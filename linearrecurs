@@ -1,0 +1,52 @@
+var regexval = function(p,e,n) {
+var l=p,
+d,
+q= String,
+b=false,
+r=/\(+(.*?)\)+/,
+y=/\(+(.*?)\)+/gim,
+x=1;
+if("undefined"!==typeof(e))
+{
+l=e;
+r=/\(*(.*?)\)*/;
+y=/\(*(.*?)\)*/gim;
+x=n;
+}
+d=l.replace(/(?:(?:((?:\()?)((?:(\w*?()))?)((?:
+\))?)?)?)/gim,function(m) {
+console.log("m: "+m);
+if (r.test(m))
+{
+m=m.replace(y,function(m) {
+console.log("test: "+m);
+if("("===m)
+{
+m=x++;
+}
+else if(")"===m) {
+m=x++;
+}
+else if("()"===m) {
+j=x++;
+p=x++;
+m="" + j + p;
+}
+return m;
+});
+}
+if("("===m)
+{
+m=x++;
+}
+else if(")"===m) {
+m=x++;
+}
+console.log("m: "+m)
+return m;
+})
+if("undefined"===typeof(e)) {
+d=regexval(false,d,x);
+}
+return d;
+}
