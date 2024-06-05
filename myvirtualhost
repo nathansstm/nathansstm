@@ -1,0 +1,35 @@
+useradd housemin -d /var/www/vhosts
+
+usermod housemin -p newpass
+
+apt-get update && upgrade
+
+apt-get install nano
+
+apt-get install ntp ntpdate
+
+passwd prompt, sudo
+
+copy to root~
+
+./relation
+./internet
+./apacheen
+
+/etc/start_iptables
+/etc/flush_iptables
+/etc/init.d/firewall
+
+nano /etc/ssh/sshd_config
+
+nano /etc/ssh/ssh_config
+
+change port to 9922
+
+apt-get install aptitude
+
+aptitude update
+
+aptitude safe-upgrade
+
+reboot
