@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+aptitude install \
+ mysql-client \
+ mysql-server \
+ libsasl2-2 \
+ libsasl2-modules \
+ libsasl2-modules-sql \
+ sasl2-bin \
+ libpam-mysql \
+ openssl \
+ rkhunter \
+ binutils \
+ maildrop
+
+exit 0
