@@ -1,0 +1,26 @@
+
+/** MySQLi
+  * Create an instance of databaseOb $container = databaseOb::getInstance( params )
+  * 
+  * mysqli params $hostname = 'localhost', $username = 'user', $password = null
+  * 
+  * @access  public
+  * @param   string   $hostname         hostname of SQL server 
+  * @param   string   $username         a privileged user login	
+  * @param   string   $password         a privileged user pass
+  * @method  sql function execute()      function($value) 
+  * @method  sql function fetcharray()   function($value) 
+  * @method  sql function fetchassoc()   function($value) 
+  * @method  sql function insert()       function($table, $data) 
+  * @method  sql function update()       function($table, $data, $where) 
+  * @method  sql function remove()       function($table, $where) 
+  * @return  SQL object   $instance      databaseOb instance
+  */ 
+ 
+ 
+ SQL resource instantiated! 
+ --------------------------------------------------------------------------------
+ Logged: library connect to `localhost` success 
+ --------------------------------------------------------------------------------
+ 
+ 
