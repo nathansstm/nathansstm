@@ -1,0 +1,92 @@
+let p,a=[],r,e,n,t,s=[];
+
+(
+  a.push(
+    "loc",
+    "ctp",
+    "txt",
+    [
+      [
+        1,
+        2,
+        3,
+      ],
+      [
+        4
+      ],
+      [
+        5,
+        [
+          6,
+          [
+            7,
+          ],
+          "module",
+        ],
+      ],
+    ],
+  )
+)
+console.log("Pushing items to: "+toString(a));
+//Pushing items to [object Undefined]
+
+(() => {
+    console.log("Pushing start");
+  
+    a.forEach(i => {
+        if(Array.isArray(i)) {
+            //s.push(...flatten(i));
+        } 
+        else
+        {
+            //s.push(i);
+        }
+    })
+        console.log("Pushing array: "+toString(s));
+        //Finished items stored: [object Undefined]
+        console.log("Pushed values: "+s);
+
+    
+  
+    (s=0,(p) = (f) =>{
+          //console.log("Pushing function internal");
+        //console.log("Pushing values: "+f);
+       //console.log("Pushing counter: "+s)
+        if(n=f,Array.isArray(n)){
+          n.forEach( r => {
+            if(Array.isArray(r)) {
+              r.forEach( n => {
+            //console.log("Pushing value: "+n);
+              //s++;
+                if(Array.isArray(n)) {
+                  //console.log("Pushing array: "+n)
+                      p(n);
+                  }
+                  else
+                  {
+                    console.log("Pushing value: "+n)
+                  }
+                })
+              }
+              else
+              {
+                console.log("Pushing value: "+r)
+              }
+            })
+        }
+        else
+        {
+          s++;
+          console.log("Pushing value: "+s);
+        }
+     
+      if(typeof(f[s])==="undefined") return
+    })
+    (
+     a
+    )
+           
+         
+    
+}
+)()
