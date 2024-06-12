@@ -27,13 +27,10 @@ function loop(p) {
             //if(toString(p)==="[object Object]")
              //console.log("Find export: "+p);
     if(n=p,Array.isArray(n)){
-
       n.forEach((key, item) => {
           //console.log("Looping at key: "+key+", "+item);
              if(typeof(key==="object"))
                 t=item+2;
-             
-        
             if(Array.isArray(key)){
                 key.forEach((keys, value) => {
                     if(Array.isArray(keys)){
