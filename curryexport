@@ -1,0 +1,73 @@
+
+   //function c(x) {
+      //return function (y) {
+        //return x(y);
+      //}
+   //}
+//Advantage to above is code
+//abstract
+
+
+function f() {
+  
+    console.log("Function: "+this)
+  
+    console.log("Function: "+z)
+}
+
+
+//Arrow function (x) Initializer
+//Returns a function
+const x = (x) => {
+}
+//z = (y) abstracts Initializer
+//const c = z = (y) => (
+    //x(y)
+//)
+//Function: [object Window]
+//(y) => (
+//    x(y)
+//)
+//Function parameter y in function(y)
+//is to avoid x(y), y undefined
+//z = (y) abstracts Initializer
+const c = z = function (y) {
+    return x(y) 
+}
+//Function: [object Window]
+//function (y) {
+//    return x(y)
+//}
+//Function (y) Returns function f()
+//Which is immediately initialized
+c(f());
+//Can still curry further
+
+
+//(
+    //(c) => c(c)
+//)
+//(
+    //(y) => z=
+    //(x) => {
+        //x(y);
+    //}
+//)
+//(
+    //(z) => {return f()}
+//)
+
+
+//let z=c(f);
+//Function: [object Window]
+//function (x) {
+//    return x(y)
+//}
+
+    //const z = c(f);
+//z();
+//Function: [object Window]
+//function (y) {
+//    return x(y)
+//}
+
