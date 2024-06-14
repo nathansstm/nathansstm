@@ -1,0 +1,137 @@
+function f() {
+   console.log("Function: "+this)
+ console.log("Function: "+z)
+}
+
+
+const x=x=>
+function(y){
+  return x(y)
+};
+
+const c=c=>
+x(c);
+
+const z=c(f);
+z();
+
+//function f() {
+   //console.log("Function: "+this)
+// console.log("Function: "+b)
+//}
+
+//const b = 
+  //i(f);
+//const b =
+  //void i(f)();
+//b();
+
+//function x(){
+//}
+//function y(){
+  //x(y)
+//}
+
+
+//avoid Error c is not defined
+//avoid missing parameters y
+//const c = (y) => {
+  //return x(y)
+//}
+
+//const z = c(f);
+//z();
+
+
+
+//function i(x){
+  //return function(y){
+      //return x(y);
+  //}
+//}
+//i(f);
+
+//function i(x){
+  //return function(y){
+    //return x(y)
+//}
+//}
+//function c(x){
+  //return function(y){
+    //return x(y)
+//}
+//}
+
+//function c(x) {
+  //return function (y) {
+     //return x(y)
+  //}
+//}
+
+//function c(x) {
+  //return function(y) {
+    //return x(y)
+  //}}
+
+
+//let a = (b => {
+  //i(f)();
+//}
+//)
+//(  
+//)
+
+  //console.log("Function: "+);
+  //function x() {
+    //return
+  //}
+  //function y() {
+    //x(y)
+  //}
+  //function i(x){
+    //return function(y) {
+      //return x(y)
+    //}
+  //}
+
+
+
+
+  //return function (y) {
+    //return x(y)
+  //}
+//console.log("Function: "+z)
+
+
+ // console.log("Function: "+y);
+
+
+//function c(x) {
+//function (y) {
+  //return x(y)
+//}
+//}
+
+//avoid Error missing (
+//avoid Error missing (x) Initializer
+    //avoid Error (y) is not defined  
+//avoid Error x(y) not a function
+//const x = (x) => {
+  //return function (y) {
+    //return x(y)
+  //}
+//}
+
+//avoid Error c is not defined
+//avoid missing parameters y
+//const c = (y) => {
+  //return x(y)
+//}
+
+//const z = c(f);
+//z();
+
+
+
+
+
