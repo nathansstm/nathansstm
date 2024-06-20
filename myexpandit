@@ -245,6 +245,24 @@ function ran(n) {
     return s.toUpperCase();
 }
 
+function __get(name) {
+    //eval(' '+dd+'');
+return eval(
+    `${name}`
+)
+}
+
+function __set(
+               name,
+               value
+              ) {
+    //eval('let '+ll+'='+'"'+cc+'";');
+  //console.log("Function: "+name)
+return eval(
+    `${name}=value`
+)
+}
+
 const x=x=>
 function(y){
   return x(y)
@@ -265,6 +283,15 @@ var w=b(md5)("STRING");
 console.log(
     ran(w)
 );
+
+__set('xx','valued');
+
+
+
+console.log("Function: "
+    +__get('xx')
+)
+
 
     //b(md5)()
     //w.md5("STRING")
