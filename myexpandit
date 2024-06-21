@@ -257,7 +257,7 @@ function __set(
                value
               ) {
     //eval('let '+ll+'='+'"'+cc+'";');
-  //console.log("Function: "+name)
+  //console.log("Function: "+value)
 return eval(
     `${name}=value`
 )
@@ -290,9 +290,32 @@ __set('xx','valued');
 
 console.log("Function: "
     +__get('xx')
-)
+);
 
+//let variable = `    
+    //`;
 
+__set("variable",`Function: 
+
+`);
+console.log(__get("variable"));
+
+__set('temp',`<!DOCTYPE html>
+    <html>
+    <head>
+    <title>Title of the
+    document</title>
+    </head>
+    <body>
+    The content of the document......
+    </body>
+           
+    </html>`
+);
+
+//console.log(`Function: `
+    //+__get('temp')
+//)
     //b(md5)()
     //w.md5("STRING")
     //ran(w.md5("STRING"))
