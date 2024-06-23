@@ -313,6 +313,106 @@ __set('temp',`<!DOCTYPE html>
     </html>`
 );
 
+__set('html',`<!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+.collapsible {
+background-color:cyan;
+color:black;
+cursor:pointer;
+padding:18px;
+width:100%;
+border:none;
+text-align:left;
+outline:none;
+font-weight:bold;
+font-size:25px;
+display:inline-block;
+}
+.active,collapsible:hover {
+background-color:LightCyan;
+}
+.collapsible:after {
+content:'\\002B';
+color:white;
+font-weight:bold;
+float:right;
+margin-left:5px;
+}
+.active:after {
+content:"\\2212";
+}
+
+.content {
+padding: 0 18px;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.2s ease-out;
+background-color: LightCyan;
+}
+
+</style>
+</head>
+<body>
+
+<h2>A simple website by Nathan St</h2>
+
+<p>Collapsible Set:</p>
+<button class="collapsible">Open Section 1</button>
+<div class="content">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<button class="collapsible">Open Children 1</button>
+<div class="content"><p>Insert some content here</p>
+</div>
+
+</div>
+<button class="collapsible">Open Section 2</button>
+<div class="content">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<button class="collapsible">Open Section 3</button>
+<div class="content">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<script>
+var allHeights =0;
+var contents=document.getElementsByClassName("content");
+var j;
+for(j=0;j<contents.length;j++) {
+var h=document.getElementsByClassName("content")
+[j].scrollHeight;
+allHeights+=h;
+}
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    //if (content.style.maxHeight){
+    if (content.style.maxHeight==allHeights+"px") {
+      //content.style.maxHeight = null;
+content.style.maxHeight="0px";
+    } else {
+      //content.style.maxHeight = content.scrollHeight + "px";
+content.style.maxHeight=allHeights+"px"; 
+    }
+  });
+}
+<\/script>
+
+</body>
+</html>`
+);
+//console.log("Function: "+html)
+document.write(html);
+//console.log("Function: "+temp)
 //console.log(`Function: `
     //+__get('temp')
 //)
