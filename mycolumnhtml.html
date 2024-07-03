@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>
+Grid Layout
+</title>
+<style>
+*{
+margin:0;
+padding:0;
+}
+html{
+height:100%;
+}
+body{
+height:100%;
+}
+header,
+footer{
+padding:20px;
+}
+[el-bg]{
+background:Ivory;
+}
+[no-bg]{
+background:none;
+}
+article,
+aside{
+padding:20px;
+}
+.container{
+display:grid;
+grid-template-columns: 1.5fr 3.3fr;
+column-gap:0;
+}
+main{
+display:grid;
+grid-template-columns: 50% 50%;
+column-gap:0;
+}
+header,
+footer{
+grid-column:span 2;
+}
+ul{
+list-style-type: disc;
+list-style-position: outside;
+margin-left:20px;
+}
+[col-3]{
+display:grid;
+grid-template-columns: 25% 25% 25% 25%;
+column-gap:0;
+}
+[col-6]{
+display:grid;
+grid-template-columns: 50% 50%;
+column-gap:0;
+}
+[gr-sp]{
+grid-column:span 2;
+}
+[el-cl]{
+clear:both;
+}
+@media (max-width:500px) {
+[col-3],
+[col-6]{
+display:block;
+width:100%;
+box-sizing:border-box;
+}
+nav,
+main,
+article,
+aside{
+display:block;
+width:100%;
+box-sizing:border-box;
+}
+nav,
+main {
+grid-column: span 2;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>
+Header 1
+</h1>
+</header>
+
+<nav>
+<ul>
+<li>Open 1</li>
+<li>Open 2</li>
+<li>Open 3</li>
+<li>Open 4</li>
+</ul>
+</nav>
+
+<main>
+<aside no-bg>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<article el-bg>
+<h2>Article</h2>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</article>
+
+</main>
+
+<section gr-sp col-6>
+<article el-bg>
+<h2>Article</h2>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</article>
+<aside no-bg>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+</section>
+
+<section gr-sp col-3>
+<aside no-bg>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<aside no-bg>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<aside no-bg>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<aside no-bg>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+</section>
+
+
+
+<footer>
+<p>
+Footer
+</p>
+</footer>
+</div>
+</body>
+
+</html>
