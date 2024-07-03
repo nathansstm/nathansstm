@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Template</title>
+
+<style>
+* {
+line-height: 30px;
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+.header-wrapper {
+padding:20px;
+}
+li::hover,
+a::hover{
+background-color:Ivory;
+}
+ul, li,li a,nav {
+list-style-type:none;
+width:100%;
+}
+ul a::hover {
+background-color:Ivory;
+}
+.col-1,
+.col-1-wrapper {
+width:33.33%;
+
+}
+.col-2 {
+width:58.88%;
+}
+.col-3,
+.col-3-wrapper {
+width:33.33%;
+}
+.col-4,
+.col-4-wrapper {
+width:50%;
+}
+[class*="col-"] {
+padding:20px;
+
+float:left;
+}
+.col-1-wrapper,
+.col-3-wrapper,
+.col-4-wrapper {
+padding:0;
+}
+footer {
+clear:both;
+}
+.col-1,.col-3,.col-4 {
+width:100%;
+}
+.col-3-wrapper,
+.col-4-wrapper {
+background-color:Azure;
+}
+details,summary {
+display:block;
+}
+.row,section {
+clear:both;
+}
+ul li a{
+display:block;
+background-color:Ivory;
+width:100%;
+}
+ul li a:hover{
+background-color:Azure;
+}
+@media (max-width:500px) {
+nav,article {
+width:100%;
+height:auto;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-1-wrapper,
+.col-3-wrapper,
+.col-4-wrapper,
+.header-wrapper,
+.footer-wrapper{
+
+width:100%;
+
+}
+}
+</style>
+</head>
+<body>
+
+
+<header>
+<div class="header-wrapper">
+<h2>Header 1</h2>
+</div>
+</header>
+
+<section>
+<nav>
+<ul>
+<li><a href="#">Open 1</a></li>
+<li><a href="#">Open 2</a></li>
+<li><a href="#">Open 3</a></li>
+</ul>
+</nav>
+<article>
+</article>
+</section>
+
+<main>
+<section>
+<div class="row">
+<div class="col-1-wrapper">
+<div class="col-1">
+<h3>
+Header 3
+</h3>
+<nav>
+<ul>
+<li><a href="#">Open 4</a></li>
+<li>
+<details>
+<summary>Ice giants</summary>
+<details>
+<summary>Gas giants</summary>
+<ul>
+<li>Jupiter</li>
+<li>Saturn</li>
+</ul>
+</details>
+</li>
+<li><a href="#">Open 6</a></li>
+<li>
+<details>
+<summary>Giant planets</summary>
+<ul>
+<li>
+<details>
+<summary>Gas giants</summary>
+<ul>
+<li>Jupiter</li>
+<li>Saturn</li>
+</ul>
+</details>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="col-3-wrapper" style="background:none;">
+<div class="col-3">
+<h2>
+Header 2
+</h2>
+<p>Insert some page content......</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris.</p>
+</div>
+</div>
+<div class="col-3-wrapper">
+<div class="col-3">
+<h2>
+Header 4
+</h2>
+<p>Insert some page content......</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris.</p>
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+<section>
+<div class="row">
+
+<div class="col-4-wrapper">
+<div class="col-4">
+<h2>
+Header 5
+</h2>
+<p>Insert some page content......</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Est sit amet facilisis magna etiam tempor orci eu. Augue neque gravida in fermentum. Commodo odio aenean sed adipiscing. Tempus urna et pharetra pharetra massa massa ultricies. Lectus vestibulum mattis ullamcorper velit sed. Lectus sit amet est placerat in egestas erat imperdiet. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Purus in mollis nunc sed id semper.</p>
+<br/>
+<p>Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit. Gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium.</p>
+</div>
+</div>
+<div class="col-4-wrapper" style="background:none;">
+<div class="col-4">
+<h2>
+Header 6
+</h2>
+<p>Insert some page content......</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Est sit amet facilisis magna etiam tempor orci eu. Augue neque gravida in fermentum. Commodo odio aenean sed adipiscing. Tempus urna et pharetra pharetra massa massa ultricies. Lectus vestibulum mattis ullamcorper velit sed. Lectus sit amet est placerat in egestas erat imperdiet. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Purus in mollis nunc sed id semper.</p>
+<br/>
+<p>Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit. Gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium.</p>
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+<section>
+<div class="row">
+<div class="footer-wrapper">
+<footer>
+<p>Footer</p>
+</footer>
+</div>
+</div>
+
+</section>
+</main>
+
+
+
+</body>
+</html>
+
