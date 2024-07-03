@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>
+Flex Layout
+</title>
+<style>
+*{
+margin:0;
+padding:0;
+}
+ul{
+list-style-type: disc;
+list-style-position: outside;
+margin-left:20px;
+}
+html,
+body{
+height:100%;
+}
+header,
+footer,
+article,
+aside{
+padding:20px;
+}
+main{
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+}
+[fx-el]{
+flex:1;
+width:33.33%;
+}
+[fx-md]{
+flex:1;
+width:49.99%;
+}
+[fx-sm]{
+flex:1;
+width:25%;
+}
+[el-md]{
+box-sizing:border-box;
+width:50%;
+}
+[el-bg]{
+background:Ivory;
+}
+[no-bg]{
+background:none;
+}
+[el-cl]{
+clear:both;
+}
+[el-sp]{
+display:flex;
+width:100%;
+}
+@media (max-width:500px) {
+main,
+[el-sp]{
+display:block;
+box-sizing:border-box;
+}
+[fx-el],
+[fx-md],
+[fx-sm],
+[el-md],
+[el-sp]{
+box-sizing:border-box;
+width:100%;
+}
+nav,
+article,
+aside{
+width:100%;
+}
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>
+Header 1
+</h1>
+</header>
+
+<main>
+<nav no-bg fx-el>
+<ul>
+<li>Open 1</li>
+<li>Open 2</li>
+<li>Open 3</li>
+<li>Open 4</li>
+</ul>
+</nav>
+<aside no-bg fx-el>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<article el-bg fx-el>
+<h2>Article</h2>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</article>
+
+<section el-sp>
+<article el-bg fx-md>
+<h2>Article</h2>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</article>
+<aside no-bg fx-md>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+</section>
+
+<section el-sp>
+<aside no-bg fx-sm>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<aside no-bg fx-sm>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<aside no-bg fx-sm>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+<aside no-bg fx-sm>
+<h3>Aside</h3>
+<p>
+The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser. The content of the body element is displayed in your browser.
+</p>
+</aside>
+</section>
+</main>
+
+
+
+
+<footer>
+<p>
+Footer
+</p>
+</footer>
+
+</body>
+
+</html>
