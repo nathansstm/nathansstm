@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>
+Grid Layout
+</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+html{
+height:100%;
+}
+body{
+height:100%;
+}
+[blog-grid] {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-template-rows: 50px 200px 100px;
+grid-gap: 20px;
+}
+header,
+footer{
+grid-column: 1 / 4;
+}
+[el-bg]{
+background:Ivory;
+}
+[no-bg]{
+background:none;
+}
+
+main{
+display:grid;
+grid-gap:20px;
+grid-template-columns: repeat(3,1fr);
+grid-template-rows: 30% 200px auto;
+background:Ivory;
+}
+main > * {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+header,
+footer,
+nav,
+article,
+aside,
+footer{
+background:Azure;
+padding:20px;
+}
+[gr-d]{
+grid-column: 1 / 2;
+grid-row: 1 / 2;
+}
+[gr-a]{
+grid-column: 2 / 3;
+grid-row: 1 / 2;
+}
+[gr-f]{
+grid-column: 3 / 4;
+grid-row: 1 / 2;
+}
+[gr-e]{
+grid-column: 1 / 2;
+grid-row: 2 / 3;
+}
+[gr-b]{
+grid-column: 2 / 3;
+grid-row: 2 / 3;
+}
+[gr-c]{
+grid-column: 3 / 4;
+grid-row: 2 / 3;
+}
+[a-box]{
+background-color: Azure;
+border-radius: 5px;
+padding: 20px;
+font-size: 150%;
+}
+@media (max-width:500px) {
+nav,
+article,
+aside{
+grid-column: 1 / 4;
+}
+
+}
+</style>
+</head>
+<body>
+
+<main>
+<header>
+<h1>
+Header
+</h1>
+</header>
+
+<nav>
+<h3>
+Nav
+</h3>
+</nav>
+<article>
+<h2>
+Article
+</h2>
+</article>
+<aside>
+<h3>
+Aside
+</h3>
+</aside>
+
+
+<footer>
+<p>
+Footer
+</p>
+</footer>
+</main>
+
+</body>
+
+</html>
