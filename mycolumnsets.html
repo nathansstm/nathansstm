@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSS Template</title>
+
+<style>
+* {
+line-height: 30px;
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+[class*="col-"] {
+padding:20px;
+float:left;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.col-4,
+.col-6{
+background-color:Azure;
+}
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+details,summary {
+display:block;
+}
+li::hover,
+a::hover{
+background-color:Ivory;
+}
+ul, li,li a,nav {
+list-style-type:none;
+width:100%;
+}
+ul a::hover {
+background-color:Ivory;
+}
+ul li a{
+display:block;
+background-color:Ivory;
+width:100%;
+}
+ul li a:hover{
+background-color:Azure;
+}
+.header {
+padding: 20px;
+}
+@media (max-width:500px) {
+nav,article {
+width:100%;
+height:auto;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12{
+
+width:100%;
+
+}
+}
+</style>
+</head>
+<body>
+
+
+<header>
+<div class="header">
+<h2>Header 1</h2>
+</div>
+</header>
+
+<section>
+<nav>
+<ul>
+<li><a href="#">Open 1</a></li>
+<li><a href="#">Open 2</a></li>
+<li><a href="#">Open 3</a></li>
+</ul>
+</nav>
+<article>
+</article>
+</section>
+
+<main>
+<section>
+<div class="row">
+<div class="col-4" style="background:none;">
+<h3>
+Header 3
+</h3>
+<nav>
+<ul>
+<li><a href="#">Open 4</a></li>
+<li>
+<details>
+<summary>Ice giants</summary>
+<details>
+<summary>Gas giants</summary>
+<ul>
+<li>Jupiter</li>
+<li>Saturn</li>
+</ul>
+</details>
+</li>
+<li><a href="#">Open 6</a></li>
+<li>
+<details>
+<summary>Giant planets</summary>
+<ul>
+<li>
+<details>
+<summary>Gas giants</summary>
+<ul>
+<li>Jupiter</li>
+<li>Saturn</li>
+</ul>
+</details>
+</li>
+<li>
+<details>
+<summary>Gas moons</summary>
+<ul>
+<li>Europa</li>
+<li>Io</li>
+<li>Ganymede</li>
+<li>Callisto</li>
+</ul>
+</details>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-4" style="background:none;">
+<h2>
+Header 2
+</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel.</p>
+</div>
+<div class="col-4">
+<h2>
+Header 4
+</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel.</p>
+</div>
+</div>
+
+</section>
+
+<section>
+<div class="row">
+
+<div class="col-6">
+<h2>
+Header 5
+</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Est sit amet facilisis magna etiam tempor orci eu. Augue neque gravida in fermentum. Commodo odio aenean sed adipiscing. Tempus urna et pharetra pharetra massa massa ultricies. Lectus vestibulum mattis ullamcorper velit sed. Lectus sit amet est placerat in egestas erat imperdiet. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Purus in mollis nunc sed id semper.</p>
+<br/>
+<p>Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit. Gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium.</p>
+
+<section>
+<div class="col-12">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere.</p>
+</div>
+</section>
+
+<p>Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit. Gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium.</p>
+</div>
+
+<div class="col-6" style="background:none;">
+<h2>
+Header 6
+</h2>
+<section>
+<div class="col-6">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+<div class="col-6">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+</section>
+
+<section>
+<div class="col-12">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere.</p>
+</div>
+</section>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Est sit amet facilisis magna etiam tempor orci eu. Augue neque gravida in fermentum. Commodo odio aenean sed adipiscing. Tempus urna et pharetra pharetra massa massa ultricies. Lectus vestibulum mattis ullamcorper velit sed. Lectus sit amet est placerat in egestas erat imperdiet. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Purus in mollis nunc sed id semper.</p>
+<br/>
+<p>Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit. Gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium.</p>
+</div>
+
+<div class="col-12">
+
+<div class="col-3">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel.</p>
+</div>
+<div class="col-3">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel.</p>
+</div>
+<div class="col-3">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel.</p>
+</div>
+<div class="col-3">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel.</p>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium. Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="row">
+
+<div class="col-6">
+<h2>
+Header 7
+</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Est sit amet facilisis magna etiam tempor orci eu. Augue neque gravida in fermentum. Commodo odio aenean sed adipiscing. Tempus urna et pharetra pharetra massa massa ultricies. Lectus vestibulum mattis ullamcorper velit sed. Lectus sit amet est placerat in egestas erat imperdiet. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Purus in mollis nunc sed id semper.</p>
+<br/>
+<p>Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit. Gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium.</p>
+
+
+<section>
+<div class="col-12">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere.</p>
+</div>
+</section>
+
+
+</div>
+<div class="col-6" style="background:none;">
+<h2>
+Header 8
+</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris. Amet consectetur adipiscing elit ut aliquam purus. Morbi tempus iaculis urna id volutpat lacus. Lectus proin nibh nisl condimentum. Risus nec feugiat in fermentum posuere. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Est sit amet facilisis magna etiam tempor orci eu. Augue neque gravida in fermentum. Commodo odio aenean sed adipiscing. Tempus urna et pharetra pharetra massa massa ultricies. Lectus vestibulum mattis ullamcorper velit sed. Lectus sit amet est placerat in egestas erat imperdiet. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Purus in mollis nunc sed id semper.</p>
+<br/>
+<p>Ac auctor augue mauris augue neque gravida in. Justo eget magna fermentum iaculis eu non diam phasellus. Nunc congue nisi vitae suscipit tellus mauris a. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Sed pulvinar proin gravida hendrerit. Gravida rutrum quisque non tellus. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Ut lectus arcu bibendum at varius vel. Suspendisse sed nisi lacus sed. Sit amet aliquam id diam maecenas ultricies. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Amet tellus cras adipiscing enim eu turpis egestas pretium.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="row">
+<div clas="col-12">
+<footer>
+<p>Footer</p>
+</footer>
+</div>
+</div>
+
+</section>
+</main>
+
+
+
+</body>
+</html>
