@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>
+Grid Layout
+</title>
+<style>
+*{
+margin:0;
+padding:0;
+}
+html{
+height:100%;
+}
+body{
+height:100%;
+}
+header,
+footer,
+nav,
+article,
+aside,
+footer{
+background:Azure;
+padding:20px;
+}
+[el-bg]{
+background:Ivory;
+}
+[no-bg]{
+background:none;
+}
+main{
+display:grid;
+grid-gap:20px;
+grid-template-columns: repeat(12,1fr);
+grid-template-rows: 1fr 200px 200px 200px auto;
+background:Ivory;
+}
+main > * {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+header,
+footer{
+grid-column: 1 / 13;
+}
+ul{
+list-style-type: disc;
+list-style-position: outside;
+margin-left:20px;
+}
+[x-col-4]{
+grid-column: 1 / 5;
+}
+[y-col-4]{
+grid-column: 5 / 9;
+}
+[z-col-4]{
+grid-column: 9 / 13;
+}
+[c-col-6]{
+grid-column: 1 / 7;
+}
+[a-col-6]{
+grid-column: 7 / 13;
+}
+[d-col-3]{
+grid-column: 1 / 4;
+}
+[f-col-3]{
+grid-column: 4 / 7;
+}
+[e-col-3]{
+grid-column: 7 / 10;
+}
+[b-col-3]{
+grid-column: 10 / 13;
+}
+[gr-sp]{
+grid-column:span 2;
+}
+[el-cl]{
+clear:both;
+}
+@media (max-width:500px) {
+[x-col-4],
+[y-col-4],
+[z-col-4],
+[c-col-6],
+[a-col-6],
+[d-col-3],
+[f-col-3],
+[e-col-3],
+[b-col-3]{
+grid-column: 1 / 13;
+}
+
+
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>
+Header
+</h1>
+</header>
+
+<nav x-col-4>
+<h3>
+Nav
+</h3>
+</nav>
+<aside y-col-4>
+<h3>
+Aside
+</h3>
+</aside>
+<article z-col-4>
+<h2>
+Article
+</h2>
+</article>
+
+<aside c-col-6>
+<h3>
+Aside
+</h3>
+</aside>
+<aside a-col-6>
+<h3>
+Aside
+</h3>
+</aside>
+
+<aside d-col-3>
+<h3>
+Aside
+</h3>
+</aside>
+<aside f-col-3>
+<h3>
+Aside
+</h3>
+</aside>
+<aside e-col-3>
+<h3>
+Aside
+</h3>
+</aside>
+<aside b-col-3>
+<h3>
+Aside
+</h3>
+</aside>
+
+<footer>
+<p>
+Footer
+</p>
+</footer>
+</main>
+</body>
+
+</html>
