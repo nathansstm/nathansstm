@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Breakdown Example</title>
+    <script type="module">
+        import { simulatedFileContent } from './the_post.js';
+
+        class URLProcessor {
+            static pageHead=`
+  <style>
+  @font-face {
+      font-family: 'robotoregular';
+      src: url('roboto-regular.woff2') format('woff2'),
+           url('roboto-regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+
+  }
+  body {
+      padding:20px;
+      font-family: 'robotoregular';
+      line-height:32px;
+      color:#fff!important;
+      background-color:#a4c400!important
+ 		}
+  a {
+      color:#fff!important;
+      text-decoration:none;
+  }
+  p::before {
+      content:open-quote;
+      font-size:100px;
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+  }
+  p::after {
+      position: relative;
+      content:close-quote;
+      font-size:100px;
+      bottom: -50px;
+      width: 100%;
+      display: inline-block;
+      text-align: center;
+  }
+  label {
+      display: none;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+  pre{
+      position: relative;
+      min-width:-webkit-fill-available;
+      min-width:-moz-available;
+      min-width:stretch;
+      max-width:0;
+      font-size:10px;
+      font-family: 'robotoregular';
+      overflow-x:auto;
+      color:#ffffff;
+      background:#a4c639;
+      padding: 100px 20px;
+      white-space: pre-wrap;
+      line-height: 16px;
+  }
+  button {
+      background: transparent;
+      cursor: pointer;
+      border: none;
+      position: absolute;
+      color: #ffffff;
+      font-size: 100px;
+      top: 5px;
+      right: 5px;
+  }
+  </style>
+            `;
+
+            static pageHeader=`
+            <header>
+            <h1>&nbsp;</h1>
+            <h1>Hello, Blog!</h1>
+            </header>
+            `;
+            static pageFooter=`
+            <script>
+document.querySelectorAll('.copy-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+        // Get the data-code attribute value
+        const postId = button.getAttribute('data-code');
+
+        // Use string concatenation instead of backticks in querySelector
+        const parent = document.querySelector('post-' + postId);
+        
+        if (parent) {
+            // Find the <pre> element inside this parent
+            const pre = parent.querySelector('pre');
+            if (pre) {
+                const code = pre.innerText;
+                if (navigator.clipboard) {
+            //alert('secure');
+                navigator.clipboard.writeText(code).then(() => {
+                    //button.textContent = 'Copied!';
+                    //setTimeout(() => { button.innerHTML = '&lt;&gt;'; }, 2000);
+                });
+                } else {
+            //alert('bad!');
+            const textArea = document.createElement('textarea');
+            textArea.value = code;
+            document.body.appendChild(textArea);
+            textArea.focus({preventScroll:true});
+            textArea.select();
+            document.execCommand('copy');
+                    //alert('insecure!);
+            document.body.removeChild(textArea);
+                }
+            }
+        }
+    });
+});
+            <\/script>
+            <footer>
+            <h3>Site Index</h3>
+            <ul>
+            <li><a href="">Back To Home</a></li>
+            </ul>
+            </footer>
+            `;
+            constructor(url) {
+                this.url = new URL(url);
+                this._parseURL();
+            }
+
+            _parseURL() {
+                const pathSegments = this.url.pathname.split('/').filter(part => part);
+                this.action = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : '';
+                this.param = this.url.searchParams.has('view') ? 'view' : 
+                             this.url.searchParams.has('post') ? 'post' : 
+                             '';
+               this.id = this.url.searchParams.has('post') ? parseInt(this.url.searchParams.get('post'), 10) : null;
+               document.write(`Action: ${this.action}, Param: ${this.param}, ID: ${this.id}<br>`);
+            }
+
+            async execute() {
+                if (this.action === 'post.html') {
+                    if (this.param === 'view' || this.param === '') {
+                        this._readFullFile();
+                    } else if (this.param === 'post' && !isNaN(this.id)) {
+                        this._readPostById(this.id);
+                    } else {
+                        document.write('Invalid param or id<br>');
+                    }
+                } else {
+                    document.write('Invalid action<br>');
+                }
+            }
+
+            async _readFullFile() {
+                const fileContent = await this._getFileContent();
+                document.write(URLProcessor.pageHead);
+                document.write(URLProcessor.pageHeader);
+                document.write(fileContent.replace(/\n/g, '<br>') + '<br>');
+                document.write(URLProcessor.pageFooter);
+            }
+
+            async _readPostById(id) {
+                const fileContent = await this._getFileContent();
+                const regex = new RegExp(`<post-${id}>(.*?)</post-${id}>`, 's');
+                const match = fileContent.match(regex);
+                document.write(URLProcessor.pageHead);
+                document.write(URLProcessor.pageHeader);
+                if (match) {
+                    document.write(`Content for post id ${id}:<br>` + match[1].replace(/\n/g, '<br>') + '<br>');
+                } else {
+                    document.write(`No content found for post id ${id}<br>`);
+                }
+                document.write(URLProcessor.pageFooter);
+
+            }
+
+            async _getFileContent() {
+                return new Promise((resolve) => {
+                    setTimeout(() => resolve(simulatedFileContent), 1000); // Simulating file read delay
+                });
+            }
+        }
+
+        // Use the current window location
+        const currentURL = window.location.href;
+        const processor = new URLProcessor(currentURL);
+        processor.execute();
+    </script>
+</head>
+<body>
+</body>
+</html>
