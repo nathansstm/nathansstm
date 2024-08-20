@@ -1,0 +1,2565 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>
+MyFreeTemplate.store
+</title>
+</head>
+<body>
+<script>
+//function f() {
+//console.log("Function: "+this)
+//console.log("Function: "+a)
+//}
+function f() {
+console.log("Function: "+this);
+console.log("Function: "+b);
+}
+
+function r(r) {
+//Create a randomly generated password
+console.log("Function: "+r);
+}
+
+function e(user) {
+//Returns a secure hash value
+var hexcase=0;
+var b64pad="";
+
+//var hexcase=2;
+
+//this.inner = function () {
+//return hexcase;
+//}
+  
+
+return this;
+}
+
+function md5(str) {
+//console.log("Function: "+a)
+//console.log("Functionl: "+str)
+return hex(str_md5(str));
+}
+//function md5() {
+//return s;
+//console.log("Function: ");
+    
+//}
+
+function m51() {
+//console.log("Functions: "+this)
+}
+
+function str_md5(s) {
+//console.log("Function: "+s)
+return md52(s);
+}
+
+function n(x) {
+return function(y) {
+return x(y);
+}
+}
+
+function md5cycle(x,k) {
+var a = x[0], 
+b = x[1], 
+c = x[2], 
+d = x[3];
+a =ff(a,b,c,d,k[0],7 , -680876936);
+d =ff(d,a,b,c,k[1],12, -389564586);
+c =ff(c,d,a,b,k[2],17, 606105819);
+b =ff(b,c,d,a,k[3],22, -1044525330);
+a =ff(a,b,c,d,k[4],7 , -176418897);
+d =ff(d,a,b,c,k[5],12, 1200080426);
+c =ff(c,d,a,b,k[6],17, -1473231341);
+b =ff(b,c,d,a,k[7],22, -45705983);
+a =ff(a,b,c,d,k[8],7, 1770035416);
+d =ff(d,a,b,c,k[9],12, -1958414417);
+c =ff(c,d,a,b,k[10],17, -42063);
+b =ff(b,c,d,a,k[11],22, -1990404162);
+a =ff(a,b,c,d,k[12],7, 1804603682);
+d =ff(d,a,b,c,k[13],12, -40341101);
+c =ff(c,d,a,b,k[14],17, -1502002290);
+b =ff(b,c,d,a,k[15],22, 1236535329);
+
+a =gg(a,b,c,d,k[1],5, -165796510);
+d =gg(d,a,b,c,k[6],9, -1069501632);
+c =gg(c,d,a,b,k[11],14, 643717713);
+b =gg(b,c,d,a,k[0],20, -373897302);
+a =gg(a,b,c,d,k[5],5, -701558691);
+d =gg(d,a,b,c,k[10],9, 38016083);
+c =gg(c,d,a,b,k[15],14, -660478335);
+b =gg(b,c,d,a,k[4],20, -405537848);
+a =gg(a,b,c,d,k[9],5, 568446438);
+d =gg(d,a,b,c,k[14],9, -1019803690);
+c =gg(c,d,a,b,k[3],14, -187363961);
+b =gg(b,c,d,a,k[8],20, 1163531501);
+a =gg(a,b,c,d,k[13],5, -1444681467);
+d =gg(d,a,b,c,k[2],9, -51403784);
+c =gg(c,d,a,b,k[7],14, 1735328473);
+b =gg(b,c,d,a,k[12],20, -1926607734);
+
+a =hh(a,b,c,d,k[5],4, -378558);
+d =hh(d,a,b,c,k[8],11, -2022574463);
+c =hh(c,d,a,b,k[11],16, 1839030562);
+b =hh(b,c,d,a,k[14],23, -35309556);
+a =hh(a,b,c,d,k[1],4, -1530992060);
+d =hh(d,a,b,c,k[4],11, 1272893353);
+c =hh(c,d,a,b,k[7],16, -155497632);
+b =hh(b,c,d,a,k[10],23, -1094730640);
+a =hh(a,b,c,d,k[13],4, 681279174);
+d =hh(d,a,b,c,k[0],11, -358537222);
+c =hh(c,d,a,b,k[3],16, -722521979);
+b =hh(b,c,d,a,k[6],23, 76029189);
+a =hh(a,b,c,d,k[9],4, -640364487);
+d =hh(d,a,b,c,k[12],11, -421815835);
+c =hh(c,d,a,b,k[15],16, 530742520);
+b =hh(b,c,d,a,k[2],23, -995338651);
+
+a =ii(a,b,c,d,k[0],6, -198630844);
+d =ii(d,a,b,c,k[7],10, 1126891415);
+c =ii(c,d,a,b,k[14],15, -1416354905);
+b =ii(b,c,d,a,k[5],21, -57434055);
+a =ii(a,b,c,d,k[12],6, 1700485571);
+d =ii(d,a,b,c,k[3],10, -1894986606);
+c =ii(c,d,a,b,k[10],15, -1051523);
+b =ii(b,c,d,a,k[1],21, -2054922799);
+a =ii(a,b,c,d,k[8],6, 1873313359);
+d =ii(d,a,b,c,k[15],10, -30611744);
+c =ii(c,d,a,b,k[6],15, -1560198380);
+b =ii(b,c,d,a,k[13],21, 1309151649);
+a =ii(a,b,c,d,k[4],6, -145523070);
+d =ii(d,a,b,c,k[11],10, -1120210379);
+c =ii(c,d,a,b,k[2],15, 718787259);
+b =ii(b,c,d,a,k[9],21, -343485551);
+
+x[0] = add32(a, x[0]);
+x[1] = add32(b, x[1]);
+x[2] = add32(c, x[2]);
+x[3] = add32(d, x[3]);
+//return Array(a,b,c,d);
+}
+
+function md5blk(s) { /* I figured global was faster.   */
+var md5blks = [], i; /* Andy King said do it this way. */
+for (i=0; i<64; i+=4) {
+md5blks[i >> 2] = s[i]
++ (s[i +1] << 8)
++ (s[i +2] << 16)
++ (s[i +3] << 24);
+//md5blks[i>>2] = s.charCodeAt(i)
+//+ (s.charCodeAt(i+1) << 8)
+//+ (s.charCodeAt(i+2) << 16)
+//+ (s.charCodeAt(i+3) << 24);
+}
+return md5blks;
+}
+
+function cmn(q,a,b,x,s,t) {
+a = add32(add32(a,q),add32(x,t));
+return add32((a<<s)|(a>>>(32-s)),b);
+//return safe_add(bit_rol(safe_add(safe_add(a,q),safe_add(x,t)),s),b);
+}
+function ff(a,b,c,d,x,s,t) {
+return cmn((b&c)| ((~b)&d), a,b,x,s,t);
+}
+function gg(a,b,c,d,x,s,t) {
+return cmn((b&d) |(c&(~d)),a,b,x,s,t);
+}
+function hh(a,b,c,d,x,s,t) {
+return cmn(b^c^d,a,b,x,s,t);
+}
+function ii(a,b,c,d,x,s,t) {
+return cmn(c^(b |(~d)),a,b,x,s,t);
+}
+function md51(s) {
+txt = '';
+var n = s.length,
+state = [1732584193, -271733879, -1732584194, 271733878], i;
+for (i=64; i<=s.length; i+=64) {
+md5cycle(state, md5blk(s.substring(i-64, i)));
+//md5cycle(state, sb(s));
+}
+s = s.substring(i-64);
+var tail = [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0];
+for (i=0; i<s.length; i++)
+tail[i>>2] |= s.charCodeAt(i) << ((i%4) << 3);
+tail[i>>2] |= 0x80 << ((i%4) << 3);
+if (i > 55) {
+md5cycle(state, tail);
+for (i=0; i<16; i++) tail[i] = 0;
+}
+tail[14] = n*8;
+md5cycle(state, tail);
+return state;
+}
+function md52(r){
+//console.log("Function: "+r)
+txt="";
+var t,c=r.length,e=[1732584193,-271733879,-1732584194,271733878];
+for(t=64;t<=r.length;t+=64) 
+md5cycle(e,md5blk(r.substring(t-64,t)));
+r=r.substring(t-64);
+var n=[0,0,0,0,
+0,0,0,0,
+0,0,0,0,
+0,0,0,0];
+for(t=0;t<r.length;t++) 
+n[t>>2]|=r.charCodeAt(t)<<(t%4<<3);
+if(n[t>>2]|=128<<(t%4<<3),t>55)
+for(md5cycle(e,n),t=0;t<16;t++)n[t]=0;
+return n[14]=8*c,md5cycle(e,n),e
+}
+var hex_chr = '0123456789abcdef'.split('');
+function sb(x) {
+var i;
+var nblk=((x.length+8)>>6)+1;
+var blks=new Array(nblk*16);
+for(i=0;i<nblk*16;i++) blks[i]=0;
+for(i=0;i<x.length;i++) blks[i>>2]|=x.charCodeAt(i)<<((i%4)*8);
+blks[i>>2]|=0x80<<((i%4)*8);
+blks[nblk*16-2]=x.length*8;
+//return blks;
+}
+function rhex(n) {
+var s='', j=0;
+for(; j<4; j++)
+s += hex_chr[(n >> (j * 8 + 4)) & 0x0F]
++ hex_chr[(n >> (j * 8)) & 0x0F];
+return s;
+}
+
+function hex(x) {
+for (var i=0; i<x.length; i++)
+x[i] = rhex(x[i]);
+return x.join('');
+}
+function add32(x,y) {
+return (x + y) & 0xFFFFFFFF;
+}
+function rstring(s) {
+return "STRING";
+}
+
+function ran(n) {
+let s=n.split("");
+s.sort(()=> 
+0.5 - Math.random()
+);
+//console.log(s);
+s=s.join("");
+s=s.substring(0,5);
+return s.toUpperCase();
+}
+
+function __get(name) {
+//eval(' '+dd+'');
+return eval(
+`${name}`
+)
+}
+
+function __set(
+name,
+value
+) {
+//eval('let '+ll+'='+'"'+cc+'";');
+//console.log("Function: "+value)
+return eval(
+`${name}=value`
+)
+}
+
+const x=x=>
+function(y){
+return x(y)
+};
+
+//let s="STRING";
+
+const a=b=c=>
+x(c);
+
+const d=e=f=>
+void 
+x(c)();
+
+var w=b(md5)("STRING");
+//var w=b(md5);
+
+console.log(
+ran(w)
+);
+
+__set('xx','valued');
+
+
+
+//console.log("Function: "
+//+__get('xx')
+//);
+
+//let variable = `    
+//`;
+
+__set("variable",`Function: 
+
+`);
+//console.log(
+//__get("variable")
+//);
+
+__set('temp',`<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the
+document</title>
+</head>
+<body>
+The content of the document......
+</body>
+           
+</html>`
+);
+
+__set('html',`<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+@font-face {
+    font-family: 'poppinsregular';
+    src: url('poppins-regular.woff2') format('woff2'),
+         url('poppins-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*{
+margin:0;
+padding:0;
+}
+:root{
+--blue:#4285f4;
+--yellow:#fbbc05;
+--green:#1abc9c;
+--red:#ea4335;
+--black:#000000;
+--white:#ffffff;
+--navi:#dfe3ee;
+--aside:#a4c639;
+--article:#000;
+--header:#ffffff;
+--footer:#ffffff;
+--button:#dfe3ee;
+--menu:#ffffff;
+--logo:#dfe3ee;
+--logo-background:#dfe3ee;
+--free:#ffffff;
+--color:#ffffff;
+--sub:#fbbc05;
+--gray:#f5f5f1;
+--code:#8b9dc3;
+--pre:#ffffff;
+--open:#1e90ff;
+--modal:#fbbc05;
+--back:20px;
+}
+.hero {
+padding:0;
+}
+.hero-image {
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("photographer.jpg");
+height: 300px;
+border-radius:50px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+display:table;
+box-shadow:0px 5px 10px #dfe3ee;
+}
+aside > .hero-image:nth-of-type(2){
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("photographer (1).jpg");
+}
+aside:nth-of-type(3) > .hero-image{
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("wedding.jpg");
+}
+article > .hero-image:nth-of-type(1){
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("avatar_g.jpg");
+}
+.hero-image h1{
+color: var(--white);
+background:none;
+padding:0;
+}
+.hero-text {
+display:table-cell;
+vertical-align:middle;
+text-align:center;
+width:50%;
+color: var(--white);
+}
+.hero-image table{
+width:50%;
+margin:0 auto;
+}
+p{
+text-align:left;
+text-justify:inter-character;
+padding:30px;
+font-size:5vw;
+font-weight:200;
+text-shadow:0 0 1px #999;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+color:var(--black);
+text-shadow:0 0 1px #999;
+padding:40px;
+}
+h1{
+font-size:10vw;
+}
+h2{
+font-size:9vw;
+}
+h3{
+font-size:8vw;
+}
+h4{
+font-size:7vw;
+}
+button,
+nav,
+h1,
+h2,
+h3,
+h5,
+h6,
+p,
+.logo,
+.page-header,
+.open-modal,
+.menua a,
+[menu-b] a,
+[menu-c] a{
+line-height:40px;
+font-family: 'poppinsregular';
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-3 {float:right;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+ul{
+list-style-type: none;
+}
+.collapsible {
+color:var(--black);
+cursor:pointer;
+padding:18px;
+width:100%;
+border:none;
+text-align:left;
+outline:none;
+font-weight:300;
+font-size:25px;
+display:inline-block;
+background:none;
+}
+.active,
+collapsible:hover {
+background:var(--white);
+color:var(--green);
+}
+.collapsible:after {
+content:'\\2a09';
+color:var(--navi);
+font-weight:400;
+float:right;
+border-radius:2px;
+margin-left:5px;
+font-size:40px;
+}
+.active:after {
+content:"\\2212";
+color:var(--navi);
+}
+.content{
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.2s ease-out;
+}
+.logo {
+position:relative;
+color:var(--logo);
+padding:15px 20px 20px 10px;
+font-size:16px;
+text-decoration:none;
+}
+.logo{
+background:url('Logo.svg') no-repeat;
+background-position:left 10px top 10px;
+}
+.logo span:nth-of-type(1){
+background:var(--white);
+font-size:16px;
+font-weight:400;
+color:var(--logo);
+}
+.nav {
+overflow:hidden;
+width:100%;
+max-height:0;
+transition: 1s max-height ease-out;
+}
+[menu-b] .open-modal{
+display:block;
+padding:10px 10px;
+text-decoration:none;
+}
+.menua a:not([modal-close]),
+[menu-c] a:not([modal-close]),
+.menua .open-modal{
+display:block;
+color:var(--green);
+font-size:16px;
+padding:20px;
+text-decoration:none;
+}
+.navi {
+position:absolute;
+cursor:pointer;
+top:15px;
+right:15px;
+float:right;
+padding:20px;
+border:0px solid #ffffff;
+background:var(--navi);
+touch-action:manipulation;
+border-radius: 20px;
+background: linear-gradient(145deg, #ffffff, #dfe3ee);
+box-shadow: 0px 1px 10px 2px #ffffff, 0px 0px 10px 4px #dfe3ee;
+}
+.side-menu:checked ~ .navi{
+background: linear-gradient(135deg, #dfe3ee, #ffffff);
+box-shadow: 0px 1px 10px 2px #ffffff, 0px 0px 12px 4px #dfe3ee;
+}
+.navi-line {
+background: transparent;
+box-shadow:1px 1px 3px 1px #dfe3ee;
+display:block;
+border-radius:20px;
+height:4px;
+position:relative;
+width:24px;
+}
+.navi-line::before,
+.navi-line::after {
+background: transparent;
+box-shadow:1px 1px 3px 1px #dfe3ee;
+content:'';
+border-radius:20px;
+display:block;
+height:100%;
+position:absolute;
+width:100%;
+}
+.navi-line::before {
+top:5px;
+}
+.navi-line::after {
+top:-5px;
+}
+.side-menu {
+display:none;
+}
+.side-menu:checked ~ nav {
+max-height:100%;
+transition: 0.5s max-height ease;
+}
+.side-menu:checked ~ .navi .navi-line {
+background:transparent;
+}
+modal-window{
+position:relative;
+background:var(--green);
+padding: 4em 2em;
+}
+page-popup{
+top:0;
+left:0;
+right:0;
+bottom:0;
+position:absolute;
+padding: 4em 2em;
+display:block;
+max-height:100%;
+height:100%;
+overflow-y:auto;
+overflow-x:auto;
+color:var(--white);
+background:var(--green);
+}
+.page-close{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+opacity:0.5;
+background:var(--black);
+}
+css-modal:focus + modal-window{
+display:block;
+}
+[modal-close]{
+position:absolute;
+top:10px;
+right:20px;
+text-decoration:none;
+color:var(--white);
+font-size:24px;
+font-weight:700;
+}
+[modal-close]:after{
+content:"\\2a09";
+}
+[info-modal]{
+position:fixed;
+top:0;
+left:0;
+height:100%;
+width:100%;
+background-color:rgba(0,0,0,.5);
+display:none;
+justify-content:center;
+align-items:center;
+}
+#page-modal,
+#page-modal1,
+#page-modal3,
+#page-modal4,
+#page-modal5,
+#page-modal6,
+#page-modal7,
+#page-modal8,
+#page-modal9,
+#page-modal10,
+#page-modal11,
+#page-modal12,
+#page-modal13,
+#page-modal14,
+#page-modal15{
+position:fixed;
+pointer-events:none;
+display:none;
+top:0;
+left:0;
+height:100%;
+width:100%;
+justify-content:center;
+align-items:center;
+right:0;
+bottom:0;
+}
+#page-modal:target,
+#page-modal1:target,
+#page-modal3:target,
+#page-modal4:target,
+#page-modal5:target,
+#page-modal6:target,
+#page-modal7:target,
+#page-modal8:target,
+#page-modal9:target,
+#page-modal10:target,
+#page-modal11:target,
+#page-modal12:target,
+#page-modal13:target,
+#page-modal14:target,
+#page-modal15:target{
+pointer-events:all;
+display:flex;
+}
+[info-modal],
+modal-window h2,
+modal-window p,
+page-popup h2,
+page-popup p{
+color:var(--white);
+font-weight:400;
+}
+page-popup h2,
+modal-window h2{
+font-weight:700;
+}
+page-popup span{
+white-space:pre-wrap;
+overflow-x:auto;
+}
+page-popup span:after{
+content:'\\00000a';
+}
+[menu-b] .open-modal{
+font-size:16px;
+padding:10px;
+width:30vw;
+color:var(--white);
+text-align:center;
+float:right;
+border-radius:30px;
+background:var(--green);
+border:0px solid var(--navi);
+margin:10px 10px 10px 0px;
+cursor:pointer;
+}
+.open-modal:focus + [info-modal]{
+display:flex;
+}
+.banner{
+fill:var(--menu);
+font-size:5vh;
+text-shadow:none;
+opacity:1;
+transition:opacity,font-size, fill 2s;
+}
+#text-thumb tspan{
+fill:var(--white);
+font-size:4vh;
+text-shadow:none;
+transition:fill, font-size 5s;
+}
+#text-thumb rect{
+fill:var(--navi);
+transition:fill 2s;
+}
+#text-thumb:hover rect{
+fill:var(--menu);
+transition:fill 2s;
+}
+#text-thumb:hover .banner{
+fill:var(--navi);
+opacity:0.5;
+transform:translateX(20%) translateY(50%);
+transition:opacity,fill 2s;
+}
+#text-thumb:hover tspan{
+fill:var(--green);
+font-size:3vh;
+opacity:1;
+transition:font-size 5s;
+}
+blockquote{
+quotes:"\\201C""\\201D";
+max-width:100%;
+margin:0px 20px;
+padding-bottom:0;
+border-radius:2px;
+line-height:32px;
+text-align:justify;
+text-justify:inter-character;
+font-weight:100;
+padding:0px 20px;
+border:none;
+font-size:24px;
+font-family: 'poppinsregular';
+}
+blockquote::before{
+content:open-quote;
+font-size:50px;
+font-weight:100;
+font-style:italic;
+margin-top:25px;
+font-family: 'poppinsregular';
+}
+blockquote::after{
+content:'';
+font-size:50px;
+font-weight:100;
+font-style:italic;
+font-family: 'poppinsregular';
+}
+pre{
+display:block;
+min-width:-webkit-fill-available;
+min-width:-moz-available;
+min-width:stretch;
+max-width:0;
+padding:20px 40px;
+font-size:14px;
+font-family: 'poppinsregular';
+overflow-x:auto;
+color:var(--white);
+background:var(--code);
+}
+pre:has(code){
+white-space:nowrap;
+}
+code{
+color:var(--white);
+}
+main{
+display:grid;
+grid-template-columns: repeat(3,1fr);
+}
+main > *{
+display:flex;
+flex-wrap:wrap;
+flex-direction:column;
+}
+header{
+flex:1 1 100%;
+position:sticky;
+top:0;
+/*width:100%;*/
+background:var(--header);
+}
+header,
+[menu-c],
+.aside1,
+.main,
+.aside2,
+footer{
+grid-column: 1 / 4;
+}
+@media only screen and (min-width:480px) {
+[menu-c] > nav > ul{
+display:flex;
+}
+[menu-c] > nav > ul > li{
+flex-grow:1;
+}
+[menu-c] > nav > ul > li > a{
+text-align:center;
+}
+.aside1{
+grid-column: 1 / 2;
+}
+.main{
+grid-column: 2 / 3;
+}
+.aside2{
+grid-column: 3 / 4;
+}
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+<a href="#" class="logo">
+<span>My</span><span style="color:var(--green);background:var(--white);">Free</span><span style="color:var(--logo);">Template.store</span>
+</a>
+<input class="side-menu" type="checkbox" id="side-menu"/>
+<label class="navi" for="side-menu">
+<span class="navi-line">
+</span>
+</label>
+<nav class="nav">
+<ul class="menua">
+<li>
+<a href="temporaryhtml.txt">
+Float Canvas
+</a>
+</li>
+<li>
+<a href="temporarygrid.txt">
+Grid Canvas
+</a>
+</li>
+<li>
+<a href="#page-modal5">
+Float, equal
+</a>
+<div id="page-modal5">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Float
+</h2>
+<p>
+Equal length columns provided by wrappers and custom element tags
+</p>
+<p>
+<span>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+body{padding:0;margin:0;}
+cl1-12{float:left;width:100%;height:30vh;background:#ff9900;}
+cl3-4{float:left;width:100%;position:relative;}
+cl2-4{float:left;width:100%;position:relative;}
+cl1-4{float:left;width:100%;position:relative;}
+cl2-4{right:33%;}
+cl1-4{right:33%;}
+cl3-4{background:#7b0099;}
+cl2-4{background:#00a1f1;}
+cl1-4{background:#ffbb00;}
+col1-4{float:left;width:29%;left:69%;position:relative;}
+col2-4{float:left;width:29%;left:73%;position:relative;}
+col3-4{float:left;width:29%;left:77%;position:relative;}
+&lt/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;cl1-12&gt;Header&lt;/cl1-12&gt;
+&lt;cl3-4&gt;
+&lt;cl2-4&gt;
+&lt;cl1-4&gt;
+&lt;col1-4&gt;Aside
+&lt;/col1-4&gt;
+&lt;col2-4&gt;Aside
+&lt;/col2-4&gt;
+&lt;col3-4&gt;Aside Aside Aside Aside Aside Aside Aside Aside
+&lt;/col3-4&gt;
+&lt;/cl1-4&gt;
+&lt;/cl2-4&gt;
+&lt;/cl3-4&gt;
+&lt;cl1-12&gt;Footer&lt;cl1-12&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</span>
+</p>
+</page-popup>
+</div>
+</li>
+</ul>
+</nav>
+</header>
+
+<aside menu-c>
+<nav>
+<ul class="menua">
+<li>
+<a href="DomReset.js">
+DomReset.js
+</a>
+</li>
+<li>
+<a href="UpdateWan.sh">
+UpdateWan.sh
+</a>
+</li>
+<li>
+<a href="l.sh">
+Benchmark
+</a>
+</li>
+  <li>
+<a href="p.sh">
+p.sh
+</a>
+</li>
+<li>
+<a href="#page-modal4">
+Float, unequal
+</a>
+<div id="page-modal4">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Float
+</h2>
+<p>
+This example will not show equal height columns, see the other float layout from the menu
+</p>
+<p>
+<span>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+col-3{float:left;}
+col-9{float:left;}
+col-12{float:left;}
+col-3{width:25%;}
+col-9{width:50%;}
+col-12{width:100%;}
+&lt/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;col-12&gt;
+&lt/col-12&gt;
+&lt;col-3&gt;
+&lt;/col-3&gt;
+&lt;col-9&gt;
+&lt;/col-9&gt;
+&lt;col-3&gt;
+&lt;/col-3&gt;
+&lt;col-12&gt;
+&lt;/col-12&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</span>
+</p>
+</page-popup>
+</div>
+</li>
+<li>
+<a href="#page-modal3">
+Grid Layout
+</a>
+<div id="page-modal3">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Grid
+</h2>
+<p>
+<span>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+main {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+}
+header,
+footer {
+grid-column: 1 / 4;
+}
+&lt/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main&gt;
+&lt;header&gt;
+&lt/header&gt;
+&lt;nav&gt;
+&lt;/nav&gt;
+&lt;aside&gt;
+&lt;/aside&gt;
+&lt;article&gt;
+&lt;/article&gt;
+&lt;footer&gt;
+&lt;/footer&gt;
+&lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</span>
+</p>
+</page-popup>
+</div>
+</li>
+<li>
+<a href="#page-modal">
+Flex Layout
+</a>
+<div id="page-modal">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Flex
+</h2>
+<p>
+<span>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+main{
+display:flex;
+flex-direction:row;
+flex:1;
+}
+article{
+flex:1;
+}
+nav,
+aside{
+flex:0 0 1fr;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;/header&gt;
+&lt;main&gt;
+&lt;nav&gt;
+&lt;/nav&gt;
+&lt;article&gt;
+&lt;/article&gt;
+&lt;aside&gt;
+&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</span>
+</p>
+</page-popup>
+</div>
+</li>
+<li>
+<a href="#page-modal1">
+TryIt Layout
+</a>
+<div id="page-modal1">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+TryIt
+</h2>
+<p>
+<span>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+The content of the body element is displayed in your browser
+&lt;/body&gt;
+&lt;html&gt;
+</span>
+</p>
+</page-popup>
+</div>
+</li>
+</ul>
+</nav>
+</aside>
+
+<aside class="aside aside1">
+<h2>
+Layouts
+</h2>
+<p>
+Free open source web page layout and code. Html you can use for modern and responsive web pages. Float starter layout for a simple page, Float Layout with correct width and wrappers for equal length columns, no clear! See float canvas first for a sample of how the float method can be correctly applied for equal length columns, fix code that many get wrong, no clear needed, see links for copy read plaintext! And find more here to help you grow as a coder including advice about structuring your project, modularization, howto organize your code into small, reusable modules and more. Each module should export pure functions and avoid side effects. Consider this example directory structure:
+</p>
+<pre>
+src/
+  utils/
+    math.js
+    string.js
+  components/
+    Button.js
+    Input.js
+  hooks/
+    useFetch.js
+    useToggle.js
+</pre>
+<p>
+File Naming, Use clear, descriptive names for files and functions to make the codebase more navigable.
+</p>
+<pre>
+// src/utils/math.js
+export const add = (a, b) => a + b;
+export const multiply = (a, b) => a * b;
+</pre>
+<p>
+Documentation and Comments, Document your functions with comments and JSDoc to describe their behavior, inputs, and outputs.
+</p>
+<pre>
+/**
+ * Adds two numbers together.
+ * @param {number} a - The first number.
+ * @param {number} b - The second number.
+ * @returns {number} The sum of the two numbers.
+ */
+export const add = (a, b) => a + b;
+</pre>
+<p>
+By following these principles and patterns, you can effectively leverage functional programming in your JavaScript libraries and frameworks, creating code that is more modular, reusable, and easier to test.
+</p>
+<h2>
+Content
+</h2>
+<p>
+Find these simple reusable and effective layout canvas template and library files for free available here on this web page and found also, for free! Contact nathans.stm@aol for any help or simply message drop and stay connected, find also my Github at @nathansstm for more code samples and layouts. The best way to find static content for your next project may likely be available also for free and require lityle more than a few taps on your phones Google play account, check out ChatGPT and AI generated static content you can integrate dynamically into your pages.
+</p>
+<h2>
+Rsa
+</h2>
+<p>
+In RSA cryptography, the naming convention and the use of public and private keys are based on their roles in securing communication. Public Key: The public key is used to encrypt messages. It is called &#96;public&#96; because it is shared openly and can be used by anyone to encrypt data meant for the owner of the corresponding private key. Since anyone can encrypt data with the public key, only the owner of the private key can decrypt it, ensuring that only the intended recipient can read the message. Private Key: The private key is used to decrypt messages that were encrypted with the corresponding public key. It is called "private" because it is kept secret by the owner. The private keys secrecy ensures that only the owner can decrypt messages that were encrypted with their public key.
+</p>
+<p>
+Heres a basic implementation of RSA encryption and decryption using vanilla JavaScript. This example is for educational purposes and demonstrates the steps involved in RSA without using any third-party libraries. Step-by-Step RSA Implementation: Generate large prime numbers. Compute &#96;n&#96; (product of the primes). Compute the totient. Choose an encryption key &#96;e&#96;. Compute the decryption key &#96;d&#96;. Encrypt and decrypt a message.
+</p>
+<pre>
+//Simple modular exponentiation
+function modPow(base, exp, mod) {
+base = base % mod;
+let result = 1n;
+while (exp > 0n) {
+if (exp % 2n === 1n) {
+result = (result * base) % mod;
+}
+exp = exp >> 1n;
+base = (base * base) % mod;
+}
+return result;
+}
+
+//Simple modular inverse function
+function modInverse(a, m) {
+[a, m] = [BigInt(a), BigInt(m)];
+if (m === 1n) return 0n;
+let [m0, x0, x1] = [m, 0n, 1n];
+while (a > 1n) {
+const q = a / m;
+[a, m] = [m, a % m];
+[x0, x1] = [x1 - q * x0, x0];
+}
+return x1 < 0n ? x1 + m0 : x1;
+}
+
+//Use small prime numbers for simplicity
+//I think this needs to be refactored
+//a real world application would use
+//much larger randomized primes but
+//to avoid Buffer overflows you may
+//experiment with this in your code
+const p = 61n;
+const q = 53n;
+const n = p * q; // n = 61 * 53 = 3233
+const phi = (p - 1n) * (q - 1n); // phi = (61 - 1) * (53 - 1) = 3120
+const e = 17n; // Choose e such that 1 < e < phi and gcd(e, phi) = 1
+const d = modInverse(e, phi); // Compute d
+
+const publicKey = { e, n };
+const privateKey = { d, n };
+
+//console.log('Public Key:', { e: e.toString(), n: n.toString() });
+//console.log('Private Key:', { d: d.toString(), n: n.toString() });
+console.log('Public Key\n'+e.toString()+n.toString());
+console.log('Private Key\n'+d.toString()+n.toString());
+
+//Function to encrypt a message
+function rsaEncrypt(message, publicKey) {
+const { e, n } = publicKey;
+const encryptedChars = Array.from(message).map(char => {
+    const m = BigInt(char.charCodeAt(0));
+    return modPow(m, e, n);
+});
+//console.log('Encrypted message:', encryptedChars.map(c => c.toString()));
+console.log('Encrypted:\n'+encryptedChars.join(""));
+return encryptedChars;
+}
+
+//Function to decrypt a message
+function rsaDecrypt(encryptedMessage, privateKey) {
+const { d, n } = privateKey;
+const decryptedChars = encryptedMessage.map(char => {
+    const m = modPow(char, d, n);
+    return String.fromCharCode(Number(m));
+});
+const decryptedMessage = decryptedChars.join('');
+//console.log('Decrypted message:', decryptedMessage);
+return decryptedMessage;
+}
+
+//Example usage
+const message = 'STRING';
+console.log('Original:\n'+message);
+const encryptedMessage = rsaEncrypt(message, publicKey);
+const decryptedMessage = rsaDecrypt(encryptedMessage, privateKey);
+console.log('Decrypted:\n'+decryptedMessage);
+</pre>
+<p>
+
+</p>
+</aside>
+  
+<article class="main">
+<h1>
+Boilerplate
+</h1>
+<p>
+The static content for this page comes from my own need to reference best practices talk about modern design patterns and to share some canvas layout code that takes well known page layout methods and display them mostly for learning purpose and to help others move to fast and clean design pattern and templating methods. You likely have no room for error when managing your own structure related work tasks design projects and workflows, its time web page layout come to this worldly standard.
+</p>
+<h2>
+Expressive
+</h2>
+<p>
+With modern day JavaScript, objects and classes provide expressive functional code with structure, efficiency and extensibility, features and words like reusable inheritance mutable polymorphism adaptive encapsulate and namespace for starters. Take a look at the <a href="https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-ecmascript-language-types">ECMA</a> standard and even more name value is revealed.
+</p>
+<p>
+Words like value writable mappable getter setter ennumerable configurable initialize property descriptor method call abstract promise reflect module export syntactic class definition literals and more are important topics about this object oriented standard, and others like semantic and functional are making a comeback. About the complexity of versioning, backports and collaberative design, programmers individually have patterns they tend to follow. Lets address Functional Design Patterns. Function Composition, Combine simple functions to build more complex ones.
+</p>
+<pre>
+const compose = (...fns) => x => fns.reduceRight((v, f) => f(v), x);
+const add1 = x => x + 1;
+const double = x => x * 2;
+const add1ThenDouble = compose(double, add1);
+console.log(add1ThenDouble(3)); // 8
+</pre>
+<p>
+Currying, Transform a function with multiple arguments into a series of functions that each take a single argument.
+</p>
+<pre>
+const curry = fn => (...args) => args.length >= fn.length
+  ? fn(...args)
+  : curry(fn.bind(null, ...args));
+const add = (a, b) => a + b;
+const curriedAdd = curry(add);
+console.log(curriedAdd(1)(2)); // 3
+</pre>
+<p>
+Partial Application, Create a new function by pre-filling some of the arguments of the original function.
+</p>
+<pre>
+const partial = (fn, ...presetArgs) => (...laterArgs) => fn(...presetArgs, ...laterArgs);
+const multiply = (a, b) => a * b;
+const double = partial(multiply, 2);
+console.log(double(3)); // 6
+</pre>
+<p>
+Functor and Monad Patterns, Use functors (objects that can be mapped over) and monads (objects that support chaining operations) to handle data transformations and side effects. Example with &#96;Maybe&#96; monad:
+</p>
+<pre>
+const Maybe = value => ({
+  map: fn => (value == null ? Maybe(null) : Maybe(fn(value))),
+  flatMap: fn => (value == null ? Maybe(null) : fn(value)),
+  getOrElse: defaultValue => (value == null ? defaultValue : value)
+});
+const result = Maybe(5)
+  .map(x => x + 1)
+  .map(x => x * 2)
+  .getOrElse(0); // 12
+</pre>
+<p>
+The nature of collaberative design, debugging and pull requests may seem a necessary part of updates and patching or refactoring code but time spent on a project core could be spent on other things. This has led me to spend more time on functional code and apply what Ive learned from popular methods to my own code. From this view I rely on Class oriented patterns less, favor Class use and abstract patterns from existing collaberative works more, and focus myself on functional programming. Find some tips and tricks here to help you grow and evolve your method. Here are some great examples.
+</p>
+<p>
+Yes, if you prefer using functional programming (FP) paradigms over object-oriented programming (OOP), there are several design patterns and principles you can follow to leverage functional code effectively. Here are some key patterns and practices for functional programming in JavaScript:
+</p>
+<p>
+Find usefulness in adopting Functional Programming Principles, Pure Functions, Functions that have no side effects and return the same output for the same input.
+</p>
+<pre>
+const add = (a, b) => a + b;
+</pre>
+<p>
+Immutability, Avoid changing state or data structures. Use functions like &#96;map&#96;, &#96;filter&#96;, and &#96;reduce&#96; to transform data.
+</p>
+<pre>
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2); // [2, 4, 6]
+</pre>
+<p>
+First-Class Functions, Treat functions as first-class citizens, passing them as arguments and returning them from other functions.
+</p>
+<pre>
+const apply = (fn, value) => fn(value);
+const increment = x => x + 1;
+console.log(apply(increment, 3)); // 4
+</pre>
+<p>
+Higher-Order Functions, Functions that take other functions as arguments or return them.
+</p>
+<pre>
+const withLogging = fn => (...args) => {
+  console.log('Arguments:', args);
+  const result = fn(...args);
+  console.log('Result:', result);
+  return result;
+};
+const multiply = (a, b) => a * b;
+const loggedMultiply = withLogging(multiply);
+loggedMultiply(2, 3); // Logs arguments and result
+</pre>
+<h2>
+Key
+</h2>
+<p>
+Yes, the SSH key you generated using RSA is related to the public and private keys we discussed for RSA encryption. Understanding SSH RSA Keys, RSA Key Generation: When you generate an SSH RSA key pair, the program creates a private key and a corresponding public key using the RSA algorithm. Private Key: The private key is kept secure and is used to decrypt messages or sign data. Public Key: The public key can be shared and is used to encrypt messages or verify signatures created with the corresponding private key. Components of the SSH RSA Key. The Key Prefix (&#96;ssh-rsa&#96;): Indicates that this is an RSA key. Base64 Encoded Data: The long string following the prefix is the Base64-encoded representation of the key. Similarities with Our RSA Example, Algorithm: Both use the RSA algorithm for key generation, encryption, and decryption. Key Pair: Both consist of a public key and a private key. Mathematical Foundations: Both use the same underlying mathematical principles of modular exponentiation and prime factorization. Differences from Our Simplified Example Key Size: The key you generated from the terminal app is likely much larger (e.g., 2048 bits or 4096 bits), which provides higher security compared to our simplified example using small primes. Format and Encoding: The SSH key is encoded in a specific format for compatibility with SSH software, whereas our example works directly with numeric values. Using SSH Keys for Encryption Public Key Encryption: You can use the public key in the same way as in our RSA example to encrypt data. The private key would then be used to decrypt it. Authentication: In SSH, the public key is used to authenticate the connection, ensuring that only the holder of the private key can connect. Practical Application, Public Key Sharing: You can share the public part of your SSH key (&#96;ssh-rsa ...&#96;) with a server to allow secure, authenticated connections. Private Key Security: Keep your private key secure to ensure that only you can authenticate with the associated public key. Example Usage with SSH Keys
+</p>
+<pre>
+//Simplified example of encrypting a message using an SSH RSA public key (conceptually similar)
+const publicKey = { e: 65537n, n: BigInt('0x' + '00a3d5d99d3f7fd913c521287df24cd224ec05bf1ab58eaa1acd32cb0f11bc02a8e3e14036fc02767411a26b3f662af540bbf2e96aabced146ac26c9350d0a82a34614178903c9a47e0e59a82ae511c541bc5820377d4f083d0e413625d7484f64e6d0f79b2dda1bf58cd14a8f9836779f91caf95f7c9249ed2de3ebee6a90a709') };
+
+//Function to encrypt a message (simplified, conceptual)
+function rsaEncrypt(message, publicKey) {
+const { e, n } = publicKey;
+const encryptedChars = Array.from(message).map(char => {
+    const m = BigInt(char.charCodeAt(0));
+    return modPow(m, e, n);
+});
+return encryptedChars;
+}
+
+const message = 'STRING';
+const encryptedMessage = rsaEncrypt(message, publicKey);
+console.log('Encrypted message:', encryptedMessage.map(c => c.toString()));
+</pre>
+<p>
+In this conceptual example, the public keys modulus (&#96;n&#96;) and exponent (&#96;e&#96;) would be derived from the actual SSH key components. From a terminal app like Termius, the &#96;.pub&#96; file contains only the public key. Heres a detailed explanation of the process: Understanding SSH Keys, Key Pair Generation: When you generate an SSH key pair, two keys are created: a private key and a public key. The private key is stored in a file, often named &#96;id_rsa&#96; (without any extension) or something similar. The public key is stored in a separate file with the &#96;.pub&#96; extension, like &#96;id_rsa.pub&#96;. Using the Public Key for Authentication: You can share the public key (&#96;id_rsa.pub&#96;) with others. When you send your public key to someone who has a server, they add it to a file called &#96;~/.ssh/authorized_keys&#96; on their server. This file (&#96;authorized_keys&#96;) contains a list of public keys that are authorized to log into that server.
+</p>
+<p>
+How SSH Key-Based Authentication Works, Private Key: You keep the private key secure on your local machine (or in the secure cloud). This key is used to prove your identity when connecting to the server. If you use an app like Termius, your private key may not be found on your device, it is likely stored securely on the cloud and associated with any public keys you import into the app and associate with the host. Public Key on Server: The public key on the server is used to verify your identity. The server checks if the private key you use matches the corresponding public key in the &#96;authorized_keys&#96; file. Authentication Process: When you attempt to log in to the server, your SSH client uses your private key to generate a signature. The server uses the corresponding public key to verify the signature. If the signature is valid, you are granted access.
+</p>
+</article>
+
+<aside menu-b class="aside aside2">
+<h2>
+Coin
+</h2>
+<p>
+Here’s a list of the most popular free or emerging coins with buzz potential, presented with their acronym followed by the word coin: DOT Coin (Polkadot) ADA Coin (Cardano) SOL Coin (Solana) AVAX Coin (Avalanche) LINK Coin (Chainlink) ICP Coin (Internet Computer) EGLD Coin (Elrond) ALGO Coin (Algorand) THETA Coin (Theta) FIL Coin (Filecoin) GRT Coin (The Graph) VET Coin (VeChain) HBAR Coin (Hedera Hashgraph) CELO Coin (Celo) XRD Coin (Radix) INJ Coin (Injective Protocol) PLS Coin (PulseChain) PI Coin (Pi Network) BEE Coin (Bee Network) These names can give you a sense of their branding and potential for creating buzz in the cryptocurrency community.
+</p>
+<h3>
+Html
+</h3>
+<h3>
+Tips,Tricks:
+</h3>
+<button class="collapsible">
+Semantic html
+</button>
+<div class="content">
+<p>
+Use the following tags as often as you can when creating your pages, they are semantic and by nature of their names provide automatic and instant meaning to page layout. Avoid using empty or meaning less tags and so called div soup, not just for readers and accessibility, but also so your pages and posts can be outlined.
+</p>
+<p style="margin:0;padding:0;">
+<pre>
+&lt;aside&gt;
+&lt;article&gt;
+&lt;nav&gt;
+&lt;main&gt;
+&lt;section&gt;
+&lt;header&gt;
+&lt;footer&gt;
+</pre>
+</p>
+<p style="margin:0;padding:0;">
+<blockquote>
+A semantic element clearly describes its meaning to both the browser and developer
+</blockquote>
+</p>
+<a href="#page-modal12" class="open-modal">
+View
+</a>
+<div id="page-modal12">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Semantics
+</h2>
+<p>
+<span>
+&lt;aside&gt;
+&lt;article&gt;
+&lt;nav&gt;
+&lt;main&gt;
+&lt;section&gt;
+&lt;header&gt;
+&lt;footer&gt;
+</span>
+</p>
+</page-popup>
+</div>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+Semantics
+</h2>
+<p>
+The basic building blocks of modern page layout structure, more predictable and easier to read and outline than div
+</p>
+</modal-window>
+</div>
+<p>
+Try and tap view for a simple layout that is holy grail friendly and use float, flexbox, or grid module to setup your view. See tap download for the plaintext of the view.
+</p>
+<button class="collapsible">
+HTML elements
+</button>
+<div class="content">
+<p>
+<pre>
+&lt;article&gt;
+&lt;aside&gt;
+&lt;details&gt;
+&lt;figcaption&gt;
+&lt;figure&gt;
+&lt;footer&gt;
+&lt;header&gt;
+&lt;main&gt;
+&lt;mark&gt;
+&lt;nav&gt;
+&lt;section&gt;
+&lt;summary&gt;
+&lt;time&gt;
+</pre>
+</p>
+<a href="#page-modal11" class="open-modal">
+View
+</a>
+<div id="page-modal11">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Html
+</h2>
+<p>
+<span>
+&lt;article&gt;
+&lt;aside&gt;
+&lt;details&gt;
+&lt;figcaption&gt;
+&lt;figure&gt;
+&lt;footer&gt;
+&lt;header&gt;
+&lt;main&gt;
+&lt;mark&gt;
+&lt;nav&gt;
+&lt;section&gt;
+&lt;summary&gt;
+&lt;time&gt;
+</span>
+</p>
+</page-popup>
+</div>
+</div>
+</div>
+<button class="collapsible">
+Form Elements
+</button>
+<div class="content">
+<p>
+The elements listed below are part of a short list of total form inputs which w3schools considers to be html five friendly and good for modern posts, use them when able, and find tons of example styles for more clever uses of these elements by combining your search element name with another word such as navigation menu modal popup collapsible accordion cloud tag slider image and more
+</p>
+<p>
+<pre>
+&lt;form&gt;
+&lt;input&gt;
+&lt;label&gt;
+&lt;select&gt;
+&lt;textarea&gt;
+&lt;button&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;
+&lt;datalist&gt;
+&lt;output&gt;
+&lt;option&gt;
+&lt;optgroup&gt;
+</pre>
+</p>
+<a href="#page-modal10" class="open-modal">
+View
+</a>
+<div id="page-modal10">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Forms
+</h2>
+<p>
+<span>
+&lt;form&gt;
+&lt;input&gt;
+&lt;label&gt;
+&lt;select&gt;
+&lt;textarea&gt;
+&lt;button&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;
+&lt;datalist&gt;
+&lt;output&gt;
+&lt;option&gt;
+&lt;optgroup&gt;
+</span>
+</p>
+</page-popup>
+</div>
+</p>
+</div>
+<button class="collapsible">
+VPS install
+</button>
+<div class="content">
+<p>
+Run the following multi line command to install your web host server after converting the file to unix using dos2unix and removing any unicode white space that may show up in the file at the end of lines as a colored block in vim. Use chmod +x first to make the file executable and run as root so that the programs installed receive proper ownership permissions. Enjoy your new web host by setting home directories at /var/www/vhost and use your favorite ftp client to upload your files.
+</p>
+<a href="#page-modal8" class="open-modal">
+View
+</a>
+<div id="page-modal8">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Host
+</h2>
+<p>
+<span>
+#!/bin/sh -e
+aptitude install &#92;
+apache2 &#92;
+apache2.2-common &#92;
+apache2-doc &#92;
+apache2-mpm-prefork &#92;
+apache2-utils &#92;
+libexpat1 &#92;
+ssl-cert &#92;
+libapache2-mod-php5 &#92;
+php5 &#92;
+php5-common &#92;
+php5-gd &#92;
+php5-mysql &#92;
+php5-imap &#92;
+php5-cli &#92;
+php5-cgi &#92;
+libapache2-mod-fcgid &#92;
+apache2-suexec &#92;
+php-pear &#92;
+php-auth &#92;
+php5-mcrypt &#92;
+mcrypt &#92;
+php5-imagick &#92;
+imagemagick &#92;
+libapache2-mod-suphp &#92;
+libopenssl-ruby &#92;
+libapache2-mod-ruby
+exit 0
+</span>
+</p>
+</page-popup>
+</div>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+About
+</h2>
+<p>
+The most basic host install with Apache Web Server, ssl utility, php client and server, php gd image library, php mysql module, php imap module, php cgi module and more.
+</p>
+</modal-window>
+</div>
+<p>
+Next we want to setup a relational database management system and some related programs such as Openssl and rkhunter for a slight boost in security. Also we include Libsasl modules, which will be useful for accessing our mysql-client through a web interface. Make sure again to chmod +x as root, remove any trailing spaces at line breaks and convert to unix first.
+</p>
+<a href="#page-modal7" class="open-modal">
+View
+</a>
+<div id="page-modal7">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Database
+</h2>
+<p>
+<span>
+#!/bin/sh -e
+aptitude install &#92;
+mysql-client &#92;
+mysql-server &#92;
+libsasl2-2 &#92;
+libsasl2-modules &#92;
+libsasl2-modules-sql &#92;
+sasl2-bin &#92;
+libpam-mysql &#92;
+openssl &#92;
+rkhunter &#92;
+binutils &#92;
+maildrop
+exit 0
+</span>
+</p>
+</page-popup>
+</div>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+About
+</h2>
+<p>
+We install Mysql as a program both the client and server with some additional programs and modules for security then add openssl rkhunter mail and other commands from binutils and maildrop for load balancing.
+</p>
+</modal-window>
+</div>
+<p>
+Next we run a final command to turn on web host modules for a few handy things like root operations htaccess rewrites ssl http includes and you can add more as needed. This way we allow for important events to occur which for example many popular content management systems and web clients like Wordpress and phpMyAdmin use for their internal operations.
+</p>
+<a href="#page-modal6" class="open-modal">
+View
+</a>
+<div id="page-modal6">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Modules
+</h2>
+<p>
+<span>
+#!/bin/sh -e
+a2enmod &#92;
+suexec &#92;
+rewrite &#92;
+ssl &#92;
+actions &#92;
+include
+exit 0
+</span>
+</p>
+</page-popup>
+</div>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+About
+</h2>
+<p>
+Close the setup with important modules allow superuser execution web requests that rewrite http ssl and write rewrite permission and use a2enmod to add any others you want to enable.
+</p>
+</modal-window>
+</div>
+<p>
+I have used this process step by step to setup many virtual containers programs to run basic a basic web host virtual machine. If you prefer a different web server like nginx for example I still reccommend using this process to setup and test with so as one example you know your zone is properly configured and you are natting properly, Enjoy!
+</p>
+</div>
+<button class="collapsible">
+Setup Backups
+</button>
+<div class="content">
+<p>
+To create a backup we will use rsync and a one line command to run and mail and confirm that the process ran smoothly. The man page at <a href="https://man.freebsd.org/cgi/man.cgi?query=rsync&apropos=0&sektion=0&manpath=Darwin+8.0.1%2Fppc&format=html">freebsd.org</a> can explain how this program works and in their words offers 
+</p>
+<blockquote>
+a faster, flexable replacement for rcp......a program that behaves in much the same way
+</blockquote>
+<p>
+I would first always convert to unix then make the file executable and run as root. By default your files and directories will retain user and group ownership so with some pre-planning to reflect a site user and group owner any server to server transfer will be immediately usable as well.
+</p>
+<p>
+<pre>
+<code>
+﻿rsync -ax --timeout=30 --rsh="ssh -p22 -c arcfour -l root" serverhostaddr:/var/www/vhosts/ /root/vhosts_backup | mail -s "Backup DONE for your-server (hostname)" MAIL@DOMAIN.COM
+</code>
+</pre>
+</p>
+<a href="#page-modal9" class="open-modal">
+View
+</a>
+<div id="page-modal9">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Backup
+</h2>
+<p>
+The rsync command is used for secure data transfer with arcfour encryption and a pipe to the mail command for confirm of the transfer
+</p>
+</page-popup>
+</div>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+Rsync, mail
+</h2>
+<p>
+Run this command by hand or cron and effortlessly create an exact backup of your files and folders at /root/vhosts_backup and use mail (default sendmail) to send and confirm the process.
+</p>
+</modal-window>
+</div>
+</div>
+<button class="collapsible">
+Message Digest 5
+</button>
+<div class="content">
+<p>
+We have a task here and desire to create a working JavaScript library for encoding with md5 encryption. This can be useful for creating pass codes but should not be relied on only for security. I have learned this method from several sources, and combined code here that is a working example of the Message Digest family you can copy and paste.
+</p>
+<pre>
+function md5(str) {
+    //return hex(str_md5(str));
+    return hex(md52(str));
+}
+</pre>
+<p>
+First create a function to return the result, you can name this anything so long as you note the call to convert the string and return a result from the hexadecimal set of characters. There are other functions that will in order work with blocks of byte array integer values and a worker function that cycle blocks of those values through a digest message table that contains the algorithm logic and buffers.
+</p>
+<pre>
+function str_md5(s) {
+    return md52(s);
+}
+</pre>
+<p>
+Should you desire your input to be typeof other than string, use str_md5 separately, this is simply for extensibility, but would accordingly require different conversion workers beyond the scope of this example. This method of encryption is one way and destructive, the example accepts string inputs, or if you must call them keys.
+</p>
+<pre>
+function md5cycle(x,k) {
+  var a = x[0], 
+      b = x[1], 
+      c = x[2], 
+      d = x[3];
+    a =ff(a,b,c,d,k[0],7 , -680876936);
+    d =ff(d,a,b,c,k[1],12, -389564586);
+    c =ff(c,d,a,b,k[2],17, 606105819);
+    b =ff(b,c,d,a,k[3],22, -1044525330);
+    a =ff(a,b,c,d,k[4],7 , -176418897);
+    d =ff(d,a,b,c,k[5],12, 1200080426);
+    c =ff(c,d,a,b,k[6],17, -1473231341);
+    b =ff(b,c,d,a,k[7],22, -45705983);
+    a =ff(a,b,c,d,k[8],7, 1770035416);
+    d =ff(d,a,b,c,k[9],12, -1958414417);
+    c =ff(c,d,a,b,k[10],17, -42063);
+    b =ff(b,c,d,a,k[11],22, -1990404162);
+    a =ff(a,b,c,d,k[12],7, 1804603682);
+    d =ff(d,a,b,c,k[13],12, -40341101);
+    c =ff(c,d,a,b,k[14],17, -1502002290);
+    b =ff(b,c,d,a,k[15],22, 1236535329);
+
+    a =gg(a,b,c,d,k[1],5, -165796510);
+    d =gg(d,a,b,c,k[6],9, -1069501632);
+    c =gg(c,d,a,b,k[11],14, 643717713);
+    b =gg(b,c,d,a,k[0],20, -373897302);
+    a =gg(a,b,c,d,k[5],5, -701558691);
+    d =gg(d,a,b,c,k[10],9, 38016083);
+    c =gg(c,d,a,b,k[15],14, -660478335);
+    b =gg(b,c,d,a,k[4],20, -405537848);
+    a =gg(a,b,c,d,k[9],5, 568446438);
+    d =gg(d,a,b,c,k[14],9, -1019803690);
+    c =gg(c,d,a,b,k[3],14, -187363961);
+    b =gg(b,c,d,a,k[8],20, 1163531501);
+    a =gg(a,b,c,d,k[13],5, -1444681467);
+    d =gg(d,a,b,c,k[2],9, -51403784);
+    c =gg(c,d,a,b,k[7],14, 1735328473);
+    b =gg(b,c,d,a,k[12],20, -1926607734);
+
+    a =hh(a,b,c,d,k[5],4, -378558);
+    d =hh(d,a,b,c,k[8],11, -2022574463);
+    c =hh(c,d,a,b,k[11],16, 1839030562);
+    b =hh(b,c,d,a,k[14],23, -35309556);
+    a =hh(a,b,c,d,k[1],4, -1530992060);
+    d =hh(d,a,b,c,k[4],11, 1272893353);
+    c =hh(c,d,a,b,k[7],16, -155497632);
+    b =hh(b,c,d,a,k[10],23, -1094730640);
+    a =hh(a,b,c,d,k[13],4, 681279174);
+    d =hh(d,a,b,c,k[0],11, -358537222);
+    c =hh(c,d,a,b,k[3],16, -722521979);
+    b =hh(b,c,d,a,k[6],23, 76029189);
+    a =hh(a,b,c,d,k[9],4, -640364487);
+    d =hh(d,a,b,c,k[12],11, -421815835);
+    c =hh(c,d,a,b,k[15],16, 530742520);
+    b =hh(b,c,d,a,k[2],23, -995338651);
+
+    a =ii(a,b,c,d,k[0],6, -198630844);
+    d =ii(d,a,b,c,k[7],10, 1126891415);
+    c =ii(c,d,a,b,k[14],15, -1416354905);
+    b =ii(b,c,d,a,k[5],21, -57434055);
+    a =ii(a,b,c,d,k[12],6, 1700485571);
+    d =ii(d,a,b,c,k[3],10, -1894986606);
+    c =ii(c,d,a,b,k[10],15, -1051523);
+    b =ii(b,c,d,a,k[1],21, -2054922799);
+    a =ii(a,b,c,d,k[8],6, 1873313359);
+    d =ii(d,a,b,c,k[15],10, -30611744);
+    c =ii(c,d,a,b,k[6],15, -1560198380);
+    b =ii(b,c,d,a,k[13],21, 1309151649);
+    a =ii(a,b,c,d,k[4],6, -145523070);
+    d =ii(d,a,b,c,k[11],10, -1120210379);
+    c =ii(c,d,a,b,k[2],15, 718787259);
+    b =ii(b,c,d,a,k[9],21, -343485551);
+
+    x[0] = add32(a, x[0]);
+    x[1] = add32(b, x[1]);
+    x[2] = add32(c, x[2]);
+    x[3] = add32(d, x[3]);
+}
+</pre>
+<p>
+The function above contains the digest message table, the algorithms used are found in functions ff gg hh and ii and digest four sets of 16 values at 32 bits each or four sets of 512 bit string data each cycle bitwise rolled into 32bit integers and a final 128bit message digest by using buffer padding at 64 bits plus leading zeroes applied circular.
+</p>
+<pre>
+function md5blk(s) { /* I figured global was faster.   */
+    var md5blks = [], i; /* Andy King said do it this way. */
+for (i=0; i&lt;64; i+=4) {
+    md5blks[i >> 2] = s[i]
+    + (s[i +1] &lt;&lt; 8)
+    + (s[i +2] &lt;&lt; 16)
+    + (s[i +3] &lt;&lt; 24);
+    //md5blks[i>>2] = s.charCodeAt(i)
+    //+ (s.charCodeAt(i+1) &lt;&lt; 8)
+    //+ (s.charCodeAt(i+2) &lt;&lt; 16)
+    //+ (s.charCodeAt(i+3) &lt;&lt; 24);
+}
+    return md5blks;
+}
+</pre>
+<p>
+The function md5blks will return blocks of byte array integer values. Note direct substitution and prefer this over charCodeAt to resolve unicode and input issues.
+</p>
+<pre>
+function cmn(q,a,b,x,s,t) {
+    a = add32(add32(a,q),add32(x,t));
+    return add32((a&lt;&lt;s)|(a>>>(32-s)),b);
+}
+</pre>
+<p>
+The checksum function will add to 32bit integers for checksum comparison as the message digest is created, the algorithms use these checksums when cycling each creating one 32 bit number 16 times for 512 bit data processing each digest cycle four times per cycle, per block. The next thing is that two characters in the hexadecimal set can represent one byte or 8 bits, the end of each cycle concatenates four sets of these two character integer representations four times, the return of hexadecimal set range conversion of the four two character sets four times in total results in 32 characters in total, concatenated.
+</p>
+<pre>
+function ff(a,b,c,d,x,s,t) {
+    return cmn((b&c)| ((~b)&d), a,b,x,s,t);
+}
+</pre>
+<p>
+The function ff follows bc+not(b) d as an auxilliary for one 32 bit word
+</p>
+<pre>
+function gg(a,b,c,d,x,s,t) {
+    return cmn((b&d) |(c&(~d)),a,b,x,s,t);
+}
+</pre>
+<p>
+The function gg follows bd+c not(d)
+</p>
+<pre>
+function hh(a,b,c,d,x,s,t) {
+    return cmn(b^c^d,a,b,x,s,t);
+}
+</pre>
+<p>
+The function hh follows b xor c xor d
+</p>
+<pre>
+function ii(a,b,c,d,x,s,t) {
+    return cmn(c^(b |(~d)),a,b,x,s,t);
+}
+</pre>
+<p>
+The function ii follows c xor (b+not(d))
+</p>
+<p>
+The function below is update to the md51 worker function with hex_chr after being the hexadecimal set range hex() and rhex() will pick from.
+</p>
+<pre>
+function md52(r){
+      txt="";
+  var t,c=r.length,e=[1732584193,-271733879,-1732584194,271733878];
+  for(t=64;t&lt;=r.length;t+=64) 
+      md5cycle(e,md5blk(r.substring(t-64,t)));
+      r=r.substring(t-64);
+  var n=[0,0,0,0,
+         0,0,0,0,
+         0,0,0,0,
+         0,0,0,0];
+  for(t=0;t&lt;r.length;t++) 
+      n[t>>2]|=r.charCodeAt(t)&lt;&lt;(t%4&lt;&lt;3);
+  if(n[t>>2]|=128&lt;&lt;(t%4&lt;&lt;3),t>55)
+      for(md5cycle(e,n),t=0;t&lt;16;t++)n[t]=0;
+  return n[14]=8*c,md5cycle(e,n),e
+}
+    var hex_chr = '0123456789abcdef'.split('');
+</pre>
+<p>
+The three functions are used for hexadecimal conversion the alphanumeric characters in the hexadecimal range, these 16 sets of 2 characters, each set 8 bits or 128 bit level encryption for the concatenated 32 character result.
+</p>
+<pre>
+function rhex(n) {
+    var s='', j=0;
+    for(; j&lt;4; j++)
+    s += hex_chr[(n >> (j * 8 + 4)) & 0x0F]
+      + hex_chr[(n >> (j * 8)) & 0x0F];
+    return s;
+}
+</pre>
+<pre>
+function hex(x) {
+    for (var i=0; i&lt;x.length; i++)
+    x[i] = rhex(x[i]);
+    return x.join('');
+}
+</pre>
+<pre>
+function add32(x,y) {
+    return (x + y) & 0xFFFFFFFF;
+}
+</pre>
+<p>
+This is the nature of md5 when represented alphanumerically, most encryption really follows the same basic rule and even two way methods are still only useful for things like compression but not solely for security, as even the best encryption methods suffer digest table guess logic math padding transit and collision vulnerability.
+</p>
+<p>
+Here consider a post by popular known company <a href="https://www.globalsign.com/en/blog/security-risks-outdated-encryption">GlobalSign</a> about vulnerability names such as intercept downgrade collision reversal and padding just to name a few. The nature of secure encryption methods is not the topic the example handles.
+</p>
+<p>
+The point of encryption what it was intended for and how one way hash differs is more the topic. The idea lets us reach out to <a href="https://cloud.google.com/learn/what-is-encryption">cloud.google</a> for another example and to find this simple natural pretext......
+</p>
+<blockquote>
+Encryption is used to protect data
+</blockquote>
+<p>
+The point is simple enough and another <a href="https://cloud.google.com/docs/security/encryption/default-encryption">word from</a> the cloud giant really brings the topic to a better viewpoint
+</p>
+<blockquote>
+...ensures that data remains encrypted throughout the backup process.  This approach avoids unnecessarily exposing plaintext data
+</blockquote>
+<p>
+And there you have that you <i>can rely on</i> encryption as a method of substitution, this allows for compression by nature. And this should really be the focus of the topic of encryption.
+</p>
+<a href="temporaryjs.js" class="open-modal">
+View
+</a>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+md5
+</h2>
+</modal-window>
+</div>
+<p>
+I enjoy hashing and encryption methods that produce clean results from simple digests for less critical tasks using a resultant character set that scales at the bit level in minimal ways. This is a dated example of one such method, and its hexadecimal character set range plus the result count is really where the security rests in theory, and in the minds of most people. The benefit the method has is padding exact multiples of 16 each cycle using 64 bits circularly with 32 bit integers on 32 bit machines optimal build for the message digest and it uses several clean algorithms for 512 bit data cycles that run through buffers fairly quickly with a clean digest element table produced from the sine function in 1991.
+</p>
+</div>
+<button class="collapsible">
+Regex Recursion
+</button>
+<div class="content">
+<p>
+The simple way to run through a pattern using Regular Expressions in JavaScript using custom delimeters with no additional conditional logic for traversal. The topic here is features in comparison to say PERL in one case regarding pattern based recursion. There is one expression <i>pattern</i> however which makes recursion fast and easy even in JS and it can be mapped to different delimiters as your needs require.
+</p>
+<pre>
+<code>
+/(?:(?:((?:\()?)((?:(\w*?()))?)((?:\))?)?)?)/gim
+</code>
+</pre>
+<p>
+The expression pattern should be noted as symmetrical and linear in fashion both, as such it does require as one example some attention paid to security but this you can code into your own use case. The result is with even JavaScript expressions <i>it is</i> possible, a relief to any one seeking recursive expression patterns with the current standard.
+</p>
+</div>
+<button class="collapsible">
+JavaScript expandit
+</button>
+<div class="content">
+<p>
+The example here shows a simple abstract pattern for an export and needs based object or Class worker. The project may be expanded, but really was just a one evening explore into possible uses for an Array worker that proved some minor lesson in the limits of functional code
+</p>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+JavaScript
+</h2>
+</modal-window>
+</div>
+<a href="#page-modal14" class="open-modal">
+View
+</a>
+<div id="page-modal14">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Export
+</h2>
+<p>
+<span>
+let p,a,r,e=[,],n=[{needs:1},],t,s;
+
+let m=[]; //Push all modules to: m
+//Refactor this, Use &#96;mode&#96; worker
+//Refactor this, Use &#96;mode&#96; writer
+//I.e we want a template worker(),
+//or [object Object] writer
+
+(
+ e.push(
+    [,,,
+    [[,],],
+    [[,],],
+    [,,,,,,
+        [[[{export:{},},],],
+        [["export",],],
+        [[true,],n,]],,
+     ],
+    ]
+   )
+);
+//The only design type here uses 
+//a multidimensional Array typeof
+//[object Object] as shown above 
+
+(
+function loop(p) {
+          
+if(n=p,Array.isArray(n)){
+
+n.forEach((key, item) =&gt; {
+if(typeof(key)&&key[0]=="[object Object]"){
+console.log("object")
+//object,export parent
+if(typeof(key)&&key[0]["needs"]){
+console.log("needs")
+//object,export object(export)
+//object,export object(needs)
+//needs
+}
+}
+if(typeof(key)&&key[1]=="export"){
+console.log("export")
+//export
+}
+if(typeof(key)&&key[2]=="true,[object Object]"){
+console.log("true")
+//true
+}
+if(typeof(key==="object"))
+t=item+2;
+             
+if(Array.isArray(key)){
+key.forEach((keys, value) =&gt; {
+if(Array.isArray(keys)){
+loop(keys);
+}
+else
+{
+if(typeof(keys)&&keys==="export")
+console.log("export")
+//export
+return 0
+}
+});
+}
+else
+{
+}
+});
+}
+}
+)
+(
+e
+)
+</span>
+</p>
+</page-popup>
+</div>
+<p>
+Tap download and find a simple way to curry a JavaScript super function that can be expanded to support your own custom design pattern or function library. The example is for low level functional programming, to run function definitions, but can be applied to Class methods as well.
+</p>
+<pre>
+let p,a,r,e=[,],n=[{needs:1},],t,s;
+
+let m=[]; //Push all modules to: m
+//Refactor this, Use &#96;mode&#96; worker
+//Refactor this, Use &#96;mode&#96; writer
+//I.e we want a template worker(),
+//or [object Object] writer
+
+(
+ e.push(
+    [,,,
+    [[,],],
+    [[,],],
+    [,,,,,,
+        [[[{export:{},},],],
+        [["export",],],
+        [[true,],n,]],,
+     ],
+    ]
+   )
+);
+//The only design type here uses 
+//a multidimensional Array typeof
+//[object Object] as shown above 
+
+(
+function loop(p) {
+          
+if(n=p,Array.isArray(n)){
+
+n.forEach((key, item) =&gt; {
+if(typeof(key)&&key[0]=="[object Object]"){
+console.log("object")
+//object,export parent
+if(typeof(key)&&key[0]["needs"]){
+console.log("needs")
+//object,export object(export)
+//object,export object(needs)
+//needs
+}
+}
+if(typeof(key)&&key[1]=="export"){
+console.log("export")
+//export
+}
+if(typeof(key)&&key[2]=="true,[object Object]"){
+console.log("true")
+//true
+}
+if(typeof(key==="object"))
+t=item+2;
+             
+if(Array.isArray(key)){
+key.forEach((keys, value) =&gt; {
+if(Array.isArray(keys)){
+loop(keys);
+}
+else
+{
+if(typeof(keys)&&keys==="export")
+console.log("export")
+//export
+return 0
+}
+});
+}
+else
+{
+}
+});
+}
+}
+)
+(
+e
+)
+</pre>
+<p>
+The code is commented for learning and needs refactoring, the concept is simple enough you can pattern an Array of varying complexity as long as the objects maintain their nested structure. The export parent object contains an object to export, the needs parent contains an object for needs dependency. The console functions can be removed and exports can be added, no further Class abstraction is required apart from the objects as they may be defined, alone.
+</p>
+<pre>
+<code>
+let p,a,r,e=[,],n=[{needs:1}],t,s,m=[];e.push([,,,[[,]],[[,]],[,,,,,,[[[{export:{}}]],[["export"]],[[!0],n]],,]]),function e(o){n=o,Array.isArray(n)&&n.forEach(((o,r)=&gt;{"[object Object]"==o[0]&&(console.log("object"),o[0].needs&&console.log("needs")),"export"==o[1]&&console.log("export"),"true,[object Object]"==o[2]&&console.log("true"),t=r+2,Array.isArray(o)&&o.forEach(((o,r)=&gt;{if(!Array.isArray(o))return"export"===o&&console.log("export"),0;e(o)}))}))}(e);
+</code>
+</pre>
+<p>
+The one line minified code sample sits at just under 500 bytes and still could use refactor before being truly useful for any core pattern, the idea for this model came from ejs also known as Embedded Javascript Templates by Matthew Eernisse, and may be worth your time to explore as his design pattern is the more popular method in about the most clean implement I have come across with modern template engines in vanilla Js.
+</p>
+</div>
+<button class="collapsible">
+JavaScript library
+</button>
+<div class="content">
+<p>
+The topic here focus on functional programming, and you may have seen the same or similar method used in Class libraries as well. The example uses function notation to run function definitions in an unobtrusive and secure way, take a look
+</p>
+<div tabindex="1" class="open-modal">
+About
+</div>
+<div info-modal>
+<modal-window>
+<h2>
+JavaScript
+</h2>
+</modal-window>
+</div>
+<a href="#page-modal13" class="open-modal">
+View
+</a>
+<div id="page-modal13">
+<a href="#none" class="page-close">
+</a>
+<page-popup>
+<a href="#none" modal-close></a>
+<h2>
+Library
+</h2>
+<p>
+<span>
+//The topic, create a
+//simple anonymous
+//arrow function 
+const x=x=>
+function(y){
+return x(y)
+};
+
+//Expect a return
+//and use as b(p)
+const a=b=c=>
+x(c);
+
+//Expect no return
+//and use as e(p)
+const d=e=f=>
+void 
+x(c)();
+
+//Sample with
+//name, definition
+//args, parameters
+var w=b(name)(args);
+//var w=b(name);
+</span>
+</p>
+</page-popup>
+</div>
+<p>
+Tap download and find a simple way to curry a JavaScript super function that can be expanded to support your own custom design pattern or function library. The example is for low level functional programming, to run function definitions, but can be applied to Class methods as well.
+</p>
+</div>
+<h2>
+Hash
+</h2>
+<p>
+Hashing methods and encryption methods, while both part of cryptographic techniques, operate fundamentally differently and serve different purposes. There are fundamental differences in how each functions and how they process data.  Hashing vs. Encryption, Hashing Purpose: Hash functions are used to produce a fixed-size digest from arbitrary-length input data. They are primarily used for data integrity checks, digital signatures, and password storage. Hash functions process data in blocks and apply a series of mathematical transformations to produce the final hash value. The characteristics, Deterministic, the same input always produces the same hash output. Irreversible, it is computationally infeasible to reverse the hash function to retrieve the original input (preimage resistance). Fixed Output Length, regardless of the input size, the output hash has a fixed length (e.g., 256 bits for SHA-256). Encryption has a purpose: Encryption methods are used to protect the confidentiality of data by converting plaintext into ciphertext using a key. This allows only authorized parties (with the correct key) to decrypt and access the original data. Operation, encryption algorithms process data in blocks or streams, transforming each block/character using the encryption key. Characteristics, Reversible, Given the correct key, the original plaintext can be retrieved from the ciphertext. Variable Output Length, The length of the ciphertext can vary based on the length of the input and the encryption mode used.
+</p>
+<h2>
+Data
+</h2>
+<p>
+Differences in Data Processing, Block Processing in Hashing: Hash functions process data in fixed-size blocks (e.g., 512 bits for SHA-256). Each block undergoes a series of transformations, mixing the data with internal state variables, typically using operations like bitwise shifts, logical functions, and modular addition. The process is repeated for each block, with the final output being the hash digest. Block/Stream Processing in Encryption: Symmetric encryption (e.g., AES) processes data in fixed-size blocks (e.g., 128 bits for AES). Each block is transformed using the encryption key, often through multiple rounds of substitution and permutation operations. Asymmetric encryption (e.g., RSA) typically works on chunks of data that are smaller than the key size, transforming each chunk using mathematical operations involving the key pair.
+</p>
+<h2>
+Blog
+</h2>
+<p>
+You can use pure vanilla Javascript to create the simplest blogging platform that you have likely ever seen. While browser security restrictions prevent client only file operations, with server access we will show how a simple export of the_post.js can be read by post.html as a const simulatedFileContents using a Class based module approach to import a "stream" of custom post tags, show all on url parameter ?view (and by default), and specific post using ?post=id for a single post. The idea is simple: Create the most basic method using the most modern approach, finish if desired with styles and a comment plugin, Lets get started:
+</p>
+<pre>
+&#101;xport const simulatedFileContent = &#96;
+    &lt;post-123&gt;
+    This is the content for post 123.
+    &lt;/post-123&gt;
+    &lt;post-456&gt;
+    This is the content for post 456.
+    &lt;/post-456&gt;
+&#96;;
+
+document&#46;write&#40;&#34;the_post&#46;js loaded successfully&lt;br&gt;&#34;&#41;;
+</pre>
+<p>
+Next we need to create our post.html, the function list in order to construct our Class, _parseURL() for the url path, execute() our primary method for processing the ?action: Accept ?view for the full content stream, Accept ?post with an id for a specific post. The _readFullFile, _readPostById and _getFileContent are simple enough for handling the import, expand from this point as you need.
+</p>
+  <pre>
+&lt;!DOCTYPE html>
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+&lt;meta charset=&#34;UTF-8&#34;&gt;
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#46;0&#34;&gt;
+&lt;title&gt;URL Breakdown Example&lt;/title&gt;
+&lt;script type=&#34;module&#34;&gt;
+import &#123; simulatedFileContent &#125; from &#39;&#46;/the_post&#46;js&#39;;
+
+class URLProcessor &#123;
+constructor&#40;url&#41; &#123;
+    this&#46;url = new URL&#40;url&#41;;
+    this&#46;_parseURL&#40;&#41;;
+&#125;
+
+_parseURL&#40;&#41; &#123;
+    const pathSegments = this&#46;url&#46;pathname&#46;split&#40;&#39;/&#39;&#41;&#46;filter&#40;part =&gt; part&#41;;
+    this&#46;action = pathSegments&#46;length &gt; 0 ? pathSegments[pathSegments&#46;length - 1] : &#39;&#39;;
+    this&#46;param = this&#46;url&#46;searchParams&#46;has&#40;&#39;view&#39;&#41; ? &#39;view&#39; : 
+                 this&#46;url&#46;searchParams&#46;has&#40;&#39;post&#39;&#41; ? &#39;post&#39; : 
+                 &#39;&#39;;
+    this&#46;id = this&#46;url&#46;searchParams&#46;has&#40;&#39;post&#39;&#41; ? parseInt&#40;this&#46;url&#46;searchParams&#46;get&#40;&#39;post&#39;&#41;, 10&#41; : null;
+    document&#46;write&#40;&#96;Action: $&#123;this&#46;action&#125;, Param: $&#123;this&#46;param&#125;, ID: $&#123;this&#46;id&#125;&lt;br&gt;&#96;&#41;;
+&#125;
+
+async execute&#40;&#41; &#123;
+    if &#40;this&#46;action === &#39;post.html&#39;&#41; &#123;
+        if &#40;this&#46;param === &#39;view&#39; || this&#46;param === ''&#41; &#123;
+            this&#46;_readFullFile&#40;&#41;;
+        &#125; else if &#40;this&#46;param === &#39;post&#39; && !isNaN&#40;this&#46;id&#41;&#41; &#123;
+            this&#46;_readPostById&#40;this&#46;id&#41;;
+        &#125; else &#123;
+            document&#46;write&#40;&#39;Invalid param or id&lt;br&gt;&#39;&#41;;
+        &#125;
+    &#125; else &#123;
+        document&#46;write&#40;&#39;Invalid action&lt;br&gt;&#39;&#41;;
+    &#125;
+&#125;
+
+async _readFullFile&#40;&#41; &#123;
+    const fileContent = await this&#46;_getFileContent&#40;&#41;;
+    document&#46;write&#40;&#39;File contents:&lt;br&gt;&#39; + fileContent&#46;replace&#40;/&#92;n/g, &#39;&lt;br&gt;&#39;&#41; + &#39;&lt;br&gt;&#39;&#41;;
+&#125;
+
+async _readPostById&#40;id&#41; &#123;
+    const fileContent = await this&#46;_getFileContent&#40;&#41;;
+    const regex = new RegExp&#40;&#96;&lt;post-$&#123;id&#125;&gt;&#40;&#46;*?&#41;&lt;/post-$&#123;id&#125;&gt;&#96;, &#39;s&#39;);
+    const match = fileContent&#46;match&#40;regex&#41;;
+    if &#40;match&#41; &#123;
+        document&#46;write&#40;&#96;Content for post id $&#123;id&#125;:&lt;br&gt;&#96; + match[1]&#46;replace&#40;/&#92;n/g, &#39;&lt;br&gt;&#39;&#41; + &#39;&lt;br&gt;&#39;&#41;;
+    &#125; else &#123;
+        document&#46;write&#40&#96;No content found for post id $&#123;id&#125;&lt;br&gt;&#96;&#41;;
+    &#125;
+&#125;
+
+async _getFileContent&#40;&#41; &#123;
+    return new Promise&#40;&#40;resolve&#41; =&gt; &#123;
+        setTimeout&#40;&#40;&#41; =&gt; resolve&#40;simulatedFileContent&#41;, 1000&#41;; // Simulating file read delay
+    &#125;&#41;;
+&#125;
+&#125;
+
+// Use the current window location
+const currentURL = window&#46;location&#46;href;
+const processor = new URLProcessor&#40;currentURL&#41;;
+processor&#46;execute&#40;&#41;;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>
+_parseURL Method:Pathname Handling: Splits the pathname into segments and gets the last segment to determine the action. Query Parameters Handling: Checks if the URL contains view or post parameters to set the param accordingly. ID Extraction: Extracts the post parameter value and converts it to an integer if present. execute Method: Checks if the action is post.html and handles the query parameters appropriately. Example URLs: post.html?view will output the full file content. post.html?post=123 will output the content for post ID 123.
+</p>
+<h2>
+Term
+</h2>
+<p>
+Termius is a comprehensive terminal application that stands out for its robust feature set, user-friendly interface, and strong focus on security. Its cross-platform support, extensive customization options, and productivity-enhancing tools make it a top choice for developers and system administrators looking for an efficient and secure way to manage their remote servers. Whether youre connecting to a single server or managing a large network of hosts, Termius provides the tools and flexibility needed to streamline your workflow.
+</p>
+<p>
+Cross-Platform Support: Available on macOS, Windows, Linux, iOS, and Android, allowing seamless access across different devices. Multiple Protocols: Supports SSH, Mosh, and Telnet, providing flexibility for various connectivity needs. Secure Sync: Encrypted synchronization of settings, host information, and keys across all devices.SFTP: Integrated SFTP client for easy file transfers between local and remote systems. Snippets and Autocomplete: Allows saving and reusing frequently used commands, with an autocomplete feature to speed up command input. Port Forwarding: Supports both local and remote port forwarding, useful for accessing services behind firewalls. Password and Key Authentication: Supports multiple authentication methods, including password, SSH keys, and multi-factor authentication. Customizable Interface: Offers a range of customization options, including themes, fonts, and terminal colors. Group and Tag Hosts: Organize hosts into groups and add tags for easy management and quick access.Offline Mode: Allows connecting to recently used hosts even without an internet connection. Agent Forwarding: Securely forwards SSH keys to remote servers. Tunneling: Establish secure tunnels for accessing private network services.
+</p>
+<h2>
+Cloud
+</h2>
+</aside>
+
+
+
+<footer>
+<h3>
+Copy&copy;
+</h3>
+</footer>
+</main>
+
+<script>
+//function adjustStyle() {
+//var width=0;
+//if (window.innerHeight) {
+//width=window.innerWidth;
+//} else if (document.documentElement && document.documentElement.clientHeight) {
+//width=document.documentElement.clientWidth;
+//} else if (document.body) {
+//width=document.body.clientWidth;
+//}
+//if(width<300) {
+//document.getElementById("").setAttribute("","");
+//} else {
+//document.getElementById("").setAtribute("","");
+//}
+//}
+//window.onresize=function() {
+//adjustStyle();
+//}
+
+var allHeights =0;
+var contents=document.getElementsByClassName("content");
+var j;
+for(j=0;j<contents.length;j++) {
+var h=document.getElementsByClassName("content")
+[j].scrollHeight;
+allHeights+=h;
+}
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+//if (content.style.maxHeight){
+if (content.style.maxHeight==allHeights+"px") {
+//content.style.maxHeight = null;
+content.style.maxHeight="0px";
+} else {
+//content.style.maxHeight = content.scrollHeight + "px";
+content.style.maxHeight=allHeights+"px"; 
+}
+});
+}
+<\/script>
+
+</body>
+</html>`
+);
+//console.log("Function: "+html)
+document.write(html);
+//console.log("Function: "+temp)
+//console.log(`Function: `
+//+__get('temp')
+//)
+//b(md5)()
+//w.md5("STRING")
+//ran(w.md5("STRING"))
+
+//const b=c(f);
+//const a=c;
+//b(f)();
+
+//function b(x){
+//return function(y) {
+//return x(y)
+//}
+//}
+
+//function f() {
+//console.log("Function: "+this)
+// console.log("Function: "+b)
+//}
+
+//const b = 
+//i(f);
+//const b =
+//void c(f)();
+//b();
+
+//function x(){
+//}
+//function y(){
+//x(y)
+//}
+</script>
+</body>
+</html>
