@@ -1,4 +1,9 @@
 export const simulatedFileContent = `
+    <post-43>
+<p>
+I have spent time to learn about Pointers in C programs today, including avoiding invalid syntax by using single quotes for single characters and double quotes for string literals, And using const char* ptr = &c to "point" to the memory address of the variable c or if a value such as "Hello" the first character in Read only memory of the letter H.
+</p>
+    </post-43>
     <post-42>
 <p>
 I need a way to have yet more control over grep, in some use cases egrep and extended pattern matches, even case insensitive with pipe is not enough to grab the right priority, here is the solution to break on a first match, solving any discrepency where egrep or grep will not prioritized a first match.
