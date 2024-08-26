@@ -229,6 +229,45 @@ SuffixTokenMapping suffix_token_map[] = {
     // Add more mappings as necessary
 };
 
+// Define the structure for prefix mapping
+typedef struct {
+    char type[MAX_LINE_LENGTH];
+} PrefixInputMapping;
+
+// Predefined border mappings
+PrefixInputMapping prefix_input_map[] = {
+    {"="},
+    {"%"},
+    {"^"},
+    {"`"},
+    {"\""},
+    {"'"},
+    {">"},
+    {"<"},
+    {"|"},
+    {"]"},
+    {"["},
+    {"."},
+    {","},
+    {"?"},
+    {"!"},
+    {"#"},
+    {":"},
+    {"-"},
+    {"+"},
+    {")"},
+    {"("},
+    {"}"},
+    {"{"},
+    {"&"},
+    {"/"},
+    {"\\"},
+    {"*"},
+    {"@"}
+    // Add more mappings as necessary
+};
+
+
 // Declare the error functions before using them
 void error_one(const char* command);
 void error_two(const char* command);
@@ -318,6 +357,7 @@ void lookup_error(const char* input) {
     int has_suffix_token = 0;
     int balance = 0;
     int has_token_balance = 0;
+    int has_prefix_input = 0;
     
     const char* last_char_ptr = NULL;
     const char* first_char_ptr = NULL;
@@ -459,6 +499,12 @@ void lookup_error(const char* input) {
         }
     }
     
+    // If input matches any in PrefixInputMapping
+    for (int i = 0; i < sizeof(prefix_input_map) / sizeof(PrefixInputMapping); i++) {
+        if (strcmp(first_char_str, prefix_input_map[i].type) == 0) {
+            has_prefix_input = 1;
+        }
+    }
     
     // If input matches any in TypeMapping
     //if (has_type == 1) {
@@ -561,6 +607,12 @@ void lookup_error(const char* input) {
     if (!has_whitespace && has_suffix_token && !has_border && !has_suffix_border && !has_token_balance && input_length >= 2) {
 //printf("Checking SuffixTokenMapping: \n");
         error_thirteen(input);
+        return;
+    }
+    
+    // If input has no white space and no quotations and no suffix match, call error_one
+    if (!has_whitespace && !has_prefix_input && has_token_balance && input_length >= 2) {
+        error_one(input);
         return;
     }
 
