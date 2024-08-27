@@ -1,0 +1,107 @@
+/**
+ * Custom hash function using sine-based digest table and bitwise operations.
+ * This is a one-way hash function that produces a 32-character hexadecimal result.
+ */
+
+/** Generate the custom hash digest table */
+const digestTable = [
+    2147483647,  // sin(1) * 0x100000000
+    4203018243,  // sin(2) * 0x100000000
+    1936044670,  // sin(3) * 0x100000000
+    4107600733,  // sin(4) * 0x100000000
+    1094165182,  // sin(5) * 0x100000000
+    2936317618,  // sin(6) * 0x100000000
+    1256349533,  // sin(7) * 0x100000000
+    4011056116,  // sin(8) * 0x100000000
+    3064682190,  // sin(9) * 0x100000000
+    1954104072,  // sin(10) * 0x100000000
+    1244797142,  // sin(11) * 0x100000000
+    3340354026,  // sin(12) * 0x100000000
+    3840409642,  // sin(13) * 0x100000000
+    2022089275,  // sin(14) * 0x100000000
+    3726729673,  // sin(15) * 0x100000000
+    2183489477,  // sin(16) * 0x100000000
+    2019073300,  // sin(17) * 0x100000000
+    2468012853,  // sin(18) * 0x100000000
+    3411161342,  // sin(19) * 0x100000000
+    1154220907,  // sin(20) * 0x100000000
+    2711480275,  // sin(21) * 0x100000000
+    1351068678,  // sin(22) * 0x100000000
+    3857485425,  // sin(23) * 0x100000000
+    1451483663,  // sin(24) * 0x100000000
+    2784892970,  // sin(25) * 0x100000000
+    1119016436,  // sin(26) * 0x100000000
+    3963457337,  // sin(27) * 0x100000000
+    1639449644,  // sin(28) * 0x100000000
+    3105928992,  // sin(29) * 0x100000000
+    1597430217,  // sin(30) * 0x100000000
+    3070523791,  // sin(31) * 0x100000000
+    1579953822,  // sin(32) * 0x100000000
+    2852907294,  // sin(33) * 0x100000000
+    1459512017,  // sin(34) * 0x100000000
+    3843135476,  // sin(35) * 0x100000000
+    2241719403,  // sin(36) * 0x100000000
+    2281752329,  // sin(37) * 0x100000000
+    1445962024,  // sin(38) * 0x100000000
+    4161761284,  // sin(39) * 0x100000000
+    2891910067,  // sin(40) * 0x100000000
+    1926038302,  // sin(41) * 0x100000000
+    3341399312,  // sin(42) * 0x100000000
+    1684392488,  // sin(43) * 0x100000000
+    2329916316,  // sin(44) * 0x100000000
+    3901772755,  // sin(45) * 0x100000000
+    2772908278,  // sin(46) * 0x100000000
+    1795863634,  // sin(47) * 0x100000000
+    4179434899,  // sin(48) * 0x100000000
+    3014262855,  // sin(49) * 0x100000000
+    1164366942   // sin(50) * 0x100000000
+];
+
+/** Hash function */
+function blockCycle(input) {
+    let hash = BigInt(0); // Start with a large integer
+    const blockSize = 16; // Process 128 bits (16 bytes) at a time
+
+    // Convert input to a byte array
+    const bytes = Array.from(input, c => c.charCodeAt(0) & 0xFF);
+
+    // Process each block
+    for (let i = 0; i < bytes.length; i += blockSize) {
+        let blockHash = BigInt(0);
+
+        // Process each byte in the block
+        for (let j = 0; j < blockSize && i + j < bytes.length; j++) {
+            const digestValue = digestTable[(i + j) % digestTable.length];
+            blockHash ^= BigInt(bytes[i + j]) * BigInt(digestValue);
+        }
+
+        // Combine blockHash with the main hash using bitwise operations
+        hash ^= (blockHash + (hash << 7n) + (hash >> 3n)) ^ (blockHash >> 5n);
+    }
+
+    // Convert the resulting hash to a hexadecimal string
+    return hash.toString(16);
+}
+
+/**
+ * Encodes the input string into a diversified 32-character hexadecimal string.
+ */
+function customHash(input) {
+    let hexResult = blockCycle(input);
+    let finalResult = hexResult;
+
+    // Reuse the hash output as input to the same function
+    while (finalResult.length < 32) {
+        hexResult = blockCycle(hexResult);
+        finalResult += hexResult;
+    }
+
+    // Truncate to exactly 32 characters
+    return finalResult.slice(0, 32);
+}
+
+// Example usage:
+const input = "Hello, World!";
+const hashResult = customHash(input);
+console.log("Input String:", input);
+console.log("Custom Hash Result:", hashResult);
