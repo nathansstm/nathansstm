@@ -86,7 +86,7 @@ const digestTable = [
  * Custom hash function using sine-based digest table and bitwise operations.
  * This is a one-way hash function that produces a diversified 32-character hexadecimal result.
  */
-function customHash(input) {
+function blockCycle(input) {
     let hash = BigInt(0); // Start with a large integer
     const blockSize = 16; // Process 128 bits (16 bytes) at a time
 
@@ -114,13 +114,13 @@ function customHash(input) {
 /**
  * Encodes the input string into a diversified 32-character hexadecimal string.
  */
-function encodeTo32CharHex(input) {
-    let hexResult = customHash(input);
+function customHash(input) {
+    let hexResult = blockCycle(input);
     let finalResult = hexResult;
 
     // Reuse the hash output as input to the same function
     while (finalResult.length < 32) {
-        hexResult = customHash(hexResult);
+        hexResult = blockCycle(hexResult);
         finalResult += hexResult;
     }
 
@@ -130,6 +130,6 @@ function encodeTo32CharHex(input) {
 
 // Example usage:
 const input = "Hello, World!";
-const hashResult = encodeTo32CharHex(input);
+const hashResult = customHash(input);
 console.log("Input String:", input);
 console.log("Custom Hash Result:", hashResult);
