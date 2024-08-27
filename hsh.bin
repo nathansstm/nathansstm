@@ -1,0 +1,63 @@
+/**
+ * Custom encoding function using a predefined digest table.
+ * This function encodes the input string into a 32-character hexadecimal string.
+ */
+
+/** Example digest table for demonstration */
+const digestTable = [
+
+
+...
+  
+    // ... more values up to 50 items
+];
+
+/** Hash function */
+function blockCycle(input) {
+    let hash = BigInt(0); // Start with a large integer
+    const blockSize = 16; // Process 128 bits (16 bytes) at a time
+
+    // Convert input to a byte array
+    const bytes = Array.from(input, c => c.charCodeAt(0) & 0xFF);
+
+    // Process each block
+    for (let i = 0; i < bytes.length; i += blockSize) {
+        let blockHash = BigInt(0);
+
+        // Process each byte in the block
+        for (let j = 0; j < blockSize && i + j < bytes.length; j++) {
+            const digestValue = digestTable[(i + j) % digestTable.length];
+            blockHash ^= BigInt(bytes[i + j]) * BigInt(digestValue);
+        }
+
+        // Combine blockHash with the main hash using bitwise operations
+        hash ^= (blockHash + (hash << 7n) + (hash >> 3n)) ^ (blockHash >> 5n);
+    }
+
+    // Convert the resulting hash to a hexadecimal string
+    return hash.toString(16);
+}
+
+/**
+ * Encodes the input string into a diversified 32-character hexadecimal string.
+ */
+function customHash(input) {
+    let hexResult = blockCycle(input);
+    let finalResult = hexResult;
+
+    // Reuse the hash output as input to the same function
+    while (finalResult.length < 32) {
+        hexResult = blockCycle(hexResult);
+        finalResult += hexResult;
+    }
+
+    // Truncate to exactly 32 characters
+    return finalResult.slice(0, 32);
+}
+
+
+// Example usage:
+const input = "Hello, World!";
+const hashResult = customHash(input);
+console.log("Input String:", input);
+console.log("Custom Hash Result:", hashResult);
