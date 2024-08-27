@@ -1,0 +1,24 @@
+/**
+ * Custom hash function using sine-based digest table and bitwise operations.
+ * This is a one-way hash function that produces a 32-character hexadecimal result.
+ */
+
+/** Generate the custom hash digest table */
+const digestTable = [
+
+...
+
+];
+
+/** Hash function */
+function customHash(input) {
+
+...
+
+}
+
+// Example usage:
+const input = "Hello, World!";
+const hashResult = customHash(input);
+console.log("Input String:", input);
+console.log("Custom Hash Result:", hashResult);
