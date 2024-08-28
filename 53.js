@@ -4,9 +4,9 @@
 // Segment: 5-bits
 // Segments: Total 6
   // Base64 Comparison
-  // Segment: 4-bits
-  // Segments: Total 6
-  // BitIndex: 64, 4-bit or 256-bits
+  // Segment: 6-bits
+  // Segments: Total 4
+  // BitIndex: 64, 6-bit or 256-bits
 // Base32 Extras
   // 1-bit << Segment Total Extra
   // 6-bits Block Total Extra
