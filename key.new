@@ -1,0 +1,86 @@
+let publicKey = '';
+let privateKey = '';
+let encryptedInput = '';
+let decryptedInput = '';
+
+// Generate private key
+function createPrivateKey() {
+    privateKey = '321CBA'; // Example key
+}
+
+// Generate public key
+function createPublicKey() {
+    publicKey = 'ABC123'; // Example key
+}
+
+// Function to create a dynamic substitution map for characters
+function createSubstitutionMap() {
+    // Original characters (letters and digits) for mapping
+    const originalChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    
+    // Diffused and unique mapping for the characters
+    const replacementChars = '0987654321aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ';
+
+    let substitutionMap = {};
+    
+    // Create a map from originalChars to replacementChars
+    for (let i = 0; i < originalChars.length; i++) {
+        substitutionMap[originalChars[i]] = replacementChars[i];
+    }
+
+    return substitutionMap;
+}
+
+// Function to apply dynamic substitution based on the map
+function dynamicSubstitute(input, substitutionMap) {
+    return input.split('').map(char => substitutionMap[char] || char).join('');
+}
+
+// Encrypt input using dynamic substitution and reverse the result
+function encryptInput(input) {
+    createPublicKey();  // Generate public key
+    createPrivateKey(); // Generate private key
+
+    const substitutionMap = createSubstitutionMap();
+
+    // Perform substitution and then reverse the string
+    encryptedInput = dynamicSubstitute(input, substitutionMap).split('').reverse().join('');
+
+    console.log('Made Key...', privateKey); // Log private key
+    console.log('Encrypted...', encryptedInput); // Log encrypted output
+    console.log('Made Key...', publicKey); // Log public key
+}
+
+// Decrypt input by reversing and then applying the reverse substitution
+function decryptInput(key) {
+    if (key === privateKey) {
+        const substitutionMap = createSubstitutionMap();
+        const reverseSubstitutionMap = {};
+
+        // Create a reverse map from substitutionMap
+        for (let [key, value] of Object.entries(substitutionMap)) {
+            reverseSubstitutionMap[value] = key;
+        }
+
+        // Reverse the string, then apply the reverse substitution map
+        decryptedInput = encryptedInput.split('').reverse().map(char => reverseSubstitutionMap[char] || char).join('');
+
+        console.log('Using key...', key); // Log private key
+        console.log('Using key...', publicKey); // Log public key
+        console.log('Decrypted...', decryptedInput); // Log decrypted output
+    } else {
+        console.log('Decryption failed: Key mismatch');
+    }
+}
+
+const stringInput = "Hello, World!";
+
+console.log('Receiving...');
+
+encryptInput(stringInput);
+
+console.log('Decrypting...');
+
+decryptInput(privateKey);
+
+console.log('Finishing...');
