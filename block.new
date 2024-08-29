@@ -1,0 +1,61 @@
+// Example Block Builder, Binary Segmenter
+const blockSize = 24; // Block size in bits
+const segmentSize = 8; // Segment size in bits
+const segmentArray = []; // To hold segments
+let segmentCount = 0; // To keep track of the number of segments
+let segment = ''; // To hold segment binary
+let currentBlock = ''; // To hold block
+let currentBlockSize = 0; // To keep track of block length
+let block = []; // To hold block segments
+let blocks = []; // To hold blocks
+
+function segmentInput(input) {
+  let segmentHolder = '';
+    // Convert each character to binary and ensure it has the full segment size
+ for (let i = 0; i < input.length; i++) {
+    const binaryValue = input.charCodeAt(i).toString(2).padStart(8, '0');
+  for (let j = 0; j < binaryValue.length; j += segmentSize) {
+    const segment = binaryValue.slice(j, j + segmentSize);
+    segmentHolder += segment + ' ';
+    segmentArray.push(segment);
+    }
+  }
+}
+function finishBlock() {
+  currentBlock = block.join(' '); // Assign block
+  currentBlockSize = 0; // Reset block counter
+  console.log('Finishing Up...');// Send message
+ blocks.push(currentBlock); // Push the block
+  block = []; // Reset block 
+}
+function buildBlock() {
+if (!currentBlockSize) { // Start a new block
+  console.log('Starting Block...'); // Send message
+} // Start new block
+  block.push(segment); // Add to block
+  currentBlockSize += segmentSize; // Add to block counter
+ console.log('Assigned...', segment); // End of current messages
+ if (currentBlockSize + segmentSize > blockSize) { // The block is full
+    finishBlock(); // The block is full
+ }// End of current block
+  // Block size is now reset
+ if (currentBlockSize && segmentCount == segmentArray.length) { // The block is last
+  // The segment is last
+   finishBlock(); // This block is last
+  // Segment is last
+ }// End of final block
+}
+// Create String to hold input
+ const input = "Hello, World!";
+// Create Array to segment input 
+ segmentInput(input); // Segment the Input
+// Loop through Array binary values
+ for (const segmentValue of segmentArray) { // New segment value
+   segmentCount++; // Increment segment count
+   segment = segmentValue; // Build segment
+  buildBlock(); // Build the block
+ } // Iterate each binary value
+// End of binary segments
+
+
+
