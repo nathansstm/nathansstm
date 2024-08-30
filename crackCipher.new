@@ -1,0 +1,47 @@
+// const fs = require('fs');
+
+// Replace this with your cipher text
+const cipherText = 'c3FFIVUrILF5v';
+
+// Character map used in the encryption
+const replacementChars = '0987654321aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ';
+
+// Function to analyze the frequency of characters
+function analyzeFrequency(text) {
+    const frequency = {};
+    for (const char of text) {
+        frequency[char] = (frequency[char] || 0) + 1;
+    }
+    return frequency;
+}
+
+// Function to attempt a simple substitution cipher
+function attemptDecryption(cipherText, shift) {
+    const shiftCharacter = (char, shiftAmount) => {
+        const charIndex = replacementChars.indexOf(char);
+        if (charIndex === -1) return char; // Return character unchanged if not found
+        const newIndex = (charIndex + shiftAmount) % replacementChars.length;
+        return replacementChars[newIndex < 0 ? newIndex + replacementChars.length : newIndex];
+    };
+
+    let decrypted = '';
+    for (const char of cipherText) {
+        decrypted += shiftCharacter(char, -shift); // Attempt decryption with the given shift
+    }
+    return decrypted;
+}
+
+// Function to test various shifts and show results
+function testShifts(cipherText) {
+    for (let shift = 0; shift < replacementChars.length; shift++) {
+        const decrypted = attemptDecryption(cipherText, shift);
+        console.log(`Shift ${shift}: ${decrypted}`);
+    }
+}
+
+// Analyze frequency of characters in the cipher text
+const frequency = analyzeFrequency(cipherText);
+console.log('Character Frequency Analysis:', frequency);
+
+// Attempt to decrypt the cipher text with different shifts
+testShifts(cipherText);
