@@ -1,86 +1,91 @@
+const replacementChars = '0987654321aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ !,';
+
 let publicKey = '';
 let privateKey = '';
-let encryptedInput = '';
-let decryptedInput = '';
+let cypherText = '';
+let originalText = '';
 
-// Generate private key
 function createPrivateKey() {
-    privateKey = '321CBA'; // Example key
+    // Example private key generation (manual for simplicity)
+    privateKey = 'CBA';
 }
 
-// Generate public key
 function createPublicKey() {
-    publicKey = 'ABC123'; // Example key
+    // Example public key generation (manual for simplicity)
+    publicKey = 'ABC';
 }
 
-// Function to create a dynamic substitution map for characters
-function createSubstitutionMap() {
-    // Original characters (letters and digits) for mapping
-    const originalChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    
-    // Diffused and unique mapping for the characters
-    const replacementChars = '0987654321aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ';
+function shiftCharacterLeft(char, shiftAmount) {
+    const charIndex = replacementChars.indexOf(char);
+    let newIndex = (charIndex - shiftAmount) % replacementChars.length;
+    if (newIndex < 0) {
+        newIndex += replacementChars.length;
+    }
+    return replacementChars[newIndex];
+}
 
-    let substitutionMap = {};
-    
-    // Create a map from originalChars to replacementChars
-    for (let i = 0; i < originalChars.length; i++) {
-        substitutionMap[originalChars[i]] = replacementChars[i];
+function shiftCharacterRight(char, shiftAmount) {
+    const charIndex = replacementChars.indexOf(char);
+    const newIndex = (charIndex + shiftAmount) % replacementChars.length;
+    return replacementChars[newIndex];
+}
+
+function encrypt(input) {
+    createPublicKey(); // Generate the public key
+    createPrivateKey(); // Generate the private key
+
+    // Calculate positions based on public key characters
+    const pos1 = replacementChars.indexOf(publicKey[0]);
+    const pos2 = replacementChars.indexOf(publicKey[1]);
+    const pos3 = replacementChars.indexOf(publicKey[2]);
+
+    const shiftAmount = Math.round(Math.pow(pos1, pos2) % pos3);
+
+    cypherText = input.split('').map(char => {
+        return shiftCharacterLeft(char, shiftAmount);
+    }).join('');
+
+    console.log('Made Key...', privateKey); // From private key function
+    console.log('Encrypted...', cypherText); // From this function
+    console.log('Made key...', publicKey); // From public key function
+}
+
+function decrypt(key) {
+    // Check if the provided key exactly matches the privateKey
+    if (key !== privateKey) {
+        console.log('Invalid key. Decryption failed.');
+        return;
     }
 
-    return substitutionMap;
-}
-
-// Function to apply dynamic substitution based on the map
-function dynamicSubstitute(input, substitutionMap) {
-    return input.split('').map(char => substitutionMap[char] || char).join('');
-}
-
-// Encrypt input using dynamic substitution and reverse the result
-function encryptInput(input) {
-    createPublicKey();  // Generate public key
-    createPrivateKey(); // Generate private key
-
-    const substitutionMap = createSubstitutionMap();
-
-    // Perform substitution and then reverse the string
-    encryptedInput = dynamicSubstitute(input, substitutionMap).split('').reverse().join('');
-
-    console.log('Made Key...', privateKey); // Log private key
-    console.log('Encrypted...', encryptedInput); // Log encrypted output
-    console.log('Made Key...', publicKey); // Log public key
-}
-
-// Decrypt input by reversing and then applying the reverse substitution
-function decryptInput(key) {
-    if (key === privateKey) {
-        const substitutionMap = createSubstitutionMap();
-        const reverseSubstitutionMap = {};
-
-        // Create a reverse map from substitutionMap
-        for (let [key, value] of Object.entries(substitutionMap)) {
-            reverseSubstitutionMap[value] = key;
-        }
-
-        // Reverse the string, then apply the reverse substitution map
-        decryptedInput = encryptedInput.split('').reverse().map(char => reverseSubstitutionMap[char] || char).join('');
-
-        console.log('Using key...', key); // Log private key
-        console.log('Using key...', publicKey); // Log public key
-        console.log('Decrypted...', decryptedInput); // Log decrypted output
-    } else {
-        console.log('Decryption failed: Key mismatch');
+    // Check if the reversed key is a substring of the publicKey
+    const reversedKey = key.split('').reverse().join('');
+    if (!publicKey.includes(reversedKey)) {
+        console.log('Key mismatch. Decryption failed.');
+        return;
     }
+
+    // Calculate positions based on private key characters
+    const pos3 = replacementChars.indexOf(privateKey[2]);
+    const pos2 = replacementChars.indexOf(privateKey[1]);
+    const pos1 = replacementChars.indexOf(privateKey[0]);
+
+    const shiftAmount = Math.round(Math.pow(pos3, pos2) % pos1);
+
+    originalText = cypherText.split('').map(char => {
+        return shiftCharacterRight(char, shiftAmount);
+    }).join('');
+
+    console.log('Using key...', key); // To compare key to privateKey
+    console.log('Using key...', privateKey); // To compare to key
+    console.log('Decrypted...', originalText); // From this function
 }
 
 const stringInput = "Hello, World!";
 
 console.log('Receiving...');
-
-encryptInput(stringInput);
+encrypt(stringInput);
 
 console.log('Decrypting...');
-
-decryptInput(privateKey);
+decrypt(privateKey);
 
 console.log('Finishing...');
