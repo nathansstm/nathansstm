@@ -1,0 +1,118 @@
+const replacementChars = '0987654321aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ !,';
+
+let publicKey = '';
+let privateKey = '';
+let cypherText = '';
+let originalText = '';
+
+function createPrivateKey() {
+    // Example private key generation (manual for simplicity)
+    privateKey = 'CBA';
+}
+
+function createPublicKey() {
+    // Example public key generation (manual for simplicity)
+    publicKey = 'ABC';
+}
+
+function shiftCharacterLeft(char, shiftAmount) {
+    const charIndex = replacementChars.indexOf(char);
+    let newIndex = (charIndex - shiftAmount) % replacementChars.length;
+    if (newIndex < 0) {
+        newIndex += replacementChars.length;
+    }
+    return replacementChars[newIndex];
+}
+
+function shiftCharacterRight(char, shiftAmount) {
+    const charIndex = replacementChars.indexOf(char);
+    const newIndex = (charIndex + shiftAmount) % replacementChars.length;
+    return replacementChars[newIndex];
+}
+
+function encrypt(input) {
+    createPublicKey(); // Generate the public key
+    createPrivateKey(); // Generate the private key
+
+    // Calculate positions based on public key characters
+    const pos1 = replacementChars.indexOf(publicKey[0]); // A
+    const pos2 = replacementChars.indexOf(publicKey[1]); // B
+    const pos3 = replacementChars.indexOf(publicKey[2]); // C
+    const shiftAmount1 = 3;
+    const shiftAmount2 = 1;
+    const shiftAmount3 = 7;
+  
+  
+    //const shiftAmount = Math.round(Math.pow(pos1, pos2) % pos3);
+
+    //cypherText = input.split('').map(char => {
+        //return shiftCharacterLeft(char, shiftAmount);
+    //}).join('');
+
+// Define your shift amounts
+const shiftAmounts = [shiftAmount1, shiftAmount2, shiftAmount3];
+
+// Encrypt the text by cycling through the shift amounts
+cypherText = input.split('').map((char, index) => {
+    const shiftAmount = shiftAmounts[index % shiftAmounts.length]; // Cycle through shift amounts
+    return shiftCharacterLeft(char, shiftAmount);
+}).join('');
+
+
+    console.log('Made Key...', privateKey); // From private key function
+    console.log('Encrypted...', cypherText); // From this function
+    console.log('Made key...', publicKey); // From public key function
+}
+
+function decrypt(key) {
+    // Check if the provided key exactly matches the privateKey
+    if (key !== privateKey) {
+        console.log('Invalid key. Decryption failed.');
+        return;
+    }
+
+    // Check if the reversed key is a substring of the publicKey
+    const reversedKey = key.split('').reverse().join('');
+    if (!publicKey.includes(reversedKey)) {
+        console.log('Key mismatch. Decryption failed.');
+        return;
+    }
+
+    // Calculate positions based on private key characters
+    const pos3 = replacementChars.indexOf(privateKey[2]); // A
+    const pos2 = replacementChars.indexOf(privateKey[1]); // B
+    const pos1 = replacementChars.indexOf(privateKey[0]); // C
+    const shiftAmount1 = 3;
+    const shiftAmount2 = 1;
+    const shiftAmount3 = 7;
+
+  
+    //const shiftAmount = Math.round(Math.pow(pos3, pos2) % pos1);
+
+    //originalText = cypherText.split('').map(char => {
+        //return shiftCharacterRight(char, shiftAmount);
+    //}).join('');
+
+// Define your shift amounts
+const shiftAmounts = [shiftAmount1, shiftAmount2, shiftAmount3];
+
+// Decrypt the text by cycling through the shift amounts
+originalText = cypherText.split('').map((char, index) => {
+    const shiftAmount = shiftAmounts[index % shiftAmounts.length]; // Cycle through shift amounts
+    return shiftCharacterRight(char, shiftAmount);
+}).join('');
+
+    console.log('Using key...', key); // To compare key to privateKey
+    console.log('Using key...', privateKey); // To compare to key
+    console.log('Decrypted...', originalText); // From this function
+}
+
+const stringInput = "Hello, World!";
+
+console.log('Receiving...');
+encrypt(stringInput);
+
+console.log('Decrypting...');
+decrypt(privateKey);
+
+console.log('Finishing...');
