@@ -63,7 +63,6 @@ TokenMapping token_map[] = {
 TokenWhiteMapping token_white_map[] = {
     {","},
     {"."},
-    {"("},
     {")"},
     {":"},
     {"*"},
@@ -84,7 +83,6 @@ TokenWhiteMapping token_white_map[] = {
 TokenNoWhiteMapping token_no_white_map[] = {
     {","},
     {"."},
-    {"("},
     {")"},
     {":"},
     {"*"},
@@ -224,8 +222,8 @@ SuffixTokenMapping suffix_token_map[] = {
     {"}"},
     {"{"},
     {"]"},
-    {"!"},
-    {")"}
+    {")"},
+    {"!"}
     // Add more mappings as necessary
 };
 
@@ -253,6 +251,7 @@ PrefixInputMapping prefix_input_map[] = {
     {"!"},
     {"#"},
     {":"},
+    {";"},
     {"-"},
     {"+"},
     {")"},
@@ -264,6 +263,34 @@ PrefixInputMapping prefix_input_map[] = {
     {"\\"},
     {"*"},
     {"@"}
+    // Add more mappings as necessary
+};
+
+// Define the structure for prefix mapping
+typedef struct {
+    char type[MAX_LINE_LENGTH];
+} PrefixEndMapping;
+
+// Predefined prefix mappings
+PrefixEndMapping prefix_end_map[] = {
+    {"{"},
+    {"("},
+    {"["},
+    {";"}
+    // Add more mappings as necessary
+};
+
+// Define the structure for prefix mapping
+typedef struct {
+    char type[MAX_LINE_LENGTH];
+} PrefixEndMissMapping;
+
+// Predefined prefix mappings
+PrefixEndMissMapping prefix_end_miss_map[] = {
+    {"{"},
+    {"("},
+    {"["},
+    {";"}
     // Add more mappings as necessary
 };
 
@@ -282,61 +309,77 @@ void error_ten(const char* command);
 void error_eleven(const char* command);
 void error_twelve(const char* command);
 void error_thirteen(const char* command);
+void error_fourteen(const char* command);
+void error_fifteen(const char* command);
+void error_sixteen(const char* command);
 
 
 // Define the error handling functions
 void error_one(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught ReferenceError: %s is not defined\n", command, command);
-}
+} // not defined
 
 void error_two(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected string\n", command);
-}
+} // string
 
 void error_three(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
-}
+} // end of input
 
 
 void error_four(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
-}
+} // end of input
 
 void error_five(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected token\n", command);
-}
+} // token
 
 void error_six(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
-}
+} // end of input
 
 void error_seven(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected token\n", command);
-}
+} // token
 
 void error_eight(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected token\n", command);
-}
+} // token
 
 void error_nine(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Invalid or unexpected token\n", command);
-}
+} // or unexpected token
 
 void error_ten(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Invalid regular expression: missing %s\n", command, command);
-}
+} // missing 
 
 void error_eleven(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
-}
+} // end of input
 
 void error_twelve(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Invalid or unexpected token\n", command);
-}
+} // or unexpected token
 
 void error_thirteen(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected token\n", command);
-}
+} // token
+
+// Define the error handling functions
+void error_fourteen(const char* command) {
+    printf("Command: %s -> Error on line 1: Uncaught ReferenceError: %s is not defined\n", command, command);
+} // not defined
+
+void error_fifteen(const char* command) {
+    printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
+} // end of input
+
+void error_sixteen(const char* command) {
+    printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
+} // end of input
 
 
 void lookup_error(const char* input) {
@@ -358,6 +401,11 @@ void lookup_error(const char* input) {
     int balance = 0;
     int has_token_balance = 0;
     int has_prefix_input = 0;
+    int has_boundary = 0;
+    int has_prefix_end = 0;
+    int has_suffix_end = 0;
+    int has_prefix_end_miss = 0;
+    int has_prefix_end_found = 0;
     
     const char* last_char_ptr = NULL;
     const char* first_char_ptr = NULL;
@@ -365,6 +413,7 @@ void lookup_error(const char* input) {
     char first_char_str[2];
     char first_no_char_str[2];
     const char* input_ptr = NULL;
+    char input_char_str[2];
 
     
     if (input_length > 0) {
@@ -434,7 +483,7 @@ void lookup_error(const char* input) {
         }
     }
     
-    // If input matches any in TokenWhiteMapping
+    // If input matches any in TokenNoWhiteMapping
     for (int i = 0; i < sizeof(token_no_white_map) / sizeof(TokenNoWhiteMapping); i++) {
         //printf("Checking token: %c\n", token_no_white_map[i]);
         if (strcmp(first_char_str, token_no_white_map[i].type) == 0) {
@@ -506,6 +555,29 @@ void lookup_error(const char* input) {
         }
     }
     
+    // If input matches any in PrefixEndMapping
+    for (int i = 0; i < sizeof(prefix_end_map) / sizeof(PrefixEndMapping); i++) {
+        if (strcmp(first_char_str, prefix_end_map[i].type) == 0) {
+            has_prefix_end = 1;
+        }
+    }
+    
+    // If input matches any in PrefixEndMissMapping
+    for (int i = 0; i < input_length; i++) {
+            input_char_str[0] = input[i];  // Example character
+            input_char_str[1] = '\0'; // Null terminator
+//printf("Checking character: %s\n", input_char_str);
+        for (int n = 0; n < sizeof(prefix_end_miss_map) / sizeof(PrefixEndMissMapping); n++) {
+            if (strcmp(input_char_str, prefix_end_miss_map[n].type) == 0) {
+                has_prefix_end_found = 1;
+            }
+        }
+            if (!has_prefix_end_found) {
+                has_prefix_end_miss = 1;
+            }
+                has_prefix_end_found = 0;
+    }
+    
     // If input matches any in TypeMapping
     //if (has_type == 1) {
         //type_one(input);
@@ -518,6 +590,9 @@ void lookup_error(const char* input) {
         } else if (input[i] == ')') {
             balance--;
         }
+        if (input[i] == '(' || input[i] == ')') {
+            has_boundary = 1;
+        }
         // If balance goes negative, it means there's a closing parenthesis without a matching opening parenthesis.
         if (balance < 0) {
             break;
@@ -525,96 +600,125 @@ void lookup_error(const char* input) {
     }
     
     // If balance is 0, all parentheses are properly enclosed.
-    if (balance == 0) {
+    if (balance == 0 && has_boundary) {
         has_token_balance = 1;
     }
 
-
+    // If balance is 0, all parentheses are properly enclosed.
+    //if (has_token_balance && has_suffix_token) {
+    //if (balance && has_boundary && has_suffix_token) {
+//printf("Checking balance: %d\n", balance);
+        //has_token_balance = 0;
+    //}
+    
     
     // If input has no white space and no quotations and no suffix match, call error_one
-    if (!has_whitespace && !has_type && !has_suffix && !has_prefix && !has_white_prefix && !has_input && !has_token_input && !has_missing && !has_border && !has_suffix_input && !has_suffix_invalid && !has_suffix_token && strchr(input, '"') == NULL && strchr(input, ';') == NULL) {
+    if (!has_whitespace && !has_type && !has_suffix && !has_prefix && !has_white_prefix && !has_input && !has_token_input && !has_missing && !has_border && !has_prefix_input && !has_suffix_input && !has_suffix_invalid && !has_suffix_token && strchr(input, '"') == NULL && strchr(input, ';') == NULL) {
         error_one(input);
         return;
-    }
+    } // not defined, value
 
     // If input has no white space and suffix equals two quotations, call error_two
     if (!has_whitespace && input_length > 2 && strcmp(&input[input_length - 2], "\"\"") == 0) {
         error_two(input);
         return;
-    }
-    
+    } // string,n""
+//printf("Checking SuffixMapping: %d\n", has_suffix);
     // If input has no white space and has type match, call error_three
     if (!has_whitespace && has_type) {
         error_three(input);
         return;
-    }
-
+    } // end of input, TypeMapping
+    
     // If input has no white space and suffix match, call error_four
-    if (!has_whitespace && has_suffix && input_length >= 1) {
+    if (!has_whitespace && has_suffix && input_length >= 1 && strncmp(&input[0], "*", 1) != 0) {
+//printf("Checking SuffixMapping: %d\n", strcmp(&input[0], "*"));
+//printf("Checking PrefixInputMissMapping: %d\n", has_prefix_end_miss);
         error_four(input);
         return;
-    }
+    } // end of input, SuffixMapping
     
     // If input has no white space and prefix match, call error_five
     if (!has_whitespace && has_prefix && input_length >= 1) {
         error_five(input);
         return;
-    }
-    
+    } // token, TokenMapping
+//printf("Checking InputMapping: %d\n", has_input);
     // If input has no white space and input match, call error_six
     if (!has_whitespace && has_input && input_length >= 1) {
         error_six(input);
         return;
-    }
+    } // end of input, InputMapping
     
     // If input has white space and prefix match, call error_seven
     if (has_whitespace && has_white_prefix && input_length >= 1) {
         error_seven(input);
         return;
-    }
+    } // token, TokenWhiteMapping
     
     // If input has no white space and prefix match, call error_eight
     if (!has_whitespace && has_no_white_prefix && input_length >= 1) {
         error_eight(input);
         return;
-    }
+    } // token, TokenNoWhiteMapping
     
     // If input has no white space and input match, call error_nine
     if (!has_whitespace && has_token_input && input_length >= 1) {
         error_nine(input);
         return;
-    }
+    } // or unexpected token, TokenInputMapping
     
     // If input has no white space and input match, call error_ten
     if (!has_whitespace && has_missing && input_length >= 1) {
         error_ten(input);
         return;
-    }
+    } // missing, MissingMapping
     
     // If input has no white space and suffix match, call error_eleven
-    if (!has_whitespace && has_suffix_input && !has_border && !has_suffix_border && input_length >= 2) {
+    if (!has_whitespace && has_suffix_input && !has_border && !has_suffix_border && !has_prefix_input && input_length > 2) {
+//printf("Checking PrefixInputMapping: %d\n", has_prefix_input);
         error_eleven(input);
         return;
-    }
+    } // end of input, SuffixInputMapping
     
     // If input has no white space and suffix match, call error_twelve
     if (!has_whitespace && has_suffix_invalid && !has_border && !has_suffix_border && input_length >= 2) {
         error_twelve(input);
         return;
-    }
-    
+    } // or unexpected token
+//printf("Checking SuffixTokenMapping: %d\n", has_token_balance);
+
     // If input has no white space and suffix match, call error_thirteen
-    if (!has_whitespace && has_suffix_token && !has_border && !has_suffix_border && !has_token_balance && input_length >= 2) {
-//printf("Checking SuffixTokenMapping: \n");
+    if (!has_whitespace && has_suffix_token && !has_border && !has_suffix_border && !has_prefix_input && !has_token_balance && input_length >= 2) {
+//printf("Checking SuffixTokenMapping: %d\n", has_token_balance);
+//printf("Checking PrefixInputMapping: %d\n", has_prefix_input);
         error_thirteen(input);
         return;
-    }
+    } // token, SuffixTokenMapping
     
     // If input has no white space and no quotations and no suffix match, call error_one
     if (!has_whitespace && !has_prefix_input && has_token_balance && input_length >= 2) {
-        error_one(input);
+//printf("Checking SuffixTokenMapping: %d\n", has_token_balance);
+        error_fourteen(input);
         return;
-    }
+    } // not defined
+    
+    // If input has no white space and input match, call error_fifteen
+    if (!has_whitespace && has_prefix_end && !has_token_balance && input_length > 2) {
+//printf("Checking SuffixTokenMapping: %d\n", has_token_balance);
+        error_fifteen(input);
+        return;
+    } // end of input, InputMapping
+    
+//printf("Checking PrefixInputMissMapping: %d\n", has_prefix_end_miss);
+    // If input has no white space and input match, call error_fifteen
+    if (!has_whitespace && !has_prefix_end_miss && has_prefix_end && input_length >= 2 && strncmp(&input[0], "*", 1) != 0) {
+//printf("Checking PrefixInputMissMapping: %d\n", has_prefix_end_miss);
+//printf("Checking SuffixTokenMapping: %d\n", has_token_balance);
+        error_sixteen(input);
+        return;
+    } // end of input, InputMapping
+
 
         //printf("Checking SuffixInputMapping: \n");
 
