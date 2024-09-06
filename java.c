@@ -294,6 +294,42 @@ PrefixEndMissMapping prefix_end_miss_map[] = {
     // Add more mappings as necessary
 };
 
+// Define the structure for suffix mapping
+typedef struct {
+    char type[MAX_LINE_LENGTH];
+} SuffixOneEndMapping;
+
+// Predefined suffix mappings
+SuffixOneEndMapping suffix_one_end_map[] = {
+    {"!"},
+    {"+"},
+    {"-"},
+    {"~"}
+    // Add more mappings as necessary
+};
+
+// Define the structure for suffix mapping
+typedef struct {
+    char type[MAX_LINE_LENGTH];
+} SuffixTwoEndMapping;
+
+// Predefined suffix mappings
+SuffixTwoEndMapping suffix_two_end_map[] = {
+    {"-"},
+    {"+"},
+    {"?"},
+    {"*"},
+    {"^"},
+    {"|"},
+    {"%"},
+    {"&"},
+    {","},
+    {"."},
+    {"<"},
+    {">"}
+    // Add more mappings as necessary
+};
+
 
 // Declare the error functions before using them
 void error_one(const char* command);
@@ -312,6 +348,7 @@ void error_thirteen(const char* command);
 void error_fourteen(const char* command);
 void error_fifteen(const char* command);
 void error_sixteen(const char* command);
+void error_seventeen(const char* command);
 
 
 // Define the error handling functions
@@ -381,6 +418,10 @@ void error_sixteen(const char* command) {
     printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
 } // end of input
 
+void error_seventeen(const char* command) {
+    printf("Command: %s -> Error on line 1: Uncaught SyntaxError: Unexpected end of input\n", command);
+} // end of input
+
 
 void lookup_error(const char* input) {
     int input_length = strlen(input);
@@ -406,6 +447,8 @@ void lookup_error(const char* input) {
     int has_suffix_end = 0;
     int has_prefix_end_miss = 0;
     int has_prefix_end_found = 0;
+    int has_suffix_one_end = 0;
+    int has_suffix_two_end = 0;
     
     const char* last_char_ptr = NULL;
     const char* first_char_ptr = NULL;
@@ -559,6 +602,22 @@ void lookup_error(const char* input) {
     for (int i = 0; i < sizeof(prefix_end_map) / sizeof(PrefixEndMapping); i++) {
         if (strcmp(first_char_str, prefix_end_map[i].type) == 0) {
             has_prefix_end = 1;
+        }
+    }
+    
+    // If input matches any in SuffixOneEndMapping
+    for (int i = 0; i < sizeof(suffix_one_end_map) / sizeof(SuffixOneEndMapping); i++) {
+        //printf("Checking suffix: %c\n", suffix_one_end_map[i]);
+        if (strcmp(first_char_str, suffix_one_end_map[i].type) == 0) {
+            has_suffix_one_end = 1;
+        //printf("Setting has_suffix_one_end: %d\n", has_suffix_one_end);
+        }
+    }
+    
+    // If input matches any in SuffixTwoEndMapping
+    for (int i = 0; i < sizeof(suffix_two_end_map) / sizeof(SuffixTwoEndMapping); i++) {
+        if (strcmp(last_char_ptr, suffix_two_end_map[i].type) == 0) {
+            has_suffix_two_end = 1;
         }
     }
     
@@ -719,6 +778,12 @@ void lookup_error(const char* input) {
         return;
     } // end of input, InputMapping
 
+    if (!has_whitespace && has_suffix_one_end && has_suffix_two_end && input_length > 2) {
+        error_seventeen(input);
+        return;
+    } // end of input, InputMapping
+
+    
 
         //printf("Checking SuffixInputMapping: \n");
 
