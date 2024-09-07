@@ -12,3 +12,6 @@ ln -s /Documents/www /var/www/html
 
 
 rm -f /var/www/html && ln -s /Documents/www /var/www/html
+
+
+rm -f /var/www/html && mkdir -p /var/www && ln -s /Documents/www /var/www/html
