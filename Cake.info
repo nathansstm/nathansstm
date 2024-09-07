@@ -1,0 +1,14 @@
+wget https://github.com/cakephp/cakephp/archive/refs/tags/1.2.0.tar.gz -O 1.2.0.tar.gz && tar -xvzf 1.2.0.tar.gz && mv cakephp-1.2.0 cakephp && mv cakephp /var/www/html/ && cp -r /var/www/html/cakephp /var/www/html/cakephpbase && mv 1.2.0.tar.gz /var/www/html/ && mv /var/www/html/1.2.0.tar.gz /var/www/html/cakephp1.2.0.tar.gz
+
+ln -s <target> <path>
+
+ln -s /path/to/target /path/to/symlink
+
+ln -s /Documents/www /var/www/html
+
+rm /var/www/html
+
+ln -s /Documents/www /var/www/html
+
+
+rm -f /var/www/html && ln -s /Documents/www /var/www/html
