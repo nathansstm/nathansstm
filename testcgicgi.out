@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Set the content-type header
+echo "Content-type: text/html"
+echo ""
+
+#    URL="http://198.57.45.16/cgi-bin/testxmlcgi.out"
+#    curl -s "$URL"
+
+
+# Fetch the referer header
+referer=$(echo "$HTTP_REFERER" | tr '[:upper:]' '[:lower:]')
+
+# Extract the domain from the referer (remove "http://", "https://", and any trailing path)
+domain=$(echo "$referer" | sed -e 's|https\?://||' -e 's|/.*||')
+
+# Normalize the domain (remove the TLD)
+domain=$(echo "$domain" | sed -e 's|\.[^.]*$||')
+
+# Define allowed domain (case-insensitive, without TLD)
+allowed_domain="Myfreew"  # Adjust this to the domain you want to allow, e.g., "domain"
+
+# Normalize the allowed domain for comparison
+normalized_allowed_domain=$(echo "$allowed_domain" | tr '[:upper:]' '[:lower:]')
+
+# Check if the referer domain matches the allowed domain
+if [ "$domain" == "$normalized_allowed_domain" ]; then
+    # Fetch the content from the target URL using curl
+    URL="http://198.57.45.16/cgi-bin/testxmlcgi.out"
+    curl -s "$URL"
+else
+    echo "<h1>Access Denied</h1><p>Invalid referer domain.</p>"
+fi
+
+

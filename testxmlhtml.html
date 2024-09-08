@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Links Scraper</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            width: 300px;
+        }
+        #status, #content {
+            margin-top: 20px;
+        }
+        #status div, #content div {
+            margin-bottom: 15px;
+        }
+</style>
+</head>
+<body>
+    <h1>GitHub Links Scraper</h1>
+    
+    <h2>Test Button</h2>
+    <button id="testButton">Test Button</button>
+    <div id="testContent"></div>
+
+    <h2>Load GitHub Content</h2>
+    <button id="loadContentButton">Load Content</button>
+    <div id="status"></div>
+    <div id="content"></div>
+
+<script>
+    const githubUrl = '/cgi-bin/testcgicgi.out';
+    const targetSelector = 'h4 a[href], li a[href]';
+
+    // Function to update the status
+    function updateStatus(message) {
+        const statusDiv = document.getElementById('status');
+        const statusMessage = document.createElement('p');
+        statusMessage.textContent = message;
+        statusDiv.appendChild(statusMessage);
+    }
+
+    // Function to fetch and display the GitHub content
+    function displayGitHubContent() {
+        updateStatus('Fetching content...');
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', githubUrl, true);
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Create a new DOM parser to parse the fetched HTML
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(xhr.responseText, 'text/html');
+
+                    // Get all the targeted links
+                    const links = doc.querySelectorAll(targetSelector);
+
+                    if (links.length > 0) {
+                        let contentHtml = '<h3>Scraped Links:</h3>';
+                        links.forEach(link => {
+                            const title = link.textContent.trim();
+                            const href = link.getAttribute('href'); // Get the raw href attribute
+                            contentHtml += `<p>Title: ${title}<br>Description (Link): <a href="${href}" target="_blank">${href}</a></p>`;
+                        });
+
+                        const contentDiv = document.getElementById('content');
+                        contentDiv.innerHTML = contentHtml;
+
+                        updateStatus('Content loaded successfully.');
+                    } else {
+                        updateStatus('No links found.');
+                    }
+                } else {
+                    updateStatus('Failed to load content.');
+                }
+
+                updateStatus('Operation completed.');
+            }
+        };
+
+        xhr.send();
+    }
+
+    // Function to display a test message
+    function displayTestMessage() {
+        const testContentDiv = document.getElementById('testContent');
+        testContentDiv.innerHTML = '<p>Hello, World!</p>';
+    }
+
+    // Event listeners
+    document.getElementById('testButton').addEventListener('click', displayTestMessage);
+    document.getElementById('loadContentButton').addEventListener('click', displayGitHubContent);
+</script>
+</body>
+</html>
+
+
+

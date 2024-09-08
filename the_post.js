@@ -1,7 +1,968 @@
 export const simulatedFileContent = `
+    <post-54>
+<p>
+I have links to use that have been fetched from a new content scraper I made that pulls from Github, using Xmlhttprequest or fetch and simple Cgi program with curl to bypass Cors. I am a huge fan of Freecodecamp and Github, And noticed recently a good path any programmer or code hobbyist can use from the Freecodecamp repo, I think these links are so good that I have a current content fetch provided here.
+</p>
+<pre>
+GitHub Links Scraper
+Test Button
+Test Button
+Load GitHub Content
+Load Content
+Fetching content...
+
+Content loaded successfully.
+
+Operation completed.
+
+Scraped Links:
+Title: Actions Automate any workflow
+Description (Link): https://github.com/features/actions
+
+Title: Packages Host and manage packages
+Description (Link): https://github.com/features/packages
+
+Title: Security Find and fix vulnerabilities
+Description (Link): https://github.com/features/security
+
+Title: Codespaces Instant dev environments
+Description (Link): https://github.com/features/codespaces
+
+Title: GitHub Copilot Write better code with AI
+Description (Link): https://github.com/features/copilot
+
+Title: Code review Manage code changes
+Description (Link): https://github.com/features/code-review
+
+Title: Issues Plan and track work
+Description (Link): https://github.com/features/issues
+
+Title: Discussions Collaborate outside of code
+Description (Link): https://github.com/features/discussions
+
+Title: All features
+Description (Link): https://github.com/features
+
+Title: Documentation
+Description (Link): https://docs.github.com
+
+Title: GitHub Skills
+Description (Link): https://skills.github.com
+
+Title: Blog
+Description (Link): https://github.blog
+
+Title: Enterprise
+Description (Link): https://github.com/enterprise
+
+Title: Teams
+Description (Link): https://github.com/team
+
+Title: Startups
+Description (Link): https://github.com/enterprise/startups
+
+Title: Healthcare
+Description (Link): https://github.com/solutions/industries/healthcare
+
+Title: Financial services
+Description (Link): https://github.com/solutions/industries/financial-services
+
+Title: Manufacturing
+Description (Link): https://github.com/solutions/industries/manufacturing
+
+Title: CI/CD & Automation
+Description (Link): https://github.com/solutions/ci-cd
+
+Title: DevOps
+Description (Link): https://github.com/solutions/devops
+
+Title: DevSecOps
+Description (Link): https://github.com/solutions/devsecops
+
+Title: AI
+Description (Link): /resources/articles/ai
+
+Title: DevOps
+Description (Link): /resources/articles/devops
+
+Title: Security
+Description (Link): /resources/articles/security
+
+Title: Software Development
+Description (Link): /resources/articles/software-development
+
+Title: View all
+Description (Link): /resources/articles
+
+Title: Learning Pathways
+Description (Link): https://resources.github.com/learn/pathways
+
+Title: White papers, Ebooks, Webinars
+Description (Link): https://resources.github.com
+
+Title: Customer Stories
+Description (Link): https://github.com/customer-stories
+
+Title: Partners
+Description (Link): https://partner.github.com
+
+Title: GitHub Sponsors Fund open source developers
+Description (Link): /sponsors
+
+Title: The ReadME Project GitHub community articles
+Description (Link): https://github.com/readme
+
+Title: Topics
+Description (Link): https://github.com/topics
+
+Title: Trending
+Description (Link): https://github.com/trending
+
+Title: Collections
+Description (Link): https://github.com/collections
+
+Title: Enterprise platform AI-powered developer platform
+Description (Link): /enterprise
+
+Title: Advanced Security Enterprise-grade security features
+Description (Link): https://github.com/enterprise/advanced-security
+
+Title: GitHub Copilot Enterprise-grade AI features
+Description (Link): /features/copilot#enterprise
+
+Title: Premium Support Enterprise-grade 24/7 support
+Description (Link): /premium-support
+
+Title: Pricing
+Description (Link): https://github.com/pricing
+
+Title: Notifications
+Description (Link): /login?return_to=%2FfreeCodeCamp%2FfreeCodeCamp
+
+Title: Fork 37k
+Description (Link): /login?return_to=%2FfreeCodeCamp%2FfreeCodeCamp
+
+Title: Star 401k
+Description (Link): /login?return_to=%2FfreeCodeCamp%2FfreeCodeCamp
+
+Title: Code
+Description (Link): /freeCodeCamp/freeCodeCamp
+
+Title: Issues 190
+Description (Link): /freeCodeCamp/freeCodeCamp/issues
+
+Title: Pull requests 63
+Description (Link): /freeCodeCamp/freeCodeCamp/pulls
+
+Title: Actions
+Description (Link): /freeCodeCamp/freeCodeCamp/actions
+
+Title: Projects 3
+Description (Link): /freeCodeCamp/freeCodeCamp/projects
+
+Title: Security
+Description (Link): /freeCodeCamp/freeCodeCamp/security
+
+Title: Insights
+Description (Link): /freeCodeCamp/freeCodeCamp/pulse
+
+Title: Code
+Description (Link): /freeCodeCamp/freeCodeCamp
+
+Title: Issues
+Description (Link): /freeCodeCamp/freeCodeCamp/issues
+
+Title: Pull requests
+Description (Link): /freeCodeCamp/freeCodeCamp/pulls
+
+Title: Actions
+Description (Link): /freeCodeCamp/freeCodeCamp/actions
+
+Title: Projects
+Description (Link): /freeCodeCamp/freeCodeCamp/projects
+
+Title: Security
+Description (Link): /freeCodeCamp/freeCodeCamp/security
+
+Title: Insights
+Description (Link): /freeCodeCamp/freeCodeCamp/pulse
+
+Title: README
+Description (Link): #
+
+Title: Code of conduct
+Description (Link): #
+
+Title: BSD-3-Clause license
+Description (Link): #
+
+Title: Security
+Description (Link): #
+
+Title: Certifications
+Description (Link): #certifications
+
+Title: The Learning Platform
+Description (Link): #the-learning-platform
+
+Title: Reporting Bugs and Issues
+Description (Link): #reporting-bugs-and-issues
+
+Title: Reporting Security Issues and Responsible Disclosure
+Description (Link): #reporting-security-issues-and-responsible-disclosure
+
+Title: Contributing
+Description (Link): #contributing
+
+Title: Platform, Build and Deployment Status
+Description (Link): #platform-build-and-deployment-status
+
+Title: License
+Description (Link): #license
+
+Title: Responsive Web Design Certification
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/
+
+Title: Learn HTML by Building a Cat Photo App
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
+
+Title: Learn Basic CSS by Building a Cafe Menu
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-basic-css-by-building-a-cafe-menu
+
+Title: Learn CSS Colors by Building a Set of Colored Markers
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-colors-by-building-a-set-of-colored-markers
+
+Title: Learn HTML Forms by Building a Registration Form
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-forms-by-building-a-registration-form
+
+Title: Learn the CSS Box Model by Building a Rothko Painting
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-the-css-box-model-by-building-a-rothko-painting
+
+Title: Learn CSS Flexbox by Building a Photo Gallery
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-flexbox-by-building-a-photo-gallery
+
+Title: Learn Typography by Building a Nutrition Label
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-typography-by-building-a-nutrition-label
+
+Title: Learn Accessibility by Building a Quiz
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-accessibility-by-building-a-quiz
+
+Title: Learn More About CSS Pseudo Selectors by Building A Balance Sheet
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet
+
+Title: Learn Intermediate CSS by Building a Picasso Painting
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-intermediate-css-by-building-a-picasso-painting
+
+Title: Learn Responsive Web Design by Building a Piano
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-responsive-web-design-by-building-a-piano
+
+Title: Learn CSS Variables by Building a City Skyline
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-variables-by-building-a-city-skyline
+
+Title: Learn CSS Grid by Building a Magazine
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-grid-by-building-a-magazine
+
+Title: Learn CSS Transforms by Building a Penguin
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-transforms-by-building-a-penguin
+
+Title: Learn CSS Animations by Building a Ferris Wheel
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-animation-by-building-a-ferris-wheel
+
+Title: Survey Form
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form
+
+Title: Tribute Page
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page
+
+Title: Technical Documentation Page
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page
+
+Title: Product Landing Page
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page
+
+Title: Personal Portfolio Webpage
+Description (Link): https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-personal-portfolio-webpage-project/build-a-personal-portfolio-webpage
+
+Title: JavaScript Algorithms and Data Structures Certification
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/
+
+Title: Learn Introductory JavaScript by Building a Pyramid Generator
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-introductory-javascript-by-building-a-pyramid-generator
+
+Title: Learn Basic JavaScript by Building a Role Playing Game
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game
+
+Title: Learn Form Validation by Building a Calorie Counter
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-form-validation-by-building-a-calorie-counter
+
+Title: Learn Basic String and Array Methods by Building a Music Player
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-string-and-array-methods-by-building-a-music-player
+
+Title: Learn the Date Object by Building a Date Formatter
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-the-date-object-by-building-a-date-formatter
+
+Title: Learn Modern JavaScript Methods By Building Football Team Cards
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-modern-javascript-methods-by-building-football-team-cards
+
+Title: Learn localStorage by Building a Todo App
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-localstorage-by-building-a-todo-app
+
+Title: Learn Recursion by Building a Decimal to Binary Converter
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-recursion-by-building-a-decimal-to-binary-converter
+
+Title: Learn Basic Algorithmic Thinking by Building a Number Sorter
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-algorithmic-thinking-by-building-a-number-sorter
+
+Title: Learn Advanced Array Methods by Building a Statistics Calculator
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-advanced-array-methods-by-building-a-statistics-calculator
+
+Title: Learn Functional Programming by Building a Spreadsheet
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-functional-programming-by-building-a-spreadsheet
+
+Title: Learn Regular Expressions by Building a Spam Filter
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-regular-expressions-by-building-a-spam-filter
+
+Title: Learn Basic OOP by Building a Shopping Cart
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-oop-by-building-a-shopping-cart
+
+Title: Learn Intermediate OOP by Building a Platformer Game
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-intermediate-oop-by-building-a-platformer-game
+
+Title: Learn Intermediate Algorithmic Thinking by Building a Dice Game
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#review-algorithmic-thinking-by-building-a-dice-game
+
+Title: Learn Fetch and Promises By Building an fCC Authors Page
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-fetch-and-promises-by-building-an-fcc-authors-page
+
+Title: Learn Asynchronous Programming by Building an fCC Forum Leaderboard
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard
+
+Title: Palindrome Checker
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker
+
+Title: Roman Numeral Converter
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-roman-numeral-converter-project/build-a-roman-numeral-converter
+
+Title: Telephone Number Validator
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-telephone-number-validator-project/build-a-telephone-number-validator
+
+Title: Cash Register
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-cash-register-project/build-a-cash-register
+
+Title: Pokémon Search App
+Description (Link): https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app
+
+Title: Front End Libraries Certification
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/
+
+Title: Bootstrap
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/#bootstrap
+
+Title: jQuery
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/#jquery
+
+Title: Sass
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/#sass
+
+Title: React
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/#react
+
+Title: Redux
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/#redux
+
+Title: React and Redux
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/#react-and-redux
+
+Title: Random Quote Machine
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine
+
+Title: Markdown Previewer
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-markdown-previewer
+
+Title: Drum Machine
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-drum-machine
+
+Title: JavaScript Calculator
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator
+
+Title: 25 + 5 Clock
+Description (Link): https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-25--5-clock
+
+Title: Data Visualization Certification
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/
+
+Title: Data Visualization with D3
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/#data-visualization-with-d3
+
+Title: JSON APIs and Ajax
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/#json-apis-and-ajax
+
+Title: Bar Chart
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-bar-chart
+
+Title: Scatterplot Graph
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-scatterplot-graph
+
+Title: Heat Map
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-heat-map
+
+Title: Choropleth Map
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map
+
+Title: Treemap Diagram
+Description (Link): https://www.freecodecamp.org/learn/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram
+
+Title: Relational Database
+Description (Link): https://www.freecodecamp.org/learn/relational-database/
+
+Title: Learn Bash by Building a Boilerplate
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-bash-by-building-a-boilerplate
+
+Title: Learn Relational Databases by Building a Mario Database
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-relational-databases-by-building-a-mario-database
+
+Title: Learn Bash Scripting by Building Five Programs
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-bash-scripting-by-building-five-programs
+
+Title: Learn SQL by Building a Student Database: Part 1
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-1
+
+Title: Learn SQL by Building a Student Database: Part 2
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-2
+
+Title: Learn Advanced Bash by Building a Kitty Ipsum Translator
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-advanced-bash-by-building-a-kitty-ipsum-translator
+
+Title: Learn Bash and SQL by Building a Bike Rental Shop
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-bash-and-sql-by-building-a-bike-rental-shop
+
+Title: Learn Nano by Building a Castle
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-nano-by-building-a-castle
+
+Title: Learn Git by Building an SQL Reference Object
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#learn-git-by-building-an-sql-reference-object
+
+Title: Salon Appointment Scheduler
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#build-a-salon-appointment-scheduler-project
+
+Title: Celestial Bodies Database
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#build-a-celestial-bodies-database-project
+
+Title: Periodic Table Database
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#build-a-periodic-table-database-project
+
+Title: Number Guessing Game
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#build-a-number-guessing-game-project
+
+Title: World Cup Database
+Description (Link): https://www.freecodecamp.org/learn/relational-database/#build-a-world-cup-database-project
+
+Title: Back End Development and APIs Certification
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/
+
+Title: Managing Packages with Npm
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/#managing-packages-with-npm
+
+Title: Basic Node and Express
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/#basic-node-and-express
+
+Title: MongoDB and Mongoose
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/#mongodb-and-mongoose
+
+Title: Timestamp Microservice
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/timestamp-microservice
+
+Title: Request Header Parser
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice
+
+Title: URL Shortener
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/url-shortener-microservice
+
+Title: Exercise Tracker
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/exercise-tracker
+
+Title: File Metadata Microservice
+Description (Link): https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/file-metadata-microservice
+
+Title: Quality Assurance Certification
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/
+
+Title: Quality Assurance and Testing with Chai
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/#quality-assurance-and-testing-with-chai
+
+Title: Advanced Node and Express
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/#advanced-node-and-express
+
+Title: Metric-Imperial Converter
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/metric-imperial-converter
+
+Title: Issue Tracker
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/issue-tracker
+
+Title: Personal Library
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/personal-library
+
+Title: Sudoku Solver
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/sudoku-solver
+
+Title: American British Translator
+Description (Link): https://www.freecodecamp.org/learn/quality-assurance/quality-assurance-projects/american-british-translator
+
+Title: Scientific Computing with Python Certification
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/
+
+Title: Learn String Manipulation by Building a Cipher
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-string-manipulation-by-building-a-cipher
+
+Title: Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm
+
+Title: Learn Lambda Functions by Building an Expense Tracker
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-lambda-functions-by-building-an-expense-tracker
+
+Title: Learn List Comprehension by Building a Case Converter Program
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-list-comprehension-by-building-a-case-converter-program
+
+Title: Learn the Bisection Method by Finding the Square Root of a Number
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-the-bisection-method-by-finding-the-square-root-of-a-number
+
+Title: Learn Regular Expressions by Building a Password Generator
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-regular-expressions-by-building-a-password-generator
+
+Title: Learn Algorithm Design by Building a Shortest Path Algorithm
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-algorithm-design-by-building-a-shortest-path-algorithm
+
+Title: Learn Recursion by Solving the Tower of Hanoi Puzzle
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-recursion-by-solving-the-tower-of-hanoi-puzzle
+
+Title: Learn Data Structures by Building the Merge Sort Algorithm
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-data-structures-by-building-the-merge-sort-algorithm
+
+Title: Learn Classes and Objects by Building a Sudoku Solver
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-classes-and-objects-by-building-a-sudoku-solver
+
+Title: Learn Tree Traversal by Building a Binary Search Tree
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-tree-traversal-by-building-a-binary-search-tree
+
+Title: Learn Special Methods by Building a Vector Space
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/#learn-special-methods-by-building-a-vector-space
+
+Title: Arithmetic Formatter
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project
+
+Title: Time Calculator
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-time-calculator-project/build-a-time-calculator-project
+
+Title: Budget App
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-budget-app-project/build-a-budget-app-project
+
+Title: Polygon Area Calculator
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project
+
+Title: Probability Calculator
+Description (Link): https://www.freecodecamp.org/learn/scientific-computing-with-python/build-a-probability-calculator-project/build-a-probability-calculator-project
+
+Title: Data Analysis with Python Certification
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/
+
+Title: Data Analysis with Python Course
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/#data-analysis-with-python-course
+
+Title: NumPy
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/#numpy
+
+Title: Mean-Variance-Standard Deviation Calculator
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator
+
+Title: Demographic Data Analyzer
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer
+
+Title: Medical Data Visualizer
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/medical-data-visualizer
+
+Title: Page View Time Series Visualizer
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/page-view-time-series-visualizer
+
+Title: Sea Level Predictor
+Description (Link): https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/sea-level-predictor
+
+Title: Information Security Certification
+Description (Link): https://www.freecodecamp.org/learn/information-security/
+
+Title: Information Security with HelmetJS
+Description (Link): https://www.freecodecamp.org/learn/information-security/#information-security-with-helmetjs
+
+Title: Python for Penetration Testing
+Description (Link): https://www.freecodecamp.org/learn/information-security/#python-for-penetration-testing
+
+Title: Stock Price Checker
+Description (Link): https://www.freecodecamp.org/learn/information-security/information-security-projects/stock-price-checker
+
+Title: Anonymous Message Board
+Description (Link): https://www.freecodecamp.org/learn/information-security/information-security-projects/anonymous-message-board
+
+Title: Port Scanner
+Description (Link): https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner
+
+Title: SHA-1 Password Cracker
+Description (Link): https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker
+
+Title: Secure Real Time Multiplayer Game
+Description (Link): https://www.freecodecamp.org/learn/information-security/information-security-projects/secure-real-time-multiplayer-game
+
+Title: Machine Learning with Python Certification
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/
+
+Title: TensorFlow
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/#tensorflow
+
+Title: How Neural Networks Work
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/#how-neural-networks-work
+
+Title: Rock Paper Scissors
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/rock-paper-scissors
+
+Title: Cat and Dog Image Classifier
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/cat-and-dog-image-classifier
+
+Title: Book Recommendation Engine using KNN
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/book-recommendation-engine-using-knn
+
+Title: Linear Regression Health Costs Calculator
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/linear-regression-health-costs-calculator
+
+Title: Neural Network SMS Text Classifier
+Description (Link): https://www.freecodecamp.org/learn/machine-learning-with-python/machine-learning-with-python-projects/neural-network-sms-text-classifier
+
+Title: College Algebra with Python
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/
+
+Title: Learn Ratios and Proportions
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-ratios-and-proportions
+
+Title: Learn How to Solve for X
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-for-x
+
+Title: Learn Fractions and Decimals
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-fractions-and-decimals
+
+Title: Learn Functions and Graphing
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-functions-and-graphing
+
+Title: Learn Linear Functions
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-linear-functions
+
+Title: Learn Common Factors and Square Roots
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-common-factors-and-square-roots
+
+Title: Learn How to Graph Systems of Equations
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-graph-systems-of-equations
+
+Title: Learn How to Solve Systems of Equations
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-how-to-solve-systems-of-equations
+
+Title: Learn Applications of Linear Systems
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-applications-of-linear-systems
+
+Title: Learn Quadratic Equations
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-quadratic-equations
+
+Title: Learn Parent Graphs and Polynomials
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-parent-graphs-and-polynomials
+
+Title: Learn Business Applications of College Algebra
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-business-applications-of-college-algebra
+
+Title: Learn Simple and Compound Interest
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-simple-and-compound-interest
+
+Title: Learn Exponents and Logarithms
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#learn-exponents-and-logarithms
+
+Title: College Algebra with Python: Conclusion
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#college-algebra-with-python-conclusion
+
+Title: Multi-Function Calculator
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-multi-function-calculator-project
+
+Title: Graphing Calculator
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-graphing-calculator-project
+
+Title: Three Math Games
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#build-three-math-games-project
+
+Title: Financial Calculator
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-financial-calculator-project
+
+Title: Data Graph Explorer
+Description (Link): https://www.freecodecamp.org/learn/college-algebra-with-python/#build-a-data-graph-explorer-project
+
+Title: (New) Foundational C# with Microsoft
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/
+
+Title: Write Your First Code Using C#
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#write-your-first-code-using-c-sharp
+
+Title: Create and Run Simple C# Console Applications
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#create-and-run-simple-c-sharp-console-applications
+
+Title: Add Logic to C# Console Applications
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#add-logic-to-c-sharp-console-applications
+
+Title: Work with Variable Data in C# Console Applications
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#work-with-variable-data-in-c-sharp-console-applications
+
+Title: Create Methods in C# Console Applications
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#create-methods-in-c-sharp-console-applications
+
+Title: Debug C# Console Applications
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/#debug-c-sharp-console-applications
+
+Title: Foundational C# with Microsoft Certification Exam
+Description (Link): https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam
+
+Title: forum
+Description (Link): https://forum.freecodecamp.org
+
+Title: YouTube channel
+Description (Link): https://youtube.com/freecodecamp
+
+Title: technical publication
+Description (Link): https://www.freecodecamp.org/news
+
+Title: Discord server
+Description (Link): https://discord.gg/Z7Fm39aNtZ
+
+Title: Join the community here
+Description (Link): https://www.freecodecamp.org/signin
+
+Title: Read our security policy and follow these steps to report a vulnerability
+Description (Link): https://contribute.freecodecamp.org/#/security
+
+Title: Please follow these steps to contribute
+Description (Link): https://contribute.freecodecamp.org
+
+Title: BSD-3-Clause
+Description (Link): /freeCodeCamp/freeCodeCamp/blob/main/LICENSE.md
+
+Title: /curriculum
+Description (Link): /freeCodeCamp/freeCodeCamp/blob/main/curriculum
+
+Title: patreon.com/freecodecamp
+Description (Link): https://patreon.com/freecodecamp
+
+Title: www.freecodecamp.org/donate
+Description (Link): http://www.freecodecamp.org/donate
+
+Title:
+Description (Link): https://github.com/raisedadead
+
+Title:
+Description (Link): https://github.com/ojeytonwilliams
+
+Title:
+Description (Link): https://github.com/camperbot
+
+Title:
+Description (Link): https://github.com/renovate-bot
+
+Title:
+Description (Link): https://github.com/apps/renovate
+
+Title:
+Description (Link): https://github.com/sahat
+
+Title:
+Description (Link): https://github.com/moT01
+
+Title:
+Description (Link): https://github.com/Bouncey
+
+Title:
+Description (Link): https://github.com/terakilobyte
+
+Title:
+Description (Link): https://github.com/SaintPeter
+
+Title:
+Description (Link): https://github.com/ltegman
+
+Title:
+Description (Link): https://github.com/benmcmahon100
+
+Title:
+Description (Link): https://github.com/ShaunSHamilton
+
+Title:
+Description (Link): https://github.com/ahmaxed
+
+Title: TypeScript 67.0%
+Description (Link): /freeCodeCamp/freeCodeCamp/search?l=typescript
+
+Title: JavaScript 27.2%
+Description (Link): /freeCodeCamp/freeCodeCamp/search?l=javascript
+
+Title: CSS 5.5%
+Description (Link): /freeCodeCamp/freeCodeCamp/search?l=css
+
+Title: Dockerfile 0.2%
+Description (Link): /freeCodeCamp/freeCodeCamp/search?l=dockerfile
+
+Title: EJS 0.1%
+Description (Link): /freeCodeCamp/freeCodeCamp/search?l=ejs
+
+Title: HTML 0.0%
+Description (Link): /freeCodeCamp/freeCodeCamp/search?l=html
+
+Title: Terms
+Description (Link): https://docs.github.com/site-policy/github-terms/github-terms-of-service
+
+Title: Privacy
+Description (Link): https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+
+Title: Security
+Description (Link): https://github.com/security
+
+Title: Status
+Description (Link): https://www.githubstatus.com/
+
+Title: Docs
+Description (Link): https://docs.github.com/
+
+Title: Contact
+Description (Link): https://support.github.com?tags=dotcom-footer
+<button class="copy-btn" data-code="54">&lt;&gt;</button>
+</pre>
+</post-54>
+    <post-53>
+<p>
+I like to keep Typefont simple, that being said here is a standard way to selfhost a font, provided you have a generated Web Open Font Format file as woff or woff2, the code below is enough to provide the font family name as a usable css attribute.
+</p>
+<pre>
+@font-face {
+    font-family: 'poppinsregular';
+    src: url('poppins-regular.woff2') format('woff2'),
+         url('poppins-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+<button class="copy-btn" data-code="53">&lt;&gt;</button>
+</pre>
+    </post-53>
+    <post-52>
+<p>
+I made a simple Bash program to interact for single file uploads to a Github repository using a Personal Access Token to Auth with curl and jq to handle the file as a payload for the REST Api, combine with wget or use a TREE loop as a workaround to using package gh and git if you need to.
+</p>
+<pre>
+#!/bin/bash
+
+# Replace with your GitHub username, repository name, and PAT
+# USERNAME="your-username"
+# REPO="your-repo"
+# TOKEN="your-pat-token"
+# BRANCH="main"
+
+
+# Welcome message
+echo "Welcome......"
+
+# Prompt for the file name
+read -p "Enter File: " FILE_NAME
+
+# Check if the input is empty
+if [ -z "$FILE_NAME" ]; then
+    echo "Bad Response, Exiting......"
+    exit 1
+fi
+
+# Check if the file exists
+if [ ! -f "$FILE_NAME" ]; then
+    echo "File does not exist, Exiting......"
+    exit 1
+fi
+
+# Base64 encode the file's content
+FILE_CONTENT=$(base64 "$FILE_NAME")
+
+# Set up the API URL
+API_URL="https://api.github.com/repos/$USERNAME/$REPO/contents/$FILE_NAME"
+
+# Prepare JSON data for the API call
+JSON_DATA=$(jq -n --arg message "Add $FILE_NAME" --arg content "$FILE_CONTENT" \
+'{
+  "message": $message,
+  "content": $content,
+  "branch": "'"$BRANCH"'"
+}')
+
+# Perform the API request to push the file
+RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X PUT -H "Authorization: token $TOKEN" \
+    -d "$JSON_DATA" "$API_URL")
+
+# Check the response code
+if [ "$RESPONSE" -eq 201 ]; then
+    echo "Success, Exiting......"
+else
+    echo "Error: Failed to push file, Exiting......"
+    exit 1
+fi
+
+
+<button class="copy-btn" data-code="52">&lt;&gt;</button>
+</pre>
+    </post-52>
+    <post-51>
+<p>
+I have used a simple and clean one line command to download my Github repository zip file first removing a working directories contents, wget then gets the file, we unzip followed by moving the extracted directories contents and clean up by removing the extract directory and zip download. This command also passes TRUE through stdin avoiding any potential Errors from interrupting the unzip process.
+</p>
+<pre>
+#!/bin/bash
+
+rm -rf * && wget -O repo.zip https://github.com/owner/repository/archive/refs/heads/main.zip && unzip -o repo.zip || true && mv repository-main/* . && rm -rf repository-main repo.zip
+
+
+
+<button class="copy-btn" data-code="51">&lt;&gt;</button>
+</pre>
+    </post-51>
+    <post-50>
+<p>
+I found that with modular math a simple sequence of character shifts can be applied to Ciphertext my example alternating each character in sets of three to increase the security and diffusion of replacement Frequency by an exponential amount, and my Cipher now is unbroken after 60 attempts as a Caesar Cipher Variant.
+</p>
+    </post-50>
+    <post-49>
+<p>
+I have begun new work on a Asymmetric Encryption method using pure vanilla Js and what I have learned after my first successful attempt is a real Caesar Cipher Variant, applying modular math and a simple 2^n%x operation for a Character String position shift that I was also able to crack using Frequency Analysis and a first run with success on attempt 51 of my evaluation loop, But the Encryption and Ciphertext was made using only three Characters for a Public and Private Key and was super fun to program.
+</p>
+    </post-49>
+    <post-48>
+<p>
+I have created an Actual Base32 encoding method I call Base53 that use six 5-bit Binary Segments padded if needed and a 32 character Encode Mapping to all possible 5-bit Binary values as 2^5 and a Character Mapping of A to O a to e and 0 to 9. I also show this encoding method used to build 150-bit Keys concatenating encoded message Input five times to build a perfectly scaled 432 character Encoded message from a 270 character Raw encoded Data stream at a fixed length But using a unique Character Mapping for each Encoding operation which could also be set As fixed.
+</p>
+    </post-48>
+    <post-47>
+<p>
+I have created an Actual Base32 encoding method I call Base53 that use six 5-bit Binary Segments padded if needed and a 32 character Encode Mapping to all possible 5-bit Binary values as 2^5 and a Character Mapping of A to O a to e and 0 to 9. I also show this encoding method used to build 150-bit Keys concatenating encoded message Input five times to build a perfectly scaled 432 character Encoded message from a 270 character Raw encoded Data stream at a fixed length But using a unique Character Mapping for each Encoding operation which could also be set As fixed.
+</p>
+    </post-47>
+    <post-46>
+<p>
+I found that creating a Block builder and Binary segmenter in vanilla Js is very easy, and a useful tool for mapping character and Input Data Streams, Try building blocks of 24-bit Binary data, base64 encoding did it using four 6-bit segments, segment at 8-bits each for a more comparable fit to data input assuming Js standard Utf-16 or a basic Ascii friendly character set, easy simple and symmetric.
+</p>
+    </post-46>
+    <post-45>
+<p>
+I have found a Bitwise left shift of 1 effectively multiplies the number by 2, a right shift of 1 divides the number by 2, and more than 1 by a factor of 2^n where n is the number of positions to the right and Xor which compares each bit of its operands and if different returns 1 or same returns 0.
+</p>
+    </post-45>
+    <post-44>
+<p>
+I have taken some time to learn about Bitwise Operations including simple Bitwise Xor, Left, and Right shift operating on the Binary form of a number, agnostic to the number input format.
+</p>
+    </post-44>
     <post-43>
 <p>
-I have spent time to learn about Pointers in C programs today, including avoiding invalid syntax by using single quotes for single characters and double quotes for string literals, And using const char* ptr = &c to "point" to the memory address of the variable c or if a value such as "Hello" the first character in Read only memory of the letter H.
+I will be installing Nodejs, a powerful event driven, non blocking io runtime to run Javascript serverside. I have plans to complement my code tasks in C Standard and Javavm with more Webassembly, Typescript and Javascript using Javascript serverside mainly to benefit using the same syntax and language for my browser and serverside programming. 
 </p>
     </post-43>
     <post-42>
@@ -657,4 +1618,7 @@ Here are some DOM equivalents to the vanilla Js method for Document.write, prima
 `;
 
 document.write("the_post.js loaded successfully<br>");
+
+
+
 
