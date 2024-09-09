@@ -1,4 +1,97 @@
 export const simulatedFileContent = `
+    <post-57>
+<p>
+I have here the most simple method for generating self signed SSL certificates using the package Openssl and copied to a directory for use with nginx. This method uses Rsa for encryption and is not the best choice standalone for live server environments but depending on your Certificate Authority and use case will allow you to atleast meet the most base requirement for most Https protocol communication.
+</p>
+<pre>
+sudo apt-get update
+sudo apt-get install openssl 
+sudo mkdir -p /etc/nginx/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/yourdomain.key -out /etc/nginx/ssl/yourdomain.crt
+<button class="copy-btn" data-code="57">&lt;&gt;</button>
+</pre>
+    </post-57>
+    <post-56>
+<p>
+I have some code here that could be useful for testing encrypted Ciphertext this code was made for Nodejs and uses the Fs module only for possible work task with a file that could contain a Ciphertext.
+</p>
+<pre>
+const fs = require('fs');
+
+// Replace this with your cipher text
+const cipherText = 'c3FFIVUrILF5v';
+
+// Character map used in the encryption
+const replacementChars = '0987654321aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ';
+
+// Function to analyze the frequency of characters
+function analyzeFrequency(text) {
+    const frequency = {};
+    for (const char of text) {
+        frequency[char] = (frequency[char] || 0) + 1;
+    }
+    return frequency;
+}
+
+// Function to attempt a simple substitution cipher
+function attemptDecryption(cipherText, shift) {
+    const shiftCharacter = (char, shiftAmount) => {
+        const charIndex = replacementChars.indexOf(char);
+        if (charIndex === -1) return char; // Return character unchanged if not found
+        const newIndex = (charIndex + shiftAmount) % replacementChars.length;
+        return replacementChars[newIndex];
+    };
+
+    let decrypted = '';
+    for (const char of cipherText) {
+        decrypted += shiftCharacter(char, -shift); // Attempt decryption with the given shift
+    }
+    return decrypted;
+}
+
+// Function to test various shifts and show results
+function testShifts(cipherText) {
+    for (let shift = 0; shift < replacementChars.length; shift++) {
+        const decrypted = attemptDecryption(cipherText, shift);
+        console.log(\`Shift $\{shift}: $\{decrypted}\`);
+    }
+}
+
+// Analyze frequency of characters in the cipher text
+const frequency = analyzeFrequency(cipherText);
+console.log('Character Frequency Analysis:', frequency);
+
+// Attempt to decrypt the cipher text with different shifts
+testShifts(cipherText);
+<button class="copy-btn" data-code="56">&lt;&gt;</button>
+</pre>
+    </post-56>
+    <post-55>
+<p>
+I have adopted a copy of the Mit No Attribution license for my own source code and although I am also a fan of GNU License this one I think is also very good if you agree with the terms and do not require a more specific license like the BSD 3 Clause license then this may be just what youre looking for provided here.
+</p>
+<pre>
+MIT No Attribution
+
+Copyright
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+<button class="copy-btn" data-code="55">&lt;&gt;</button>
+</pre>
+    </post-55>
     <post-54>
 <p>
 I have links to use that have been fetched from a new content scraper I made that pulls from Github, using Xmlhttprequest or fetch and simple Cgi program with curl to bypass Cors. I am a huge fan of Freecodecamp and Github, And noticed recently a good path any programmer or code hobbyist can use from the Freecodecamp repo, I think these links are so good that I have a current content fetch provided here.
@@ -151,7 +244,7 @@ Description (Link): /freeCodeCamp/freeCodeCamp
 Title: Issues 190
 Description (Link): /freeCodeCamp/freeCodeCamp/issues
 
-Title: Pull requests 63
+Title: Pull requests 61
 Description (Link): /freeCodeCamp/freeCodeCamp/pulls
 
 Title: Actions
@@ -754,48 +847,6 @@ Description (Link): https://patreon.com/freecodecamp
 Title: www.freecodecamp.org/donate
 Description (Link): http://www.freecodecamp.org/donate
 
-Title:
-Description (Link): https://github.com/raisedadead
-
-Title:
-Description (Link): https://github.com/ojeytonwilliams
-
-Title:
-Description (Link): https://github.com/camperbot
-
-Title:
-Description (Link): https://github.com/renovate-bot
-
-Title:
-Description (Link): https://github.com/apps/renovate
-
-Title:
-Description (Link): https://github.com/sahat
-
-Title:
-Description (Link): https://github.com/moT01
-
-Title:
-Description (Link): https://github.com/Bouncey
-
-Title:
-Description (Link): https://github.com/terakilobyte
-
-Title:
-Description (Link): https://github.com/SaintPeter
-
-Title:
-Description (Link): https://github.com/ltegman
-
-Title:
-Description (Link): https://github.com/benmcmahon100
-
-Title:
-Description (Link): https://github.com/ShaunSHamilton
-
-Title:
-Description (Link): https://github.com/ahmaxed
-
 Title: TypeScript 67.0%
 Description (Link): /freeCodeCamp/freeCodeCamp/search?l=typescript
 
@@ -830,10 +881,10 @@ Title: Docs
 Description (Link): https://docs.github.com/
 
 Title: Contact
-Description (Link): https://support.github.com?tags=dotcom-footer
+Description (Link): https://support.github.com?tags=dotcom-footer<button class="copy-btn" data-code="54">&lt;&gt;</button>
 <button class="copy-btn" data-code="54">&lt;&gt;</button>
 </pre>
-</post-54>
+    </post-54>
     <post-53>
 <p>
 I like to keep Typefont simple, that being said here is a standard way to selfhost a font, provided you have a generated Web Open Font Format file as woff or woff2, the code below is enough to provide the font family name as a usable css attribute.
@@ -1618,7 +1669,6 @@ Here are some DOM equivalents to the vanilla Js method for Document.write, prima
 `;
 
 document.write("the_post.js loaded successfully<br>");
-
 
 
 
