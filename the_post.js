@@ -1,4 +1,18 @@
 export const simulatedFileContent = `
+    <post-58>
+<p>
+I have been using nginx prefer as my web server and Http listener more because it just works and while usable for other tasks any package that can serve web content from its base with so minimal configuration really everyone should prefer, so here is the server location block to add at the bottom within the server block for a basic Common Gateway Interface directory that just works.
+</p>
+<pre>
+location /cgi-bin/ {
+    root /var/www/html;
+    fastcgi_pass unix:/var/run/fcgiwrap.socket;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME /var/www/html/$fastcgi_script_name;
+}
+<button class="copy-btn" data-code="58">&lt;&gt;</button>
+</pre>
+    </post-58>
     <post-57>
 <p>
 I have here the most simple method for generating self signed SSL certificates using the package Openssl and copied to a directory for use with nginx. This method uses Rsa for encryption and is not the best choice standalone for live server environments but depending on your Certificate Authority and use case will allow you to atleast meet the most base requirement for most Https protocol communication.
