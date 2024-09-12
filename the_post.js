@@ -1,15 +1,116 @@
 export const simulatedFileContent = `
-    <post-58>
+    <post-59>
 <p>
-I have been using nginx prefer as my web server and Http listener more because it just works and while usable for other tasks any package that can serve web content from its base with so minimal configuration really everyone should prefer, so here is the server location block to add at the bottom within the server block for a basic Common Gateway Interface directory that just works.
+I have simple example to share for nginx configuration that is useful to abstract static files and shows how a fallback to any file, lets use index.html can enable client side routing.
 </p>
 <pre>
-location /cgi-bin/ {
-    root /var/www/html;
-    fastcgi_pass unix:/var/run/fcgiwrap.socket;
-    include fastcgi_params;
-    fastcgi_param SCRIPT_FILENAME /var/www/html/$fastcgi_script_name;
+    # Handle requests for the /static subdirectory
+    location /static/ {
+        try_files $uri $uri/ /static/index.html;
+    }
+
+    # Serve static JavaScript files and other assets from /var/www/apps
+    location /apps/ {
+        root /var/www;
+    }
+<button class="copy-btn" data-code="59">&lt;&gt;</button>
+</pre>
+    </post-59>
+    <post-58>
+<p>
+I made a simple file Index.js that does the most basic client side routing similar to how Vue and React.js work, this is not server side as with Express.js and Next.js, and does require some web server location block configuration to serve Single Page Applications and to intercept Http requests from any url. We basically make use of the history API with this method along with the location block setup to effectively achieve on url take this action App routing.
+</p>
+<pre>
+import data from './testurl.js';
+// App root path
+const APP_ROOT = '/static';
+
+// Function to append content to the body without replacing it
+function appendToBody(content) {
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = content;
+    document.body.appendChild(paragraph);
 }
+
+// Function to get the delimiter used in the URL path
+function getDelimiter(path) {
+    if (path.includes('-')) return '-';
+    if (path.includes('_')) return '_';
+    if (path.includes('/')) return '/';
+    return ' '; // Default if no delimiter found
+}
+
+// Function to handle URL routing
+function load() {
+    // appendToBody('Load function started');
+
+    // Get the current pathname from the URL
+    const pathname = window.location.pathname;
+    // appendToBody('Current pathname: ' + pathname);
+
+    // Strip the app root from the path
+    const path = pathname.replace(APP_ROOT, ''); // Adjust APP_ROOT if needed
+    // appendToBody('Path after stripping APP_ROOT: ' + path);
+
+    // Extract the parts of the path
+    const parts = path.split(/[-_/]/); // Split on hyphens, underscores, or slashes
+    // appendToBody('Path parts: ' + parts.join(', '));
+
+    // Determine the delimiter
+    let delimiter = getDelimiter(path);
+    // appendToBody('Delimiter detected: ' + delimiter);
+
+    // Extract the title part (everything except the last part)
+    let titlePart = parts.slice(0, -1).join(delimiter).replace(/^[-_]/, '').replace(/[-_]$/, ''); // Remove leading and trailing delimiters
+    // appendToBody('Title part: ' + titlePart);
+
+    // Extract the slug part (the last part of the path)
+    let slugPart = parts[parts.length - 1];
+    // appendToBody('Slug part: ' + slugPart);
+    
+    // Overwrite titlePart and slugPart with simulated values
+    //delimiter = '-';
+    //titlePart = 'Yet-Another-Title'; // Simulated title part
+    //slugPart = '24680'; // Simulated slug part
+
+    // Append the overwritten values to the body
+    //appendToBody('Simulated delimiter: ' + delimiter);
+    //appendToBody('Simulated Title part: ' + titlePart);
+    //appendToBody('Simulated Slug part: ' + slugPart);
+    
+    // Query the data
+    query(data, titlePart, slugPart, delimiter);
+
+    // appendToBody('Load function complete');
+}
+
+function query(data, titlePart, slugPart, delimiter) {
+    // appendToBody('Query function started');
+
+    // Ensure the simulated title part is lowercased and formatted correctly
+    const formattedTitle = titlePart.toLowerCase().replace(/ /g, delimiter);
+
+    for (const item of data) {
+        // Format each title in the JSON data with the same delimiter
+        const jsonTitle = item.title.toLowerCase().replace(/ /g, delimiter); // Use the delimiter for spaces
+        // appendToBody('Checking item: ' + item.title);
+        // appendToBody('Formatted title: ' + formattedTitle);
+        // appendToBody('Formatted json: ' + jsonTitle);
+
+        if (item.slug === slugPart && formattedTitle === jsonTitle) {
+            // appendToBody('Match found: Hello, World!');
+            appendToBody('<h1>Hello, World!</h1>');
+            return;
+        } else {
+            // appendToBody('No match for: ' + item.title);
+        }
+    }
+
+    appendToBody('Not found!');
+}
+
+// Load on page load
+window.addEventListener('load', load);
 <button class="copy-btn" data-code="58">&lt;&gt;</button>
 </pre>
     </post-58>
