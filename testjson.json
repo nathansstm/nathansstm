@@ -1,0 +1,53 @@
+{
+  "12345": { "title": "Sample Title One" },
+  "67890": { "title": "Another Example Title" },
+  "54321": { "title": "Test Title Three" },
+  "98765": { "title": "Different Title Four" },
+  "13579": { "title": "Fifth Title Here" },
+  "24680": { "title": "Yet Another Title" },
+  "11111": { "title": "Final Sample Title" },
+  "22222": { "title": "Some Random Title" },
+  "33333": { "title": "More Sample Titles" },
+  "44444": { "title": "Last Example Title" }
+}
+
+{
+  "12345": "Sample Title One",
+  "67890": "Another Example Title",
+  "54321": "Test Title Three",
+  "98765": "Different Title Four",
+  "13579": "Fifth Title Here",
+  "24680": "Yet Another Title",
+  "11111": "Final Sample Title",
+  "22222": "Some Random Title",
+  "33333": "More Sample Titles",
+  "44444": "Last Example Title"
+}
+
+{
+  "12345": { "slug": "12345", "title": "Sample Title One" },
+  "67890": { "slug": "67890", "title": "Another Example Title" },
+  "54321": { "slug": "54321", "title": "Test Title Three" },
+  "98765": { "slug": "98765", "title": "Different Title Four" },
+  "13579": { "slug": "13579", "title": "Fifth Title Here" },
+  "24680": { "slug": "24680", "title": "Yet Another Title" },
+  "11111": { "slug": "11111", "title": "Final Sample Title" },
+  "22222": { "slug": "22222", "title": "Some Random Title" },
+  "33333": { "slug": "33333", "title": "More Sample Titles" },
+  "44444": { "slug": "44444", "title": "Last Example Title" }
+}
+
+{
+  "data": {
+    "12345": { "slug": "12345", "title": "Sample Title One" },
+    "67890": { "slug": "67890", "title": "Another Example Title" },
+    "54321": { "slug": "54321", "title": "Test Title Three" },
+    "98765": { "slug": "98765", "title": "Different Title Four" },
+    "13579": { "slug": "13579", "title": "Fifth Title Here" },
+    "24680": { "slug": "24680", "title": "Yet Another Title" },
+    "11111": { "slug": "11111", "title": "Final Sample Title" },
+    "22222": { "slug": "22222", "title": "Some Random Title" },
+    "33333": { "slug": "33333", "title": "More Sample Titles" },
+    "44444": { "slug": "44444", "title": "Last Example Title" }
+  }
+}
