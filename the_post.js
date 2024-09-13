@@ -1,4 +1,87 @@
 export const simulatedFileContent = `
+    <post-62>
+<p>
+I have here a simple method to create a Data Access Object built as variable data from a pure valid Json object syntax.  I would extend this to use asynchronous as true and return a Promise which would require a minor update to our Index.js client side router load function to async function load and a variable we could call const resolvedData assigned await data which would call query only after the data promise is resolved, which would allow us to avoid blocking the UI thread as false or synchronous request does.
+</p>
+<pre>
+// testimport.js
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', '/apps/testjson.json', false); // Adjust the path as needed
+
+let data = [];
+
+    xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            try {
+                const json = JSON.parse(xhr.responseText);
+                data = Object.entries(json).map(([slug, title]) => ({ slug, title }));
+
+            } catch (error) {
+                reject('Failed to parse JSON');
+            }
+        } else {
+            reject('Failed to load JSON data');
+        }
+    };
+
+    xhr.onerror = function () {
+        reject('Network error');
+    };
+
+    xhr.send();
+
+export default data;
+
+
+
+
+<button class="copy-btn" data-code="62">&lt;&gt;</button>
+</pre>
+    </post-62>
+    <post-61>
+<p>
+I have here a simple Json object that has been seeded with arbitrary slug and title data for use with any App testing where a small dataset is needed, mostly for testing purposes but could be refined for testing models views controllers and other database resources of a similar structure.
+</p>
+<pre>
+{
+  "12345": "Sample Title One",
+  "67890": "Another Example Title",
+  "54321": "Test Title Three",
+  "98765": "Different Title Four",
+  "13579": "Fifth Title Here",
+  "24680": "Yet Another Title",
+  "11111": "Final Sample Title",
+  "22222": "Some Random Title",
+  "33333": "More Sample Titles",
+  "44444": "Last Example Title"
+}
+<button class="copy-btn" data-code="61">&lt;&gt;</button>
+</pre>
+    </post-61>
+    <post-60>
+<p>
+I have here a simple Array object that has been seeded with arbitrary slug and title data for use with any App testing where a small dataset is needed, mostly for testing purposes but could be refined for testing models views controllers and other database resources of a similar structure.
+</p>
+<pre>
+// testurl.js
+const data = [
+    { "slug": "12345", "title": "Sample Title One" },
+    { "slug": "67890", "title": "Another Example Title" },
+    { "slug": "54321", "title": "Test Title Three" },
+    { "slug": "98765", "title": "Different Title Four" },
+    { "slug": "13579", "title": "Fifth Title Here" },
+    { "slug": "24680", "title": "Yet Another Title" },
+    { "slug": "11111", "title": "Final Sample Title" },
+    { "slug": "22222", "title": "Some Random Title" },
+    { "slug": "33333", "title": "More Sample Titles" },
+    { "slug": "44444", "title": "Last Example Title" }
+];
+
+export default data;
+<button class="copy-btn" data-code="60">&lt;&gt;</button>
+</pre>
+    </post-60>
     <post-59>
 <p>
 I have simple example to share for nginx configuration that is useful to abstract static files and shows how a fallback to any file, lets use index.html can enable client side routing.
@@ -18,7 +101,7 @@ I have simple example to share for nginx configuration that is useful to abstrac
     </post-59>
     <post-58>
 <p>
-I made a simple file Index.js that does the most basic client side routing similar to how Vue and React.js work, this is not server side as with Express.js and Next.js, and does require some web server location block configuration to serve Single Page Applications and to intercept Http requests from any url. We basically make use of the history API with this method along with the location block setup to effectively achieve on url take this action App routing.
+I made a simple file Index.js that does the most basic client side routing similar to how Vue and React.js work, this is not server side routing as with Express.js and Next.js, and does require some web server location block configuration to serve Single Page Applications and to intercept Http requests from any url. We basically make use of the history API with this method along with the location block setup to effectively achieve on url take this action App routing.
 </p>
 <pre>
 import data from './testurl.js';
@@ -61,23 +144,33 @@ function load() {
     // appendToBody('Delimiter detected: ' + delimiter);
 
     // Extract the title part (everything except the last part)
-    let titlePart = parts.slice(0, -1).join(delimiter).replace(/^[-_]/, '').replace(/[-_]$/, ''); // Remove leading and trailing delimiters
+    // let titlePart = parts.slice(0, -1).join(delimiter).replace(/^[-_]/, '').replace(/[-_]$/, ''); // Remove leading and trailing delimiters
     // appendToBody('Title part: ' + titlePart);
 
     // Extract the slug part (the last part of the path)
-    let slugPart = parts[parts.length - 1];
+    // let slugPart = parts[parts.length - 1];
     // appendToBody('Slug part: ' + slugPart);
-    
-    // Overwrite titlePart and slugPart with simulated values
-    //delimiter = '-';
-    //titlePart = 'Yet-Another-Title'; // Simulated title part
-    //slugPart = '24680'; // Simulated slug part
+    // Extract the slug part (the last part of the path)
+    let slugPart = parts[parts.length - 1];
+    let titlePart;
 
-    // Append the overwritten values to the body
-    //appendToBody('Simulated delimiter: ' + delimiter);
-    //appendToBody('Simulated Title part: ' + titlePart);
-    //appendToBody('Simulated Slug part: ' + slugPart);
-    
+    // Check if slugPart is a number
+    if (!isNaN(slugPart) && slugPart.trim() !== '') {
+        // slugPart is a number
+        // appendToBody('Slug part is a number: ' + slugPart);
+        titlePart = parts.slice(0, -1).join(delimiter).replace(/^[-_]/, '').replace(/[-_]$/, ''); // Remove leading and trailing delimiters
+        // appendToBody('Shortened titlePart: ' + titlePart);
+    } else {
+        // slugPart is not a number
+        // appendToBody('Slug part is not a number: ' + slugPart);
+        titlePart = parts.join(delimiter).replace(/^[-_]/, '').replace(/[-_]$/, ''); // Remove leading and trailing delimiters
+        // appendToBody('Built long titlePart: ' + titlePart);
+    }    
+    // appendToBody('Calling query function...');
+    // appendToBody('Using titlePart...' + titlePart);
+    // appendToBody('Using slugPart...' + slugPart);
+    // appendToBody('Using delimiter...' + delimiter);
+
     // Query the data
     query(data, titlePart, slugPart, delimiter);
 
@@ -97,7 +190,8 @@ function query(data, titlePart, slugPart, delimiter) {
         // appendToBody('Formatted title: ' + formattedTitle);
         // appendToBody('Formatted json: ' + jsonTitle);
 
-        if (item.slug === slugPart && formattedTitle === jsonTitle) {
+        // if (item.slug === slugPart && formattedTitle === jsonTitle) {
+        if (formattedTitle === jsonTitle) { // Use simpler self healing title evaluation
             // appendToBody('Match found: Hello, World!');
             appendToBody('<h1>Hello, World!</h1>');
             return;
@@ -106,7 +200,7 @@ function query(data, titlePart, slugPart, delimiter) {
         }
     }
 
-    appendToBody('Not found!');
+    appendToBody('<h1>Not found!</h1>');
 }
 
 // Load on page load

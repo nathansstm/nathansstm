@@ -1,15 +1,16 @@
 // testimport.js
 
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'testjson.json', true); // Adjust the path as needed
+xhr.open('GET', '/apps/testjson.json', false); // Adjust the path as needed
 
-const fetchData = new Promise((resolve, reject) => {
+let data = [];
+
     xhr.onload = function () {
         if (xhr.status >= 200 && xhr.status < 300) {
             try {
                 const json = JSON.parse(xhr.responseText);
-                const data = Object.entries(json).map(([slug, title]) => ({ slug, title }));
-                resolve(data);
+                data = Object.entries(json).map(([slug, title]) => ({ slug, title }));
+
             } catch (error) {
                 reject('Failed to parse JSON');
             }
@@ -23,8 +24,9 @@ const fetchData = new Promise((resolve, reject) => {
     };
 
     xhr.send();
-});
 
-export default fetchData.then(data => data);
+export default data;
+
+
 
 
