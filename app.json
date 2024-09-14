@@ -1,0 +1,31 @@
+{
+  "model": {
+    "posts": { 
+       "id": "number", 
+       "type": "string", 
+       "date": "date" 
+     }
+  },
+  
+  "view": {
+    "posts": { 
+       "init": "function", 
+       "load": "function",
+       "html": "Post.html"
+     }
+  },
+  
+  "controller": {
+    "action": { 
+       "create": "post", 
+       "update": "post",
+       "delete": "get",
+       "read": "get"
+     }
+  }
+}
+
+
+
+
+
