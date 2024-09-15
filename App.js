@@ -2,6 +2,8 @@ import data from './data.js';
 // App root path
 const APP_ROOT = '/apps';
 const APP_SRC = '/apps/src'
+const APP_STATIC = '/apps/template';
+const APP_ACTION = '/apps/controllers';
 let controller, action, model, view;
 init(); // Set path variable assignments immediately
 
@@ -78,8 +80,7 @@ function load() {
     const [[viewKey]] = Object.entries(data.view);
     const [[controllerKey]] = Object.entries(data.controller);
     // Destructuring to access the nth key-value pair
-    const [, , , [actionKey]] = Object.entries(data.controller.action);
-    
+    const [, , , [actionKey]] = Object.entries(data.controller[APP_ROUTE]);
     
         // console.log(modelKey); // Outputs "posts"
     // appendToBody('Load model...' + modelKey);
@@ -116,22 +117,90 @@ function query(data, delimiter) {
     // appendToBody('Load function started');
     const [[modelKey]] = Object.entries(data.model);
     const [[viewKey]] = Object.entries(data.view);
+    // const [[controllerKey]] = Object.entries(data.controller);
     const [[controllerKey]] = Object.entries(data.controller);
     // Destructuring to access the nth key-value pair
-    const [, , , [actionKey]] = Object.entries(data.controller.action);
+    const [, , , [actionKey]] = Object.entries(data.controller[APP_ROUTE]);
 
     if (APP_ROUTE == controllerKey) {
         // appendToBody('Query controller OK');
+        // Step 1: Assign the constant value to a new variable
+        let newController = APP_ROUTE;
+
+        // Step 2: Check if the last character is "s" and remove it
+        // if (newController.endsWith("s")) {
+            // newController = newController.slice(0, -1);
+        // }
+        const APP_CONTROLLER = APP_ACTION + delimiter + newController + '_controller.js';
+
+
+        
+        
+        // Minimal XHR to fetch template contents
+        var xhrController = new XMLHttpRequest();
+        xhrController.open('GET', APP_CONTROLLER, false); // async set to false
+        xhrController.send(null);
+
+        // Capture template content
+        var controllerContent = xhrController.responseText;
+        
+                
+        // core/framework.js
+        // import { PostController } from './controllers/PostController.js';
     }
     if (URL_ACTION == actionKey) {
-        // appendToBody('Query action OK');
+        // appendToBody('Query action OK'); // Load controller action
+        // Find function start
+        const functionName = `function ${actionKey}`;
+        const functionStartIndex = controllerContent.indexOf(functionName);
+
+        let functionBodyStartIndex = controllerContent.indexOf('{', functionStartIndex);
+        let functionBodyEndIndex = controllerContent.indexOf('}', functionBodyStartIndex);
+
+        const functionCode = controllerContent.substring(functionStartIndex, functionBodyEndIndex + 1);
+        // console.log(functionCode);
+
+
+        // Use Function constructor to create and call the function
+        const func = new Function('return ' + functionCode)();
+        // console.log('Function Output:', func());
+
+        appendToBody(func()); // Append action
+
+        
     }
     if (APP_MODEL == modelKey) {
-        // appendToBody('Query model OK');
+        // appendToBody('Query model OK'); // Load data access object
     }
     if (APP_VIEW == viewKey) {
         // appendToBody('Query view OK');
-        appendToBody('<h1>Hello, World!</h1>');
+        appendToBody('<h1>Hello, World!</h1>'); // Append view template static content
+        // const APP_VIEW = "views"; // Example value
+
+        // Step 1: Assign the constant value to a new variable
+        let newVariable = APP_VIEW;
+
+        // Step 2: Check if the last character is "s" and remove it
+        if (newVariable.endsWith("s")) {
+            newVariable = newVariable.slice(0, -1);
+        }
+
+        // Step 3: Capitalize the first letter
+        newVariable = newVariable.charAt(0).toUpperCase() + newVariable.slice(1);
+        const APP_TEMPLATE = APP_STATIC + delimiter + newVariable + '.html';
+        // appendToBody('Template file: ' + APP_TEMPLATE); // Append view template static content
+
+        // Minimal XHR to fetch template contents
+        var xhrTemplate = new XMLHttpRequest();
+        xhrTemplate.open('GET', APP_TEMPLATE, false); // async set to false
+        xhrTemplate.send(null);
+
+        // Capture template content
+        var templateContent = xhrTemplate.responseText;
+        appendToBody(templateContent); // Append view template static content
+
+        
+        // console.log(newVariable); // Output: View        
         return;
     }
     
@@ -143,6 +212,7 @@ function query(data, delimiter) {
 
 // Load on page load
 window.addEventListener('load', load);
+
 
 
 

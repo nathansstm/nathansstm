@@ -1,0 +1,6 @@
+function read() {
+    return "PostsController!";
+    
+}
+
+

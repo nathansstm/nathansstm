@@ -16,7 +16,7 @@
   },
   
   "controller": {
-    "action": { 
+    "posts": { 
        "create": "post", 
        "update": "post",
        "delete": "get",
@@ -24,6 +24,9 @@
      }
   }
 }
+
+
+
 
 
 
