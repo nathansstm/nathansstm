@@ -1,3 +1,6 @@
+// # App.js
+
+
 import data from './data.js';
 // App root path
 const APP_ROOT = '/apps';
@@ -11,6 +14,7 @@ const APP_ROUTE = controller;
 const URL_ACTION = action;
 const APP_MODEL = model;
 const APP_VIEW = view;
+// # test url http://.../apps/posts/read/posts/posts
 
 
 // Function to append content to the body without replacing it
@@ -76,18 +80,11 @@ function init() {
 // Function to handle URL routing
 function load() {
     // appendToBody('Load function started');
-    const [[modelKey]] = Object.entries(data.model);
-    const [[viewKey]] = Object.entries(data.view);
-    const [[controllerKey]] = Object.entries(data.controller);
+    //const [[modelKey]] = Object.entries(data.model);
+    //const [[viewKey]] = Object.entries(data.view);
+    //const [[controllerKey]] = Object.entries(data.controller);
     // Destructuring to access the nth key-value pair
-    const [, , , [actionKey]] = Object.entries(data.controller[APP_ROUTE]);
-    
-        // console.log(modelKey); // Outputs "posts"
-    // appendToBody('Load model...' + modelKey);
-    // appendToBody('Load view...' + viewKey);
-    // appendToBody('Load controller...' + controllerKey);
-    // appendToBody('Load action...' + actionKey);
-
+    //const [, , , [actionKey]] = Object.entries(data.controller[APP_ROUTE]);
     
     // Get the current pathname from the URL
     const pathname = window.location.pathname;
@@ -115,14 +112,29 @@ function load() {
 function query(data, delimiter) {
     // appendToBody('Query function started');
     // appendToBody('Load function started');
-    const [[modelKey]] = Object.entries(data.model);
-    const [[viewKey]] = Object.entries(data.view);
-    // const [[controllerKey]] = Object.entries(data.controller);
-    const [[controllerKey]] = Object.entries(data.controller);
+    //const [[modelKey]] = Object.entries(data.model);
+    //const [[viewKey]] = Object.entries(data.view);
+    //const [[controllerKey]] = Object.entries(data.controller);
     // Destructuring to access the nth key-value pair
-    const [, , , [actionKey]] = Object.entries(data.controller[APP_ROUTE]);
+    //const [, , , [actionKey]] = Object.entries(data.controller[APP_ROUTE]);
+    //const VAR_STORED_POSTS = 'posts';  // Dynamic key stored in a variable
+    const { ['model']: foundModels } = data;
+    const { ['view']: foundViews } = data;
+    const { ['controller']: foundControllers } = data;
+    const { [APP_ROUTE]: foundActions } = data.controller;
+    const modelToFind = APP_MODEL;
+    const viewToFind = APP_VIEW;
+    const controllerToFind = APP_ROUTE;
+    const actionToFind = URL_ACTION;
+    // Now, use Object.keys to find the key
+    const foundModel = Object.keys(foundModels).find(key => key === modelToFind);
+    const foundView = Object.keys(foundViews).find(key => key === viewToFind);
+    const foundController = Object.keys(foundControllers).find(key => key === controllerToFind);
+    const foundAction = Object.keys(foundActions).find(key => key === actionToFind);
+    //console.log(foundAction);  // Output: "read" (if it exists)
 
-    if (APP_ROUTE == controllerKey) {
+    
+    if (APP_ROUTE == foundController) {
         // appendToBody('Query controller OK');
         // Step 1: Assign the constant value to a new variable
         let newController = APP_ROUTE;
@@ -132,9 +144,6 @@ function query(data, delimiter) {
             // newController = newController.slice(0, -1);
         // }
         const APP_CONTROLLER = APP_ACTION + delimiter + newController + '_controller.js';
-
-
-        
         
         // Minimal XHR to fetch template contents
         var xhrController = new XMLHttpRequest();
@@ -148,10 +157,10 @@ function query(data, delimiter) {
         // core/framework.js
         // import { PostController } from './controllers/PostController.js';
     }
-    if (URL_ACTION == actionKey) {
+    if (URL_ACTION == foundAction) {
         // appendToBody('Query action OK'); // Load controller action
         // Find function start
-        const functionName = `function ${actionKey}`;
+        const functionName = `function ${foundAction}`;
         const functionStartIndex = controllerContent.indexOf(functionName);
 
         let functionBodyStartIndex = controllerContent.indexOf('{', functionStartIndex);
@@ -165,14 +174,14 @@ function query(data, delimiter) {
         const func = new Function('return ' + functionCode)();
         // console.log('Function Output:', func());
 
-        appendToBody(func()); // Append action
+        //appendToBody(func()); // Append action
 
         
     }
-    if (APP_MODEL == modelKey) {
+    if (APP_MODEL == foundModel) {
         // appendToBody('Query model OK'); // Load data access object
     }
-    if (APP_VIEW == viewKey) {
+    if (APP_VIEW == foundView) {
         // appendToBody('Query view OK');
         appendToBody('<h1>Hello, World!</h1>'); // Append view template static content
         // const APP_VIEW = "views"; // Example value
