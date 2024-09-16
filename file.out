@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Function to start the Node.js app
+start_app() {
+    echo "Welcome to node app......"
+    echo "Start API endpoint? (yes/no)"
+    read start_input
+
+    if [[ "$start_input" == "yes" ]]; then
+        # Start the Node.js file in the background and redirect output
+        node /var/www/apps/mysql/file.js > /var/www/apps/mysql/output.log 2>&1 &
+        echo "App started, listener on port 15012"
+    else
+        echo "Exiting without starting the app."
+        exit 0
+    fi
+
+    # Ask whether to return to the command line
+    echo "Exit to command line? (yes/no)"
+    read exit_input
+
+    if [[ "$exit_input" == "yes" ]]; then
+        echo "Returning to command line."
+        exit 0
+    else
+        echo "Keeping the app running in the background."
+    fi
+}
+
+# Function to stop the Node.js app running on port 15012
+stop_app() {
+    echo "Stopping listeners on port 15012......"
+    
+    # Find and kill processes using port 15012
+    pid=$(lsof -t -i:15012)
+    if [ -z "$pid" ]; then
+        echo "No Node.js process is listening on port 3000."
+    else
+        kill $pid
+        echo "Listener on port 15012 stopped."
+    fi
+}
+
+# Check for --stop argument to stop the app
+if [[ "$1" == "--stop" ]]; then
+    stop_app
+else
+    start_app
+fi
+
+
