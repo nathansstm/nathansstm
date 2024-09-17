@@ -1,0 +1,16 @@
+{
+  "message": "Connection successful",
+  "tables": {
+    "posts": {
+      "id": {
+        "data_type": "integer"
+      },
+      "type": {
+        "data_type": "character varying"
+      },
+      "date": {
+        "data_type": "date"
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ const express = require('express');
 const { Client } = require('pg');
 
 const app = express();
-const port = 15012;
+const port = 15013;
 
 // PostgreSQL client setup (adjust credentials as needed)
 const client = new Client({
@@ -27,9 +27,12 @@ app.get('/apps/mysql/api', async (req, res) => {
             ORDER BY table_name, ordinal_position;
         `;
 
+        //console.log('Endpoint hit'); // Check if this logs when you hit the route
         // Execute the query
         const result = await client.query(tablesQuery);
 
+        // Log the result to check if it contains the expected data
+        //console.log('Query Result:', result.rows);
         // Initialize the structure object
         const structure = {};
 
