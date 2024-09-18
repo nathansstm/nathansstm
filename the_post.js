@@ -1,4 +1,37 @@
 export const simulatedFileContent = `
+    <post-64>
+<p>
+I have made a framework for client side routing using basic Javascript and node for endpoints that follows the Model View Controller design pattern and has some functional integration with postgresql and simple create read update and delete operations as well, created for pretty and self healing url routes and should be useful for Single Page Applications, here is the basic structure so far.
+</p>
+<pre>
+apps/
+├── About.md
+├── App.js
+├── app.json
+├── data.js
+├── index.html
+├── Readme.md
+├── controllers/
+│   └── default_controller.js
+├── source/
+│   ├── api_endpoint.js
+│   ├── app.sql
+│   ├── create.js
+│   ├── dao_class.js
+│   ├── delete.js
+│   ├── dao_endpoint.js
+│   ├── read.js
+│   └── update.js
+└── template/
+    └── Default.html
+<button class="copy-btn" data-code="64">&lt;&gt;</button>
+</pre>
+    </post-64>
+    <post-63>
+<p>
+I have been using node with express app often lately to create restful apis and database endpoints along with resp.json and body-parser where appropriate to both create and interpret http requests with response body data in pure Json, and I highly reccommend it.
+</p>
+    </post-63>
     <post-62>
 <p>
 I have here a simple method to create a Data Access Object built as variable data from a pure valid Json object syntax.  I would extend this to use asynchronous as true and return a Promise which would require a minor update to our Index.js client side router load function to async function load and a variable we could call const resolvedData assigned await data which would call query only after the data promise is resolved, which would allow us to avoid blocking the UI thread as false or synchronous request does.
