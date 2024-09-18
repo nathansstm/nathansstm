@@ -1,4 +1,6 @@
+// api.js
 const express = require('express');
+const cors = require('cors'); // Import the cors middleware
 const { Client } = require('pg');
 
 const app = express();
@@ -16,6 +18,9 @@ const client = new Client({
 // Connect to the PostgreSQL database
 client.connect();
 
+// Use the cors middleware
+app.use(cors());
+
 // Define the route at /apps/mysql/api
 app.get('/apps/mysql/api', async (req, res) => {
     try {
@@ -27,12 +32,9 @@ app.get('/apps/mysql/api', async (req, res) => {
             ORDER BY table_name, ordinal_position;
         `;
 
-        //console.log('Endpoint hit'); // Check if this logs when you hit the route
         // Execute the query
         const result = await client.query(tablesQuery);
 
-        // Log the result to check if it contains the expected data
-        //console.log('Query Result:', result.rows);
         // Initialize the structure object
         const structure = {};
 

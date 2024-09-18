@@ -1,10 +1,19 @@
-// # App.js
-
-
+// App.js
 import data from './data.js';
+// main.js (or any other file where you want to use the DAO class)
+import { DataAccessObjectDAO } from '/apps/source/dao_class.js';
+
+// Create a constant DAO instance
+const dao = new DataAccessObjectDAO();
+
+// Log the message property
+//console.log('Connection message:', dao.message);
+
+// Log the tables property
+//console.log('Tables structure:', dao.tables);
 // App root path
 const APP_ROOT = '/apps';
-const APP_SRC = '/apps/src'
+const APP_SRC = '/apps/source'
 const APP_STATIC = '/apps/template';
 const APP_ACTION = '/apps/controllers';
 let controller, action, model, view;
@@ -180,12 +189,13 @@ function query(data, delimiter) {
     }
     if (APP_MODEL == foundModel) {
         // appendToBody('Query model OK'); // Load data access object
+        appendToBody(`<h1>${dao.message}</h1>`);
     }
     if (APP_VIEW == foundView) {
         // appendToBody('Query view OK');
         appendToBody('<h1>Hello, World!</h1>'); // Append view template static content
         // const APP_VIEW = "views"; // Example value
-
+        appendToBody(`<h1>${JSON.stringify(dao.tables)}</h1>`);
         // Step 1: Assign the constant value to a new variable
         let newVariable = APP_VIEW;
 
