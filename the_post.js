@@ -1,4 +1,157 @@
 export const simulatedFileContent = `
+    <post-69>
+<p>
+I have some choices moving forward as a code hobbyist and considering a node base editor like codesnack ide for simple local code testing. The success with the setup of a proper node server using http2 over https and returning a simple xhr response through Webview using xhr proved Cors is in fact not the turnpoint for return of expected response from an api endpoint using Webview and xhr, the breakthrough was proper examination of header response and comparative cors proxy server testing with curl starting with self signed certs and option insecure through better real encrypted and issued ssl certificates and proved nameserver control, so yes even cross origin requests using Webview, even simple xhr with asynchronous false is achievable and absolutely supported.
+</p>
+    </post-69>
+    <post-68>
+<p>
+I have a code example here that will soon become archive only, this is the basic Xmlhttprequest or xhr, even synchronous xhr, which can be useful for light testing but is ui and thread blocking by nature. I have in my past held a view that synchronous and blocking code is not necessarily nonrestful, some feel conversely that it defines an application state and can never be restful, but aside from simplifying code flow and the predictable nature of execution can also provide a sometimes necessary halting behavior, or intentional pause, mainly good for exposing and testing endpoints.
+</p>
+<pre>
+// Create a simple http request
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://yoursubdomain.freemyip.com/apps/cors/test', false); // false for synchronous request
+
+// Set up the onload event handler
+xhr.onload = function() {
+    if (xhr.status === 200) {
+        // Parse the response if necessary
+        const response = JSON.parse(xhr.responseText);
+        console.log(response.message);
+    } else {
+        console.error(xhr.status);
+    }
+};
+
+// Set up the onerror event handler to catch errors
+xhr.onerror = function() {
+    console.error('Network error occurred.');
+};
+
+// Send the request
+xhr.send();
+<button class="copy-btn" data-code="68">&lt;&gt;</button>
+</pre>
+    </post-68>
+    <post-67>
+<p>
+I have some code to provide to note the impact of modern code from a code hobbyist or ui programmers view to evolution as a ux software engineer. Modern methods like promises, chaining then and catch, and using await and async not only provide for cleaner code, they actually provide for more synchronous looking code, which cant be ignored. The key advantage of modern nonblocking code is efficiency and user experience, by not blocking the engine we can make use of optimistic updates prioritize loading critical data deferring less important data, allow for a stateless and user centric ux and allow for more fine grained if even nuanced control over the flow of the code, here are some examples.
+</p>
+<pre>
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    renderView(data);
+  } catch (error) {
+    showErrorMessage();
+  }
+}
+
+fetchData()
+  .then((response) => {
+    // Update UI or store the response for further use
+    renderView(response);
+  })
+  .catch((error) => {
+    // Gracefully handle errors (e.g., show a fallback UI)
+    showErrorMessage();
+  });
+
+async function fetchData() {
+  showSpinner();
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    renderData(data);
+  } catch (error) {
+    showErrorMessage();
+  } finally {
+    hideSpinner();
+  }
+}
+<button class="copy-btn" data-code="67">&lt;&gt;</button>
+</pre>
+    </post-67>
+    <post-66>
+<p>
+I have made a basic http2 node server that when properly configured with a valid ssl certificate using say certbot and a free ddns subdomain can provide an api endpoint that can be accessed from Webview and xhr with even async false, I will repeat that, Webview even with synchronous xhr, if you run into trouble with a simple http request and you are sending cors headers using https and http2 then something is wrong, in addition we also handle preflight by sending a 200 with content instead of a 204, why rely on subsequent requests when it is our privy to either accept origin or reject, below node is tested working version 18.20.4 with a free vm, free ddns from freemyip, free ssl certificate from certbot and a Js tester app using Webview api and Xmlhttprequest async false.
+</p>
+<pre>
+const http2 = require('http2');
+const fs = require('fs');
+
+// Paths to your SSL certificate and key
+const sslOptions = {
+    key: fs.readFileSync('/var/www/apps/ssl/privkey.pem'),
+    cert: fs.readFileSync('/var/www/apps/ssl/fullchain.pem')
+};
+
+const HTTP_PORT = 443; // Standard HTTPS port
+
+// Create HTTP/2 server with secure connection
+const server = http2.createSecureServer(sslOptions, (req, res) => \{
+    if (req.method === 'OPTIONS') \{
+        // Handle preflight requests
+        res.writeHead(200, \{
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        });
+        res.end(JSON.stringify(\{ message: 'Preflight response' \}));
+    } else if (req.url === '/apps/cors/test') \{
+        // Handle actual requests
+        res.writeHead(200, \{
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        \});
+        res.end(JSON.stringify(\{ message: 'Connection successful' \}));
+    \} else \{
+        // Handle unknown routes
+        res.writeHead(404);
+        res.end('Not Found');
+    \}
+\});
+
+// Start the server
+server.listen(HTTP_PORT, () => \{
+    console.log(\`HTTP/2 server running on https://localhost:$\{HTTP_PORT\}\`);
+\});
+<button class="copy-btn" data-code="66">&lt;&gt;</button>
+</pre>
+    </post-66>
+    <post-65>
+<p>
+I am updating the source tree for my client side routing mvc framework with two new files for the api source tree for a pure Json object that can now be accessed as a file asids from an actual database endpoint, once again node modules provide the solution.
+</p>
+<pre>
+apps/
+├── About.md
+├── App.js
+├── app.json
+├── data.js
+├── index.html
+├── Readme.md
+├── controllers/
+│   └── default_controller.js
+├── source/
+│   ├── api_endpoint.js
+│   ├── api_json.js
+│   ├── api_json.json
+│   ├── app.sql
+│   ├── create.js
+│   ├── dao_class.js
+│   ├── delete.js
+│   ├── dao_endpoint.js
+│   ├── read.js
+│   └── update.js
+└── template/
+    └── Default.html
+<button class="copy-btn" data-code="65">&lt;&gt;</button>
+</pre>
+    </post-65>
     <post-64>
 <p>
 I have made a framework for client side routing using basic Javascript and node for endpoints that follows the Model View Controller design pattern and has some functional integration with postgresql and simple create read update and delete operations as well, created for pretty and self healing url routes and should be useful for Single Page Applications, here is the basic structure so far.
@@ -1911,6 +2064,7 @@ Here are some DOM equivalents to the vanilla Js method for Document.write, prima
 `;
 
 document.write("the_post.js loaded successfully<br>");
+
 
 
 
